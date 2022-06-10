@@ -7,12 +7,12 @@ Diego Gandaria
 Facundo Olaizola
 
 
-**MODELO ITERATIVOINCREMENTAL
+**MODELO ITERATIVOINCREMENTAL**
 
 El incremental es un modelo de tipo evolutivo que está basado en varios ciclos Cascada realimentados aplicados repetidamente, con
 una filosofía iterativa. El modelo incremental es útil sobre todo cuando el personal necesario para una implementación completa no esta disponible.
 
-**Ventajas 
+**Ventajas**
 
 -Se reduce el tiempo de desarrollo inicial, ya que se implementa la funcionalidad parcial.
 
@@ -27,7 +27,7 @@ avances.
 -Resulta más sencillo acomodar cambios al acotar el tamaño
 de los incrementos.
 
-**Desventajas
+**Desventajas**
 
 -El modelo Incremental no es recomendable para casos de sistemas de tiempo real, de alto nivel de seguridad, de procesamiento distribuido
 y/o de alto índice de riesgos.
