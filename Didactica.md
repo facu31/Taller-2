@@ -6,6 +6,7 @@ Inicialmete por parte del componente pedagogico acompañado de la opiñon traida
 inicio al proyecto utiizando los siguientes tipos de preguntas:
 
 -Verdadero y Falso.
+
 -Texto corto.
 
 Una vez el programa haya sido desarollado la etapa inicial del software se podria hacer incapie en las cualidades
