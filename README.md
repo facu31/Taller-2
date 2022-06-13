@@ -2,9 +2,9 @@
 
 Composición grupo de trabajo:
 
-Gabriel Aramburu
-Diego Gandaria
-Facundo Olaizola
+-Gabriel Aramburu.
+-Diego Gandaria.
+-Facundo Olaizola.
 
 
 **MODELO ITERATIVOINCREMENTAL**
