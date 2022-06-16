@@ -43,8 +43,6 @@ A continuación se describen los puntos que consideramos.
 
 ## Metodología de cascada.
 
-### Características.
-
 Tiene como principal característica que cada fase del desarrollo se ejecuta en orden, comenzando por el análisis y terminando por la puesta en producción del sistema. Antes de continuar con la siguiente fase, se tiene que haber terminado con la anterior. 
 Es un enfoque poco adaptativo o flexible, que no se aplica exitosamente cuando los requerimientos cambian con frecuencia. Además el software funcionando se entrega al final del proceso.
 
@@ -78,7 +76,7 @@ Los plazos de desarrollo están acotados y se conocen de antemano (4 a 5 meses),
 
 A medio camino entre las metodologías predictivas y las adaptativas se encuentra la metodología iterativa incremental.
 
-###Porque se elige.
+### Porque se elige.
 
 La misma ofrece la posibilidad de realizar entregas parciales al cliente, cada entrega brindará información acerca del avance y permitirá realizar ajustes en los requerimientos definidos. 
 Nos permite comenzar a trabajar con un nivel de requerimientos suficiente pero no necesariamente completos y definidos con detalle. 
