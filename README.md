@@ -148,5 +148,5 @@ Al igual que JSF, con Vaadim toda la responsabilidad de la capa de presentación
 La siguiente tabla muestra lo que consideramos un resumen de las principales características de las tecnologías evaluadas.
 .
 
-file:///home/ceibal/Im%C3%A1genes/resumen.png![image](https://user-images.githubusercontent.com/63823685/174140892-99048479-0387-4948-b115-f9f3c000ddd0.png)
+![image](https://user-images.githubusercontent.com/63823685/174140892-99048479-0387-4948-b115-f9f3c000ddd0.png)
 
