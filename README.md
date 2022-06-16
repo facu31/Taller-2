@@ -129,6 +129,7 @@ La curva de aprendizaje de Thymeleaves es mucho menor que las ofrecidas por las 
 Java ofrece su propia tecnología de presentación llamada JSF. Es considerado el standar de la industria aunque como se puede observar en el siguiente gráfico obtenido de Google Trend no es la más popular. Esto se debe a que es utilizada principalmente para el desarrollo de aplicaciones empresariales (intranet)
 
 
+
 JSF ofrece la implementación del patrón MVC. A diferencia de una implementación action-based (mencionada anteriormente); JSF es una implementación component-based. La gran diferencia es que la generación de la capa de presentación pasa a estar del lado del servidor. A grandes rasgos esto implica:
 no existe por parte del programador un control directo sobre como se manejan los request http generados en el cliente. Por medio de archivos de configuración y objetos java (managedBeans) el programador  le indica al servidor como gestionar/procesar dichos request
 las páginas se renderizan completamente en el servidor, por lo tanto el mismo es el encargado de generar el html, css, js necesario
@@ -148,5 +149,6 @@ Al igual que JSF, con Vaadim toda la responsabilidad de la capa de presentación
 La siguiente tabla muestra lo que consideramos un resumen de las principales características de las tecnologías evaluadas.
 .
 
-recent:///15400924b8a13b419258e77862ab7667
+
+file:///home/ceibal/Im%C3%A1genes/resumen.png![image](https://user-images.githubusercontent.com/63823685/174140892-99048479-0387-4948-b115-f9f3c000ddd0.png)
 
