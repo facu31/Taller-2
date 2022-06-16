@@ -5,36 +5,8 @@ Composición grupo de trabajo:
 -Gabriel Aramburu.
 -Diego Gandaria.
 -Facundo Olaizola.
+-Javier Balado
 
-
-**MODELO ITERATIVOINCREMENTAL**
-
-El incremental es un modelo de tipo evolutivo que está basado en varios ciclos Cascada realimentados aplicados repetidamente, con
-una filosofía iterativa. El modelo incremental es útil sobre todo cuando el personal necesario para una implementación completa no esta disponible.
-
-**Ventajas**
-
--Se reduce el tiempo de desarrollo inicial, ya que se implementa la funcionalidad parcial.
-
--Proporciona todas las ventajas del modelo en cascada
-realimentado, reduciendo sus desventajas sólo al ámbito de
-cada incremento.
-
--Los modelos iterativos e incrementales disminuyen riesgos. ya
-que estos modelos se basan en la retroalimentación sobre los
-avances.
-
--Resulta más sencillo acomodar cambios al acotar el tamaño
-de los incrementos.
-
-**Desventajas**
-
--El modelo Incremental no es recomendable para casos de sistemas de tiempo real, de alto nivel de seguridad, de procesamiento distribuido
-y/o de alto índice de riesgos.
-
--Requiere de mucha planificación, tanto administrativa como técnica.
-
--Requiere de metas claras para conocer el estado del proyecto.
 
 # Justificación de metodología de desarrollo.
 
@@ -75,6 +47,9 @@ Los plazos de desarrollo están acotados y se conocen de antemano (4 a 5 meses),
 ## Metodología Iterativa Incremental
 
 A medio camino entre las metodologías predictivas y las adaptativas se encuentra la metodología iterativa incremental.
+El incremental es un modelo de tipo evolutivo que está basado en varios ciclos Cascada realimentados aplicados repetidamente, con
+una filosofía iterativa. El modelo incremental es útil sobre todo cuando el personal necesario para una implementación completa no esta disponible.
+
 
 ### Porque se elige.
 
@@ -83,6 +58,29 @@ Nos permite comenzar a trabajar con un nivel de requerimientos suficiente pero n
 Permite planificar los plazos de entregas, dividiendo la construcción en intervalos de tiempo tomando en cuenta la limitaciones de horas de trabajo y fecha límite de entrega. 
 Estas características también las ofrece la metodología Scrum, sin embargo creemos que la iterativa incremental se adapta mejor a las característica del equipo y el cliente.
 
+### Ventajas
+
+-Se reduce el tiempo de desarrollo inicial, ya que se implementa la funcionalidad parcial.
+
+-Proporciona todas las ventajas del modelo en cascada
+realimentado, reduciendo sus desventajas sólo al ámbito de
+cada incremento.
+
+-Los modelos iterativos e incrementales disminuyen riesgos. ya
+que estos modelos se basan en la retroalimentación sobre los
+avances.
+
+-Resulta más sencillo acomodar cambios al acotar el tamaño
+de los incrementos.
+
+### Desventajas
+
+-El modelo Incremental no es recomendable para casos de sistemas de tiempo real, de alto nivel de seguridad, de procesamiento distribuido
+y/o de alto índice de riesgos.
+
+-Requiere de mucha planificación, tanto administrativa como técnica.
+
+-Requiere de metas claras para conocer el estado del proyecto.
 # Análisis y justificación de la tecnología web a utilizar.
 
 Como parte de los requerimientos no funcionales se pidió que el sistema a desarrollar sea Web, implementado en Java y que preferentemente se utilice el framework Spring.
