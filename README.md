@@ -200,7 +200,7 @@ El análisis de requerimientos considerará la retroalimentación que nos brinde
 
 Los documentos de diseño serán actualizados reflejando los cambios que la iteración realiza al sistema (modelo de clases, esquema de base de datos, etc)
 
-## Nota sobre Iteración I.
+## Nota sobre Iteración I
 La iteración I se solapa en parte con el proceso de aprendizaje por lo tanto el número de funcionalidad entregada al finalizar de la misma se espera que sea reducido respecto a las futuras iteraciones. 
 Además esta iteración tiene un componente de diseño más fuerte ya que se parte desde cero en este aspecto. Se suma que  hay tareas como el seteado del ambiente de desarrollo que se realizan en esta iteración pero no en las siguientes. 
 
