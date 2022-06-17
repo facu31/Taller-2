@@ -153,9 +153,6 @@ La siguiente tabla muestra lo que consideramos un resumen de las principales car
 
 # Cronograma
 
-
-Cronograma.
-
 La realización del cronograma de trabajo esta condicionado por los siguientes factores:
 metodología de desarrollo a utilizar (iterativo incremental), duración máxima (aprox 5 meses), carga horaria de dedicación semanal (6 horas) y conformación del equipo (4 integrantes)
 
@@ -163,53 +160,55 @@ A continuación se muestra un diagrama Gant con el detalle de las tareas a reali
 
 ![image](https://github.com/facu31/Taller-2/blob/8843a9b9483982f7432cea6d2ca550355b436b83/Cronogramma.PNG)
 
-Planificación.
+## Planificación.
 
 Elaboración del cronograma.
 
-Análisis de requerimientos iniciales.
+## Análisis de requerimientos iniciales.
 
 Se estudia la propuesta entregada y se comienza a elaborar una lista inicial de requerimientos funcionales. También se evalúan los requerimientos no funcionales disponibles hasta el momento. 
 
 Esta lista de requerimientos no se muestran al cliente, solo son tomados como referencia para que el equipo comience a interiorizarse con las características del sistema a construir.
 
 
-Selección de metodología.
+## Selección de metodología.
 
 En base a la información presentada en la propuesta se estudian alternativas y se selecciona metodología a utilizar.
-Estudio alternativas para capa de Presentación.
+
+## Estudio alternativas para capa de Presentación.
 
 Se realiza un estudio de las tecnologías disponibles para desarrollar la aplicación en especial las características que ofrece el framework Spring. También se evalúan las ventajas y desventajas de las alternativas para el código que se ejecuta en el browser. Esta etapa nos parece importante incluirla ya que es una decisión técnica que impactará en todo el proyecto.
 
-Capacitación.
+## Capacitación.
 
 En esta etapa se realizará la auto capacitación de cada integrante del equipo en las tecnologías httl, css y javascript. También se incluirá capacitación en la alternativa que se seleccione por ejemplo (Thymeleaf). Además es necesario aprender github como repositorio de código.
 
-1era entrega documentación.
+## 1era entrega documentación.
 
 Requisito formal de entrega de documentación propuesta por el cliente.
 
-Iteraciones.
+## Iteraciones.
 En concordancia con la metodología utilizada, el proceso de desarrollo constará de varias instancias de entrega de versiones del sistema. 
 
 En cada instancia se realizarán las siguientes etapas de desarrollo:
-análisis de requerimientos, 
-diseño, 
-implementación 
-y testeo de integración. 
+- análisis de requerimientos, 
+- diseño, 
+- implementación 
+- testeo de integración. 
 
 El análisis de requerimientos considerará la retroalimentación que nos brinde el cliente. Como se menciona en la sección donde se justifica la metodología, se espera que cada versión ayude a identificar/priorizar nuevos requerimientos, los cuales será incluidos en la próxima iteración. 
 
 Los documentos de diseño serán actualizados reflejando los cambios que la iteración realiza al sistema (modelo de clases, esquema de base de datos, etc)
-Nota sobre Iteración I.
+
+## Nota sobre Iteración I.
 La iteración I se solapa en parte con el proceso de aprendizaje por lo tanto el número de funcionalidad entregada al finalizar de la misma se espera que sea reducido respecto a las futuras iteraciones. 
 Además esta iteración tiene un componente de diseño más fuerte ya que se parte desde cero en este aspecto. Se suma que  hay tareas como el seteado del ambiente de desarrollo que se realizan en esta iteración pero no en las siguientes. 
 
-Migración a la nube.
+## Migración a la nube.
 
 En esta etapa se espera poder deployar la aplicación en algunos de los servicios que se ofrecen; por ejemplo Amazon WS. Esta migración requiere estudiar como realizar el proceso y eventualmente realizar alguna modificación en el código de la aplicación.
 
-Manual de usuario.
+## Manual de usuario.
 
 Realización de manual de usuario. Como se mencionó,  los documentos técnicos del sistema se irán realizando/actualizando en cada iteración. 
 
