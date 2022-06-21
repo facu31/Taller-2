@@ -150,6 +150,8 @@ La siguiente tabla muestra lo que consideramos un resumen de las principales car
 
 ![image](https://user-images.githubusercontent.com/63823685/174140892-99048479-0387-4948-b115-f9f3c000ddd0.png)
 
+Concideramos que la mejor opciòn será implementar el proyecto utilizando un template view, debido a su relativa simplicidad
+y flexibilidad para adepaterse a los requerimientos del sistema.
 
 # Cronograma
 
