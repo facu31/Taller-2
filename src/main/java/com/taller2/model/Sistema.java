@@ -12,9 +12,9 @@ public class Sistema {
 	
 	public Sistema() {
 		profesores = new ArrayList<Profesor>();
-		profesores.add(new Profesor(1,"juan","perez","jp@gmail.com"));
-		profesores.add(new Profesor(2,"juan","rodriguez","jro@gmail.com"));
-		profesores.add(new Profesor(3,"maria","gonzalez","maria@gmail.com"));
+		profesores.add(new Profesor(1,"juan","perez","jp@gmail.com", "calle 1"));
+		profesores.add(new Profesor(2,"juan","rodriguez","jro@gmail.com", "calle b-"));
+		profesores.add(new Profesor(3,"maria","gonzalez","maria@gmail.com", "calle c"));
 	}
 	
 	public List<Profesor> listaProfesores() {

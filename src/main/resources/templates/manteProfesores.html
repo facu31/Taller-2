@@ -21,6 +21,7 @@
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Email</th>
+    <th>Direccion</th>
   </tr>
   </thead>
   <tbody>
@@ -29,6 +30,7 @@
         <td th:text="${profesor.nombre}"></td>
         <td th:text="${profesor.apellido}"></td>
         <td th:text="${profesor.email}"></td>
+        <td th:text="${profesor.direccion}"></td>
         <td> <a th:href="@{/showFormForUpdate/{id}(id=${profesor.id})}"
                 class="btn btn-primary">Editar</a>
                 <a th:href="@{/deleteEmployee/{id}(id=${profesor.id})}"

@@ -5,17 +5,19 @@ public class Profesor {
 	private String nombre;
 	private String apellido;
 	private String email;
+	private String direccion;
 	
 	public Profesor() {
 		
 	}
 	
-	public Profesor(int id, String nombre, String apellido, String email) {
+	public Profesor(int id, String nombre, String apellido, String email, String direccion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.email = email;
+		this.direccion = direccion;
 	}
 	
 	public int getId() {
@@ -41,6 +43,14 @@ public class Profesor {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 	
 	
