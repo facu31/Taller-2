@@ -16,6 +16,6 @@ public class PruebaController {
  	@GetMapping("/")
     public String viewHomePage(Model model) {
         model.addAttribute("pruebas", pruebaServiciosImpl.obtenerPrubas());
-        return "pruebasExistentes";
+        return "pruebasExistentes"; 
     }
 }
