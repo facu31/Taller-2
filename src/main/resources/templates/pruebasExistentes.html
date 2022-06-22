@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pruebas</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+ 
+<h3>Lista de Pruebas</h3>
+<a th:href="@{/addnew}" class="btn btn-primary btn-sm mb-3" >Nueva Prueba</a>
+    <table style="width:80%" border="1"
+           class = "table table-striped table-responsive-md">
+    <thead>
+  <tr>
+    <th>Id</th>
+    <th>Titulo</th>
+    <th>Descripcion</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="prueba:${pruebas}">
+        <td th:text="${prueba.id}"></td>
+        <td th:text="${prueba.titulo}"></td>
+        <td th:text="${prueba.desc}"></td>
+        <td> <a th:href="@{/showFormForUpdate/{id}(id=${prueba.id})}"
+                class="btn btn-primary">Editar</a>
+                <a th:href="@{/deleteEmployee/{id}(id=${prueba.id})}"
+                class="btn btn-danger">Borrar</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
