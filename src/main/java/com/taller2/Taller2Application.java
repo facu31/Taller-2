@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScans;
 public class Taller2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Taller2Application.class, args);
+		SpringApplication.run(Taller2Application.class, args); 
 	}
 
 }

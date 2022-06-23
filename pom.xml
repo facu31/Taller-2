@@ -44,6 +44,20 @@
 	      <artifactId>spring-boot-devtools</artifactId>
 	      <scope>runtime</scope>
     	</dependency>
+    	
+    	<!-- Esto es para utilizar jdbcTemplate -->
+    	<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+    	
+    	<!-- driver jdbc -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.29</version>
+		</dependency>
+  
 	</dependencies>
 
 	<build>

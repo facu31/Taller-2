@@ -1,0 +1,11 @@
+package com.taller2.service.dao;
+
+import java.util.List;
+
+import com.taller2.model.Profesor;
+
+public interface ProfesorDAO {
+	public int altaProfesor(Profesor prof);
+
+	public List<Profesor> obtenerProfesores();
+}
