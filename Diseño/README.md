@@ -243,7 +243,7 @@ Si bien el cliente dio algunas caracteristicas empleadas, en base a lo recavado 
 - Corrige el docente
 - Corrige automáticamente el sistema
 
-**Segun lo recavado de información, el equipo de desarollo tiene gran libertad en el diseño del software, por ejemplo el modo de elaboración de la prueba y la creación de usuarios quedan a criterio de los desarolladores.**
+**Segun lo recavado de información, el equipo de desarollo tiene gran libertad en el diseño del software, por ejemplo el modo de elaboración de la prueba y la creación de usuarios quedan a criterio de los desarolladores.**<br>
 **Sin embargo en la variedad de preguntas el cliente sugiere que existan diversos tipos.**
 
 
