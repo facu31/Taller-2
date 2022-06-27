@@ -6,7 +6,7 @@ public class Profesor {
 	private String apellido;
 	private String email;
 	private String direccion;
-	private String Facundo;
+
 	
 	public Profesor() {
 		
