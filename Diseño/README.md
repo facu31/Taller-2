@@ -214,4 +214,33 @@ En esta etapa se espera poder deployar la aplicación en algunos de los servicio
 
 Realización de manual de usuario. Como se mencionó,  los documentos técnicos del sistema se irán realizando/actualizando en cada iteración. 
 
+## Segunda Entrega de Documentación.
+
+## Instrumentos a usar en la recolección de información con el cliente.
+
+- Entrevistas:
+En una primer instancia se pedira al cliente que plante todos sus deseos en la aplicación, este nos dara un modelo a grandes rasgos de los pretendidos.
+En base a esto surgira el cuestionario utilizado.
+
+## Cuestionarios 
+
+Si bien el cliente dio algunas caracteristicas empleadas, en base a lo recavado se plantean algunas cuestiones insiertas:
+
+**Prueba:**
+
+- Es Creada por el docente.
+- Es Creada de manera aleatoria por la página.
+
+**Preguntas:**
+
+- Solo Verdadero o Falso
+- Diferentes tipos (Ej: Multiple Choice - Verdadero y falso)
+- ¿Cuantas preguntas de cada tipo? 
+
+**Corrección:**
+
+- Corrige el docente
+- Corrige automáticamente el sistema
+
+
 
