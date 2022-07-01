@@ -254,15 +254,15 @@ Ademas de lo mencionado anteriormente, se dio a entender por parte del cliente q
 
 En la siguiente sección se describe los apectos tomados en cuenta para determinar la factibilidad del proyecto.
 
-# Factibilidad técnica.
+### Factibilidad técnica.
 
 En este aspecto la tecnología de desarrollo a utilizar forma parte del estándar de la industria. Cada herramienta utilizada (lenguaje, frameworks, librerías, IDE, bade de datos) es de código abierto o de libre uso. Cada una de ellas cuenta con una comunidad de desarrollo que da soporte en foros de libre acceso. Esto permite subsanar posibles inconvenientes técnicos que surjan, por lo que se concidera que en el aspecto técnico el sistema es factible.
 
-# Factibilidad económica.
+### Factibilidad económica.
 
 Se cuenta con un presupuesto limitado de horas de trabajo, las cuales se pueden descriminar de la siguiente forma: un promedio de 6 horas semanales por cada integrante del equipo (4 personas) durante un período de 4 a 5 meses. Este paquete de horas se utilizará para implementar los requerimientos planteados por el cliente. Si bien las características o funcionalidades completasd del producto que se construirá puese exceder el presupesto con el que se cuenta, si será posible entregar una versión funcional que conforme al cliente.
 
-# Funcionalidad operativa.
+### Funcionalidad operativa.
 
 Respecto a este punto, el sistema requerirá un mínimo de mantenimiento operativo por lo que no se detectan problemas de factibilidad en este aspecto. Se planea contar con la figura de Administrador, el cual realizará el mantenimiento de usuarios (alta, baja y modificaciones). Fuera de esta tarea el sistio no requiere de más operativa para funcionar ya que cada profesor será el encargado de crear sus pruebas. Respecto al mantenimiento del hardware (servidor), realización de respaldos y administración de base de datos, el sistema requerirá un mínimo esfuerzo.
 
