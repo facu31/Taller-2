@@ -273,3 +273,13 @@ Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo ve
 
 ### Caso de uso.
 
+|Cu|Cu- Ingreso  | 
+| -------------- | --------------|
+|**Descripción** | |
+|**Precondiciones**| |
+|**Flujo Normal**| |
+|**Flujo Alternativo**| |
+|**Poscondiciones**| |
+|**Prioridad** ||
+
+<br />
