@@ -267,5 +267,9 @@ Se cuenta con un presupuesto limitado de horas de trabajo, las cuales se pueden 
 Respecto a este punto, el sistema requerirá un mínimo de mantenimiento operativo por lo que no se detectan problemas de factibilidad en este aspecto. Se planea contar con la figura de Administrador, el cual realizará el mantenimiento de usuarios (alta, baja y modificaciones). Fuera de esta tarea el sistio no requiere de más operativa para funcionar ya que cada profesor será el encargado de crear sus pruebas. Respecto al mantenimiento del hardware (servidor), realización de respaldos y administración de base de datos, el sistema requerirá un mínimo esfuerzo.
 
 
+## Requerimientos Iteración I.
 
+Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo verdadero o falso. El sistema deberá mostrar al finalizar la misma la corrección de la prueba realizada.
+
+### Caso de uso.
 
