@@ -274,13 +274,23 @@ Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo ve
 
 ### Caso de uso.
 
-|Cu|Cu- Ingreso  | 
-| -------------- | --------------|
-|**Descripción** | |
-|**Precondiciones**| |
-|**Flujo Normal**| |
-|**Flujo Alternativo**| |
-|**Poscondiciones**| |
-|**Prioridad** ||
+<br /> 
 
-<br />
+
+|Cu01 |Cu01- Ver Pruebas  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir listar las pruebas cuando el Usuario lo desee |
+|**Actores** |Estudiante|
+|**Precondiciones**| Login como estudiante.|
+| | | 
+|**Flujo Normal**|1-Usuario se loguea.|
+| |2-Se solicita el listado.|
+| |3-Sistema muestra listado de pruebas a realizar.|
+|**Flujo Alternativo**|3.1) No se encuentran pruebas listados.|
+|**Poscondiciones**|Listado de pruebas  |
+|**Prioridad** |Alta|
+
+
+<br /> 
+
+
