@@ -291,6 +291,39 @@ Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo ve
 |**Prioridad** |Alta|
 
 
+<br />  
+
+
+|Cu02 |Cu02- Realizar Pruebas Pendientes | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir realizar las pruebas que el usuario tenga pendientes |
+|**Actores** |Estudiante|
+|**Precondiciones**| Login como estudiante.|
+| | | 
+|**Flujo Normal**|1-Usuario selecciona prueba a realizar|
+| |2-Sistema muestra prueba.|
+| |3-Usuario realiza a prueba y preciosa finalizar.|
+|**Flujo Alternativo**|2.1) No se encuentran pruebas.|
+|**Poscondiciones**|Prueba Realizada Correctamente  |
+|**Prioridad** |Alta|
+
+
 <br /> 
+
+|Cu03 |Cu03- Mostrar Resultado de prueba. | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá mostrar los resultados de la prueba una vez sea realizada por el usuario. |
+|**Actores** |Estudiante|
+|**Precondiciones**| Prueba realizada por el usuario.|
+| | | 
+|**Flujo Normal**|1-Usuario realiza la prueba. |
+| |2. Sistema corrobora de forma interna las respuestas.|
+| |3-Sistema muestra la calificación al usuario.|
+|**Flujo Alternativo**|2.1) No se encuentran pruebas realizadas.|
+|**Poscondiciones**|Calificación del estudiante registrada. |
+|**Prioridad** |Alta|
+
+
+
 
 
