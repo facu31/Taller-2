@@ -277,6 +277,7 @@ Ademas de lo mencionado anteriormente, se dio a entender por parte del cliente q
 - Planeación y compromisos de entrega sobre alcances sin mucho detalle.
 - Presupuesto en horas limitado.
 
+### Contingencias
 
 La siguiente tabla contiene el plan de contingencia elaborado para los principales riesgos que se identifican en el proyecto.
  
