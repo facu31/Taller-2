@@ -278,6 +278,12 @@ Ademas de lo mencionado anteriormente, se dio a entender por parte del cliente q
 - Presupuesto en horas limitado.
 
 
+La siguiente tabla contiene el plan de contingencia elaborado para los principales riesgos que se identifican en el proyecto.
+ 
+
+![imagen](https://user-images.githubusercontent.com/63823685/177560421-7228855b-864c-4c20-9611-82a20bf73398.png)
+
+
 ## Estudio de factibilidad.
 
 En la siguiente sección se describe los apectos tomados en cuenta para determinar la factibilidad del proyecto.
