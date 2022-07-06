@@ -338,6 +338,7 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 |**Prioridad** |Alta|
 
 
+![image](https://github.com/facu31/Taller-2/blob/ddbcf022dae10f18a570ddfa2a63e4e9d9207e01/Dise%C3%B1o/Cu01.svg)
 <br />  
 
 
