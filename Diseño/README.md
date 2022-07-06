@@ -365,4 +365,5 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 [image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
+.
 
