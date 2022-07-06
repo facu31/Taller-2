@@ -298,9 +298,14 @@ Respecto al mantenimiento del hardware (servidor), realización de respaldos y a
 
 ## Requerimientos Iteración I.
 
-Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo verdadero o falso. El sistema deberá mostrar al finalizar la misma la corrección de la prueba realizada.
+1. Como alumno debo poder ver las pruebas existentes y selecccionar la que corresponda para poder realizarla.
 
-### Caso de uso.
+2. Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo verdadero o falso.El sistema deberá de mostrar las preguntas y el estudiante seleccionar la opción correcta.
+
+3. Como estudiante quiero ver la puntación recibida al finalizar la prueba indicando cuantas preguntas se contestaron correctamente.
+
+
+## Caso de uso.
 
 <br /> 
 
@@ -326,7 +331,7 @@ Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo ve
 | -------------- | --------------|
 |**Descripción** |El sistema deberá permitir realizar las pruebas que el usuario tenga pendientes |
 |**Actores** |Estudiante|
-|**Precondiciones**| Login como estudiante.|
+|**Precondiciones**| Login como estudiante. Las pruebas tienen que estar cargadas en el sistema|
 | | | 
 |**Flujo Normal**|1-Usuario selecciona prueba a realizar|
 | |2-Sistema muestra prueba.|
