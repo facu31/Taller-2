@@ -310,6 +310,8 @@ Respecto al mantenimiento del hardware (servidor), realización de respaldos y a
 
 ## Requerimientos Iteración I.
 
+La siguiente lista de requerimientos surge de la reunión mantenida con el Cliente donde de analizaron y priorizaron los requerimientos que debería tener la primer versión del sistema.
+
 1. Como alumno debo poder ver las pruebas existentes y selecccionar la que corresponda para poder realizarla.
 
 2. Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo verdadero o falso.El sistema deberá de mostrar las preguntas y el estudiante seleccionar la opción correcta.
