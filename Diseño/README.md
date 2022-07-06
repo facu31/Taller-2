@@ -250,6 +250,34 @@ Ademas de lo mencionado anteriormente, se dio a entender por parte del cliente q
 
 ## Plan de Riesgos y Contingencias.
 
+### Plan de riesgos
+
+**Complejidad tecnológica**
+
+- Desconocimiento de la tecnología base del proyecto.
+- Integraciones con sistemas externos desconocidos.
+
+**Entorno organizacional**
+
+- Continuos cambios en el entorno organizacion.
+- Fuerte presión en el proyecto por parte de los directivos.
+
+**Equipo de trabajo**
+
+- Perfiles inadecuados en el equipo.
+- Falta de experiencia en el desarrollo web.
+- Falta de claridad en los roles.
+- Capacitación constante y obligatoria del equipo en su conjunto por falta de conocimientos en algunos puntos del desarrollo web.
+- Trabajo a distancia(no presencial)
+
+**Planificación y control**
+
+- Fecha límite de entrega.
+- Los objetivos del proyecto no son realistas.
+- Planeación y compromisos de entrega sobre alcances sin mucho detalle.
+- Presupuesto en horas limitado.
+
+
 ## Estudio de factibilidad.
 
 En la siguiente sección se describe los apectos tomados en cuenta para determinar la factibilidad del proyecto.
