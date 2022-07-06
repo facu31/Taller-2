@@ -225,9 +225,10 @@ En base a esto surgira el cuestionario utilizado.
 
 ### Primera reunión de requerimientos
 Fecha: sábado 28 de Junio
+<br/>
 Modalidad: online
 
-Si bien, en la primera reunón presencial donde se lanzó el proyecto el Cliente dio algunas caracteristicas de como debería funcionar el sistema, en esta reunión se plantean algunas cuestiones insiertas que aparecieron al analizar la consigna entregaga en la mencionada reunión.
+Si bien, en la primera reunión presencial donde se lanzó el proyecto el Cliente dio algunas caracteristicas de como debería funcionar el sistema, en esta reunión se plantean algunas cuestiones insiertas que aparecieron al analizar la consigna entregaga en la mencionada reunión.
 
 #### Dudas a transmitir al Cliente.
 
