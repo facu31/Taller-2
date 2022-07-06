@@ -223,16 +223,20 @@ Realización de manual de usuario. Como se mencionó,  los documentos técnicos 
 En una primer instancia se pedira al cliente que plante todos sus deseos en la aplicación, este nos dara un modelo a grandes rasgos de los pretendidos.
 En base a esto surgira el cuestionario utilizado.
 
-### Cuestionarios 
+### Primera reunión de requerimientos
+Fecha: sábado 28 de Junio
+Modalidad: online
 
-Si bien el cliente dio algunas caracteristicas empleadas, en base a lo recavado se plantean algunas cuestiones insiertas:
+Si bien, en la primera reunón presencial donde se lanzó el proyecto el Cliente dio algunas caracteristicas de como debería funcionar el sistema, en esta reunión se plantean algunas cuestiones insiertas que aparecieron al analizar la consigna entregaga en la mencionada reunión.
+
+#### Dudas a transmitir al Cliente.
 
 **Prueba:**
 
 - Es Creada por el docente.
 - Es Creada de manera aleatoria por la página.
 
-**Preguntas:**
+**Preguntas de la prueba:**
 
 - Solo Verdadero o Falso
 - Diferentes tipos (Ej: Multiple Choice - Verdadero y falso)
