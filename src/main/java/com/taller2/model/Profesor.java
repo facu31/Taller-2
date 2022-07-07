@@ -6,6 +6,7 @@ public class Profesor {
 	private String apellido;
 	private String email;
 	private String direccion;
+
 	
 	public Profesor() {
 		

@@ -1,4 +1,4 @@
-# Taller-2
+# Taller 2
 
 Composición grupo de trabajo:
 
@@ -213,5 +213,157 @@ En esta etapa se espera poder deployar la aplicación en algunos de los servicio
 ## Manual de usuario.
 
 Realización de manual de usuario. Como se mencionó,  los documentos técnicos del sistema se irán realizando/actualizando en cada iteración. 
+
+# Segunda Entrega de Documentación.
+
+
+## Instrumentos a usar en la recolección de información con el cliente.
+
+- Entrevistas:
+En una primer instancia se pedira al cliente que plante todos sus deseos en la aplicación, este nos dara un modelo a grandes rasgos de los pretendidos.
+En base a esto surgira el cuestionario utilizado.
+
+### Primera reunión de requerimientos
+Fecha: sábado 28 de Junio
+<br/>
+Modalidad: online
+
+Si bien, en la primera reunión presencial donde se lanzó el proyecto el Cliente dio algunas caracteristicas de como debería funcionar el sistema, en esta reunión se plantean algunas cuestiones insiertas que aparecieron al analizar la consigna entregaga en la mencionada reunión.
+
+#### Dudas a transmitir al Cliente.
+
+**Prueba:**
+
+- Es Creada por el docente.
+- Es Creada de manera aleatoria por la página.
+
+**Preguntas de la prueba:**
+
+- Solo Verdadero o Falso
+- Diferentes tipos (Ej: Multiple Choice - Verdadero y falso)
+- ¿Cuantas preguntas de cada tipo? 
+
+**Corrección:**
+
+- Corrige el docente
+- Corrige automáticamente el sistema
+
+Segun lo recavado de información, el equipo de desarollo tiene gran libertad en el diseño del software, por ejemplo el modo de elaboración de la prueba y la creación de usuarios quedan a criterio de los desarolladores.<br>
+Sin embargo en la variedad de preguntas el cliente sugiere que existan diversos tipos.<br>
+Ademas de lo mencionado anteriormente, se dio a entender por parte del cliente que en una primer versión lo esperado es un prototipo del funcionamiento de las pruebas.
+
+
+## Plan de Riesgos y Contingencias.
+
+### Plan de riesgos
+
+**Complejidad tecnológica**
+
+- Desconocimiento de la tecnología base del proyecto.
+
+**Equipo de trabajo**
+
+- Falta de experiencia en el desarrollo web.
+- Falta de claridad en los roles.
+- Trabajo a distancia(no presencial)
+
+**Planificación y control**
+
+- Fecha límite de entrega.
+- Planeación y compromisos de entrega sobre alcances sin mucho detalle.
+- Presupuesto en horas limitado.
+
+### Contingencias
+
+La siguiente tabla contiene el plan de contingencia elaborado para los principales riesgos que se identifican en el proyecto.
+ 
+
+![imagen](https://user-images.githubusercontent.com/63823685/177560421-7228855b-864c-4c20-9611-82a20bf73398.png)
+
+
+## Estudio de factibilidad.
+
+En la siguiente sección se describe los apectos tomados en cuenta para determinar la factibilidad del proyecto.
+
+### Factibilidad técnica.
+
+En este aspecto la tecnología de desarrollo a utilizar forma parte del estándar de la industria. Cada herramienta utilizada (lenguaje, frameworks, librerías, IDE, bade de datos) es de código abierto o de libre uso. Cada una de ellas cuenta con una comunidad de desarrollo que da soporte en foros de libre acceso. Esto permite subsanar posibles inconvenientes técnicos que surjan, por lo que se concidera que en el aspecto técnico el sistema es factible.
+
+### Factibilidad económica.
+
+Se cuenta con un presupuesto limitado de horas de trabajo, las cuales se pueden descriminar de la siguiente forma: un promedio de 6 horas semanales por cada integrante del equipo (4 personas) durante un período de 4 a 5 meses. Este paquete de horas se utilizará para implementar los requerimientos planteados por el cliente. Si bien las características o funcionalidades completas del producto que se construirá puede exceder el presupesto con el que se cuenta, si será posible entregar una versión funcional que conforme al cliente.
+
+### Factibilidad operativa.
+
+Respecto a este punto, el sistema requerirá un mínimo de mantenimiento operativo por lo que no se detectan problemas de factibilidad en este aspecto. Se planea contar con la figura de Administrador, el cual realizará el mantenimiento de usuarios (alta, baja y modificaciones). Fuera de esta tarea el sistio no requiere de más operativa para funcionar ya que cada profesor será el encargado de crear sus pruebas. 
+Respecto al mantenimiento del hardware (servidor), realización de respaldos y administración de base de datos, el sistema requerirá un mínimo esfuerzo.
+
+
+## Requerimientos Iteración I.
+
+La siguiente lista de requerimientos surge de la reunión mantenida con el Cliente donde de analizaron y priorizaron los requerimientos que debería tener la primer versión del sistema.
+
+1. Como alumno debo poder ver las pruebas existentes y selecccionar la que corresponda para poder realizarla.
+
+2. Como alumno debo poder realizar pruebas donde el tipo de pregunta sea de tipo verdadero o falso.El sistema deberá de mostrar las preguntas y el estudiante seleccionar la opción correcta.
+
+3. Como estudiante quiero ver la puntación recibida al finalizar la prueba indicando cuantas preguntas se contestaron correctamente.
+
+
+## Caso de uso.
+
+<br /> 
+
+
+|Cu01 |Cu01- Ver Pruebas  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir listar las pruebas cuando el Usuario lo desee |
+|**Actores** |Estudiante|
+|**Precondiciones**| Login como estudiante.|
+| | | 
+|**Flujo Normal**|1-Usuario se loguea.|
+| |2-Se solicita el listado.|
+| |3-Sistema muestra listado de pruebas a realizar.|
+|**Flujo Alternativo**|3.1) No se encuentran pruebas listados.|
+|**Poscondiciones**|Listado de pruebas  |
+|**Prioridad** |Alta|
+
+
+![image](https://github.com/facu31/Taller-2/blob/ddbcf022dae10f18a570ddfa2a63e4e9d9207e01/Dise%C3%B1o/Cu01.svg)
+<br />  
+
+
+|Cu02 |Cu02- Realizar Pruebas Pendientes | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir realizar las pruebas que el usuario tenga pendientes |
+|**Actores** |Estudiante|
+|**Precondiciones**| Login como estudiante. Las pruebas tienen que estar cargadas en el sistema|
+| | | 
+|**Flujo Normal**|1-Usuario selecciona prueba a realizar|
+| |2-Sistema muestra prueba.|
+| |3-Usuario realiza a prueba y preciosa finalizar.|
+|**Flujo Alternativo**|2.1) No se encuentran pruebas.|
+|**Poscondiciones**|Prueba Realizada Correctamente  |
+|**Prioridad** |Alta|
+
+![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu02.svg)
+<br /> 
+
+|Cu03 |Cu03- Mostrar Resultado de prueba. | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá mostrar los resultados de la prueba una vez sea realizada por el usuario. |
+|**Actores** |Estudiante|
+|**Precondiciones**| Prueba realizada por el usuario.|
+| | | 
+|**Flujo Normal**|1-Usuario realiza la prueba. |
+| |2. Sistema corrobora de forma interna las respuestas.|
+| |3-Sistema muestra la calificación al usuario.|
+|**Flujo Alternativo**|2.1) No se encuentran pruebas realizadas.|
+|**Poscondiciones**|Calificación del estudiante registrada. |
+|**Prioridad** |Alta|
+
+
+![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
+
 
 

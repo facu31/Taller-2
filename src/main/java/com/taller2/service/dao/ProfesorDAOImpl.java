@@ -15,9 +15,11 @@ public class ProfesorDAOImpl implements ProfesorDAO {
 	
 	@Override
 	public int altaProfesor(Profesor prof) {
-		int id = jdbcTemplate.update("INSERT INTO taller2.profesores (nombre, apellido) values (?,?)",
+		int id = jdbcTemplate.update("INSERT INTO taller2.profesores (nombre, apellido,email,direccion) values (?,?,?,?)",
 				prof.getNombre(),
-				prof.getApellido());
+				prof.getApellido(),
+				prof.getEmail(),
+				prof.getDireccion());
 		
 		return id;
 	}
@@ -33,8 +35,8 @@ public class ProfesorDAOImpl implements ProfesorDAO {
 	                        rs.getInt("id"),
 	                        rs.getString("nombre"),
 	                        rs.getString("apellido"),
-	                        null,
-	                        null
+	                        rs.getString("email"),
+	                        rs.getString("direccion")
 	                ));
 		
 	}
