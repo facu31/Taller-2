@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Crear Pruebas</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<style>
+.cabezal {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.preguntas {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+</style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Con este codigo js invoco al servidor solo para pedir la porción de la página que contiene las 
+preguntas filtradas según el criterio del usuario  -->
+<script type="text/javascript">
+	function filtrarPreguntas() {
+		var url = '/prueba/filtrarPreguntas';
+
+		$("#preguntas-filtradas").load(url);
+	}
+</script>
+
+</head>
+<body>
+	<div class="cabezal">
+		<div class="container my-2" align="center">
+
+			<div class="card">
+				<h5 class="card-header">Nueva prueba</h5>
+				<div class="card-body">
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Titlo</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm"
+							th:text="${prueba.titulo}">
+					</div>
+
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.desc}">
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="container my-2" align="center">
+			<div class="card">
+				<h5 class="card-header">Filtro preguntas</h5>
+				<div class="card-body">
+
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<select class="form-select form-select-sm"
+								aria-label=".form-select-sm example" th:field="*{materias}">
+								<option th:each="materia : ${materias}" th:value="${materia.id}"
+									th:text="${materia.desc}"></option>
+							</select>
+						</div>
+					</div>
+
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<select class="form-select form-select-sm"
+								aria-label=".form-select-sm example" th:field="*{temas}">
+								<option th:each="tema : ${temas}" th:value="${tema.id}"
+									th:text="${tema.desc}"></option>
+							</select>
+						</div>
+					</div>
+
+				</div>
+				<button type="button" class="btn btn-info"
+					onclick="filtrarPreguntas()">Filtrar</button>
+
+
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="preguntas">
+
+		<div id="preguntas-seleccinadas">
+			<div th:fragment="fragmentoPreguntasFiltradas" id="bloque-preguntas">
+				<table style="width: 40%" border="1"
+					class="table table-striped table-responsive-md">
+					<thead class="thead-dark">
+						<tr>
+							<th>Id</th>
+							<th>Pregunta seleccinadas</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="pregunta : ${preguntasfiltradas}">
+							<td th:text="${pregunta.id}"></td>
+							<td th:text="${pregunta.enunciado}"></td>
+							<td><a class="btn btn-success">Agregar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div id="preguntas-filtradas">
+			<!-- Est parte se carga cuando el usuario hace click en el boton filtrar -->
+
+		</div>
+	</div>
+
+</body>
+</html>

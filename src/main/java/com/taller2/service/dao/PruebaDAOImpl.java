@@ -7,9 +7,11 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
+import com.taller2.model.prueba.Tema;
 
 @Service
 public class PruebaDAOImpl implements PruebaDAO{
@@ -84,6 +86,52 @@ public class PruebaDAOImpl implements PruebaDAO{
 						rs.getInt("idOpcion"),
 						rs.getString("descripcion")
 						));
+	}
+
+	@Override
+	public List<Materia> obtenerMaterias() {
+		String sql = "SELECT idMateria, descripcion from taller2.materias order by descripcion asc";
+		
+		return namejdbcTemplate.query(sql,
+				(rs, rowNum)-> 
+						new Materia(
+						rs.getInt("idMateria"),
+						rs.getString("descripcion")
+						));
+	}
+
+	@Override
+	public List<Tema> obtenerTemas() {
+		String sql = "SELECT idTema, descripcion from taller2.temas order by descripcion asc";
+		
+		return namejdbcTemplate.query(sql,
+				(rs, rowNum)-> 
+						new Tema(
+						rs.getInt("idTema"),
+						rs.getString("descripcion")
+						));
+	}
+
+	@Override
+	public List<Pregunta> filtrarPreguntas(int materia, int tema) {
+		String sql = "SELECT id, enunciado, idOpcionCorrecta "
+				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
+				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
+				+ "and m.idMateria =:idMateria and t.idTema =:idTema ";
+		
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("idMateria", materia);
+		param.addValue("idTema", tema);
+		
+		
+		return namejdbcTemplate.query(sql,
+				param,
+				(rs, rowNum)-> 
+					new Pregunta(
+							rs.getInt("id"),
+							rs.getString("enunciado"), 
+							rs.getInt("idOpcionCorrecta"))
+					);
 	}
 
 	

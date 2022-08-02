@@ -1,6 +1,5 @@
 package com.taller2.model.prueba;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Pregunta {
