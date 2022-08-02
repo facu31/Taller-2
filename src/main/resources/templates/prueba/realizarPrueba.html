@@ -27,28 +27,28 @@
 				<div>
 					<form id="formulario" th:object="${prueba}"
 						th:action="@{/corregir}" method="post">
-				<tr th:each="pregunta, iteratorPreguntas :${prueba.preguntas}">
-					<td th:text="${pregunta.id}"></td>
-					<td th:text="${pregunta.enunciado}"></td>
-					<td>
-						<div th:each="opcion:${pregunta.opciones}">
-							<input type="radio" th:id="${opcion.id}" th:value="${opcion.id}"
-								th:name="${pregunta.id}"
-								th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionIngresada}">
+						<tr th:each="pregunta, iteratorPreguntas :${prueba.preguntas}">
+							<td th:text="${pregunta.id}"></td>
+							<td th:text="${pregunta.enunciado}"></td>
+							<td>
+								<div th:each="opcion:${pregunta.opciones}">
+									<input type="radio" th:id="${opcion.id}"
+										th:value="${opcion.id}" th:name="${pregunta.id}"
+										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionIngresada}">
 
-							<label th:for="${opcion.id}" th:text="${opcion.descOpcion}"></label>
-							<input type="hidden"
-								th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
-							<input type="hidden"
-								th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
+									<label th:for="${opcion.id}" th:text="${opcion.descOpcion}"></label>
+									<input type="hidden"
+										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
+									<input type="hidden"
+										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
 
-						</div>
-					</td>
+								</div>
+							</td>
 
-				</tr>
-				</form>
+						</tr>
+					</form>
 				</div>
-				
+
 
 			</tbody>
 

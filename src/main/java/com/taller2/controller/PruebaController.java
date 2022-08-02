@@ -60,10 +60,28 @@ public class PruebaController {
         return "prueba/crearPrueba"; 
     }
  	
- 	@GetMapping("/prueba/filtrarPreguntas")
-    public String filtrarPreguntas (Model model) {
- 		List<Pregunta> preguntasFil = pruebaServiciosImpl.filtrarPreguntas(1,1);
+ 	@GetMapping("/prueba/filtrarPreguntas/materia/{idM}/tema/{idT}")
+    public String filtrarPreguntas (
+    		@PathVariable("idM") int idMateria,
+    		@PathVariable("idT") int idTema
+    		,Model model) {
+ 		
+ 		List<Pregunta> preguntasFil = pruebaServiciosImpl.filtrarPreguntas(idMateria,idTema);
+ 		
  		model.addAttribute("preguntasfiltradas", preguntasFil);
  		return "prueba/fragment_preguntasFiltradas:: fragmentoPreguntasFiltradas";
  	}
+ 	
+ 	
+ 	@GetMapping("/prueba/agregarPregunta/pregunta/{idPre}")
+    public String agregarPregunta (
+    		@PathVariable("idPre") int idPregunta
+    		,Model model) {
+ 		
+ 		List<Pregunta> preguntasSeleccionadas = pruebaServiciosImpl.filtrarPreguntas(0,0);
+ 		
+ 		model.addAttribute("preguntasSeleccionadas", preguntasSeleccionadas);
+ 		return "prueba/fragment_preguntasSeleccionadas:: fragmentoPreguntasSeleccionadas";
+ 	}
+ 	
 }

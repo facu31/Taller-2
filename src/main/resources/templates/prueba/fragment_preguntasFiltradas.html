@@ -7,9 +7,8 @@
 
 <body>
 	<div th:fragment="fragmentoPreguntasFiltradas" id="bloque-preguntas">
-		<table style="width: 40%" border="1"
-			class="table table-striped table-responsive-md">
-			<thead class="thead-dark">
+		<table class="table table-striped table-sm">
+			<thead>
 				<tr>
 					<th>Id</th>
 					<th>Pregunta filtradas</th>
@@ -20,7 +19,8 @@
 				<tr th:each="pregunta : ${preguntasfiltradas}">
 					<td th:text="${pregunta.id}"></td>
 					<td th:text="${pregunta.enunciado}"></td>
-					<td><a class="btn btn-success">Agregar</a></td>
+					<td><a class="btn btn-success btn-sm" 
+					th:attr="onclick=|agregarPregunta('${pregunta.id}', '${pregunta.enunciado}')|">Agregar</a></td>
 				</tr>
 			</tbody>
 		</table>

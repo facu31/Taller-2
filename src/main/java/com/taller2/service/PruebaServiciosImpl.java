@@ -42,8 +42,12 @@ public class PruebaServiciosImpl implements PruebaServicios {
 	public List<Tema> obtenerTemas() {
 		return pruebaDAO.obtenerTemas();
 	}
-
-	public List<Pregunta> filtrarPreguntas(int materia, int tema) {
-		return pruebaDAO.filtrarPreguntas(materia,tema);
+	
+	@Override
+	public List<Pregunta> filtrarPreguntas(int idMateria, int idTema) {
+		if (idMateria != 0 && idTema !=0) return pruebaDAO.filtrarPreguntasPorMateriaTema(idMateria,idTema);
+		if (idMateria != 0 && idTema ==0) return pruebaDAO.filtrarPreguntasPorMateria(idMateria);
+		if (idMateria == 0 && idTema !=0) return pruebaDAO.filtrarPreguntasPorTema(idTema);
+		return pruebaDAO.obtenerTodasLasPreguntas();
 	}
 }

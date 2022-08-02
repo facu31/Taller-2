@@ -16,5 +16,9 @@ public interface PruebaDAO {
 	public List<Opcion> obtenerOpciones(int idPregunta);
 	public List<Materia> obtenerMaterias();
 	public List<Tema> obtenerTemas();
-	public List<Pregunta> filtrarPreguntas(int materia, int tema);
+	
+	public List<Pregunta> filtrarPreguntasPorMateriaTema(int materia, int tema);
+	public List<Pregunta> filtrarPreguntasPorMateria(int materia);
+	public List<Pregunta> filtrarPreguntasPorTema(int tema);
+	public List<Pregunta> obtenerTodasLasPreguntas();
 }

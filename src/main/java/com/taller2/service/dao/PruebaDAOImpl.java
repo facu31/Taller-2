@@ -112,8 +112,9 @@ public class PruebaDAOImpl implements PruebaDAO{
 						));
 	}
 
+
 	@Override
-	public List<Pregunta> filtrarPreguntas(int materia, int tema) {
+	public List<Pregunta> filtrarPreguntasPorMateriaTema(int materia, int tema) {
 		String sql = "SELECT id, enunciado, idOpcionCorrecta "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
@@ -126,6 +127,64 @@ public class PruebaDAOImpl implements PruebaDAO{
 		
 		return namejdbcTemplate.query(sql,
 				param,
+				(rs, rowNum)-> 
+					new Pregunta(
+							rs.getInt("id"),
+							rs.getString("enunciado"), 
+							rs.getInt("idOpcionCorrecta"))
+					);
+	}
+
+	@Override
+	public List<Pregunta> filtrarPreguntasPorMateria(int materia) {
+		String sql = "SELECT id, enunciado, idOpcionCorrecta "
+				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
+				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
+				+ "and m.idMateria =:idMateria ";
+		
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("idMateria", materia);
+		
+		
+		return namejdbcTemplate.query(sql,
+				param,
+				(rs, rowNum)-> 
+					new Pregunta(
+							rs.getInt("id"),
+							rs.getString("enunciado"), 
+							rs.getInt("idOpcionCorrecta"))
+					);
+	}
+
+	@Override
+	public List<Pregunta> filtrarPreguntasPorTema(int tema) {
+		String sql = "SELECT id, enunciado, idOpcionCorrecta "
+				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
+				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
+				+ "and t.idTema =:idTema ";
+		
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("idTema", tema);
+		
+		
+		return namejdbcTemplate.query(sql,
+				param,
+				(rs, rowNum)-> 
+					new Pregunta(
+							rs.getInt("id"),
+							rs.getString("enunciado"), 
+							rs.getInt("idOpcionCorrecta"))
+					);
+	}
+
+	@Override
+	public List<Pregunta> obtenerTodasLasPreguntas() {
+		String sql = "SELECT id, enunciado, idOpcionCorrecta "
+				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
+				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria ";
+	
+		
+		return namejdbcTemplate.query(sql,
 				(rs, rowNum)-> 
 					new Pregunta(
 							rs.getInt("id"),
