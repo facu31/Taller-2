@@ -75,16 +75,6 @@ public class PruebaController {
  	}
  	
  	
- 	@GetMapping("/prueba/agregarPregunta/pregunta/{idPre}")
-    public String agregarPregunta (
-    		@PathVariable("idPre") int idPregunta
-    		,Model model) {
- 		
- 		List<Pregunta> preguntasSeleccionadas = pruebaServiciosImpl.filtrarPreguntas(0,0);
- 		
- 		model.addAttribute("preguntasSeleccionadas", preguntasSeleccionadas);
- 		return "prueba/fragment_preguntasSeleccionadas:: fragmentoPreguntasSeleccionadas";
- 	}
  	
  	@PostMapping("prueba/guardarPrueba")
     public String guardarPrueba(@RequestBody PreguntaDTO[] preguntas) {
@@ -95,5 +85,25 @@ public class PruebaController {
         
         return "prueba/pruebasExistentes"; 
     }
+ 	
+ 	
+ 	@GetMapping("/prueba/crearPregunta")
+    public String agregarPregunta (Model model) {
+ 		
+ 		return "prueba/crearPregunta";
+ 	}
+ 	
+ 	
+ 	@GetMapping("/prueba/crearPregunta/verdaderoFalso")
+    public String verdaderoFalsoPrincipal (Model model) {
+ 		
+ 		return "prueba/fragment_preguntaVF:: fragmento";
+ 	}
+ 	
+ 	@GetMapping("/prueba/crearPregunta/multipleOpcion")
+    public String multipleOpcionPrincipal (Model model) {
+ 		
+ 		return "prueba/fragment_preguntaMOpcion:: fragmento";
+ 	}
  	
 }
