@@ -7,6 +7,7 @@ public class Pregunta {
 	private String enunciado;
 	private List<Opcion> opciones;
 	private int idOpcionCorrecta;
+	private int puntaje;
 	
 	
 	private Integer idOpcionIngresada;
@@ -61,6 +62,14 @@ public class Pregunta {
 
 	public void setIdOpcionCorrecta(int idOpcionCorrecta) {
 		this.idOpcionCorrecta = idOpcionCorrecta;
+	}
+
+	public int getPuntaje() {
+		return puntaje;
+	}
+
+	public void setPuntaje(int puntaje) {
+		this.puntaje = puntaje;
 	}
 	
 	

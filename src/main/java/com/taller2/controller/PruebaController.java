@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
+import com.taller2.view.prueba.PreguntaDTO;
 
 @Controller
 public class PruebaController {
@@ -83,5 +85,15 @@ public class PruebaController {
  		model.addAttribute("preguntasSeleccionadas", preguntasSeleccionadas);
  		return "prueba/fragment_preguntasSeleccionadas:: fragmentoPreguntasSeleccionadas";
  	}
+ 	
+ 	@PostMapping("prueba/guardarPrueba")
+    public String guardarPrueba(@RequestBody PreguntaDTO[] preguntas) {
+        
+ 		for (PreguntaDTO pregunta: preguntas) {
+ 			System.out.println(" id " + pregunta.getId());
+ 		}
+        
+        return "prueba/pruebasExistentes"; 
+    }
  	
 }

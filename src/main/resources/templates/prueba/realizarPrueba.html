@@ -26,7 +26,7 @@
 			<tbody>
 				<div>
 					<form id="formulario" th:object="${prueba}"
-						th:action="@{/corregir}" method="post">
+						th:action="@{/prueba/corregir}" method="post">
 						<tr th:each="pregunta, iteratorPreguntas :${prueba.preguntas}">
 							<td th:text="${pregunta.id}"></td>
 							<td th:text="${pregunta.enunciado}"></td>
