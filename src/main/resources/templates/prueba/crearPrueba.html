@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Crear Pruebas</title>
+	<meta charset="ISO-8859-1">
+	<title>Crear Pruebas</title>
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<style>
-.cabezal {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
+	<style>
+		.cabezal {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
 
-.preguntas {
-	display: flex;
-	flex-direction: row;
-	align-items: start;
-}
-</style>
+		.preguntas {
+			display: flex;
+			flex-direction: row;
+			align-items: start;
+		}
+	</style>
 
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="/js/jquery.tabletojson.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/table-to-json@1.0.0/lib/jquery.tabletojson.min.js" integrity="sha256-H8xrCe0tZFi/C2CgxkmiGksqVaxhW0PFcUKZJZo1yNU=" crossorigin="anonymous"></script>
 
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
-	//Invoco al servidor solo para pedir la porción de la página que contiene las 
-	//preguntas filtradas según el criterio del usuario 
-	function filtrarPreguntas() {
-		var url = '/prueba/filtrarPreguntas';
-		url = url + '/materia/' + $('#materias-combo').val();
-		url = url + '/tema/' + $('#temas-combo').val();
+		//Invoco al servidor solo para pedir la porción de la página que contiene las 
+		//preguntas filtradas según el criterio del usuario 
+		function filtrarPreguntas() {
+			var url = '/prueba/filtrarPreguntas';
+			url = url + '/materia/' + $('#materias-combo').val();
+			url = url + '/tema/' + $('#temas-combo').val();
 
-		$("#preguntas-filtradas").load(url); //llamada axaj
-	}
+			$("#preguntas-filtradas").load(url); //llamada axaj
+		}
 
-	//Construye a mano el html que representa una fila de la tabla
-	function agregarPregunta(idPreg, enunciado) {
-		var colId = '<td>' + idPreg + '</td>';
-		var colEnunciado = '<td>' + enunciado + '</td>';
-		var colNotas = '<td> <input type="text" size="2" value="1"></td>';
-		var botonBorrar = '<td><a class="btn btn-warning btn-sm" id="botonBorrar" onclick="quitar(this)">Quitar</a></td>'
+		//Construye a mano el html que representa una fila de la tabla
+		function agregarPregunta(idPreg, enunciado) {
+			var colId = '<td>' + idPreg + '</td>';
+			var colEnunciado = '<td>' + enunciado + '</td>';
+			var colNotas = '<td> <input type="text" size="2" value="1"></td>';
+			var botonBorrar = '<td><a class="btn btn-warning btn-sm" id="botonBorrar" onclick="quitar(this)">Quitar</a></td>'
 
-		var fila = '<tr>' + colId + colEnunciado + colNotas + botonBorrar + '</tr>';
+			var fila = '<tr>' + colId + colEnunciado + colNotas + botonBorrar + '</tr>';
 
-		//agrega fila a la tabla
-		$('#tabla-preguntas tr:last').after(fila);
-	}
+			//agrega fila a la tabla
+			$('#tabla-preguntas tr:last').after(fila);
+		}
 
-	//Elimina fila al apretar el boton Quitar
-	function quitar(boton) {
-		var p = boton.parentNode.parentNode;
-		p.parentNode.removeChild(p);
-	}
+		//Elimina fila al apretar el boton Quitar
+		function quitar(boton) {
+			var p = boton.parentNode.parentNode;
+			p.parentNode.removeChild(p);
+		}
 
-	//realizo una invocación http para enviar al servidor en formato json las preguntas seleccionadas
-	function enviarPreguntas() {
-		var data = $('#tabla-preguntas').tableToJSON();
-		var url = '/prueba/guardarPrueba';
-		
-		fetch(url, {
-			  method: "POST",
-			  body: JSON.stringify(data),
-			  headers: {"Content-type": "application/json; charset=UTF-8"}
+		//realizo una invocación http para enviar al servidor en formato json las preguntas seleccionadas
+		function enviarPreguntas() {
+			var data = $('#tabla-preguntas').tableToJSON();
+			var url = '/prueba/guardarPrueba';
+
+			fetch(url, {
+				method: "POST",
+				body: JSON.stringify(data),
+				headers: { "Content-type": "application/json; charset=UTF-8" }
 			})
 
-	}
-</script>
+		}
+
+
+		
+	</script>
 
 </head>
-<nav th:replace= "Menu :: nav_bar"></nav>
+<nav th:replace="Menu :: nav_bar"></nav>
+
 <body>
 
 
@@ -89,8 +92,7 @@
 							<span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
 						</div>
 						<input type="text" class="form-control" aria-label="Small"
-							aria-describedby="inputGroup-sizing-sm"
-							th:text="${prueba.titulo}">
+							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.titulo}">
 					</div>
 
 					<div class="input-group input-group-sm mb-3">
@@ -100,9 +102,8 @@
 						<input type="text" class="form-control" aria-label="Small"
 							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.desc}">
 					</div>
-					<button type="submit" class="btn btn-primary"
-						onclick="enviarPreguntas()">Guardar</button>
-						
+					<button type="submit" class="btn btn-primary" onclick="enviarPreguntas()">Guardar</button>
+
 				</div>
 			</div>
 
@@ -126,10 +127,8 @@
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 							<select id="temas-combo" class="form-select form-select-sm"
-								aria-label=".form-select-sm example" th:field="*{temas}"
-								onchange="filtrarPreguntas()">
-								<option th:each="tema : ${temas}" th:value="${tema.id}"
-									th:text="${tema.desc}"></option>
+								aria-label=".form-select-sm example" th:field="*{temas}" onchange="filtrarPreguntas()">
+								<option th:each="tema : ${temas}" th:value="${tema.id}" th:text="${tema.desc}"></option>
 							</select>
 						</div>
 					</div>
@@ -146,9 +145,8 @@
 	<div class="preguntas">
 		<div class="container my-2" align="center">
 			<div id="preguntas-seleccionadas" class="seccion-preguntas">
-			
-				<table id="tabla-preguntas" border="1"
-					class="table table-striped table-sm">
+
+				<table id="tabla-preguntas" border="1" class="table table-striped table-sm">
 					<thead class="thead-dark">
 						<tr>
 							<th>Id</th>
@@ -173,4 +171,5 @@
 	</div>
 
 </body>
+
 </html>
