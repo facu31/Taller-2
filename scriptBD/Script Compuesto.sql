@@ -3,8 +3,9 @@ drop database IF EXISTS  taller2;
 CREATE DATABASE taller2;
 use taller2;
 -- esto crea un usuario para que se conecte la aplicacion
-CREATE USER IF NOT EXISTS 'usrtaller'@'localhost' IDENTIFIED BY 'passusrtaller';
-/* GRANT ALL ON *.* TO 'usrtaller'@'localhost'; */
+/* CREATE USER IF NOT EXISTS 'usrtaller'@'localhost' IDENTIFIED BY 'passusrtaller'; -*/
+
+ GRANT ALL ON *.* TO 'usrtaller'@'localhost';
 
 create table profesores (
 	id int not null auto_increment primary key,
