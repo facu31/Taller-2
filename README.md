@@ -365,5 +365,9 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
+## Diagrama de Clases 
+
+![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
+
 
 
