@@ -3,36 +3,54 @@
 <html lang="en">
 
 <head>
-<nav th:fragment="nav_bar" class="navbar navbar-inverse">
-  <title>Repositorio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>Repositorio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
+	<th:block th:fragment="header">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</th:block>
 
+	<nav th:fragment="menuVar" class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://localhost:8080/menu">Evaluoteca</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a
+					href="http://localhost:8080/prueba/crearPrueba">Pruebas</a></li>
+				<li><a href="http://localhost:8080/prueba/crearPregunta">Preguntas</a></li>
+				<li><a href="http://localhost:8080/prueba/listar">Realizar
+						Test</a></li>
+			</ul>
+		</div>
+	</nav>
 
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="http://localhost:8080/menu">Evaluoteca</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="http://localhost:8080/prueba/crearPrueba">Pruebas</a></li>
-      <li><a href="http://localhost:8080/prueba/crearPregunta">Preguntas</a></li>
-      <li><a href="http://localhost:8080/prueba/listar">Realizar Test</a></li>
-    </ul>
-  </div>
-</nav>
+	<div class="container">
+		<h2>Cuestionarios, Exámenes, Test, y muchos tipos de evaluaciones
+			más</h2>
 
-<div class="container">
-  <h2>Cuestionarios, Exámenes, Test, y muchos tipos de evaluaciones más</h2>
+	</div>
 
-</div>
-	
-<center><img src="https://sni.gob.ec/documents/10180/107789/evaluacion.png/d176f16e-a204-445a-90fc-17b120d89bde?t=1442609067899"></center>
+	<center>
+		<img
+			src="https://sni.gob.ec/documents/10180/107789/evaluacion.png/d176f16e-a204-445a-90fc-17b120d89bde?t=1442609067899">
+	</center>
 
 
 </body>

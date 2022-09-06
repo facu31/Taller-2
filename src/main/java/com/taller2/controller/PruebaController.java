@@ -80,7 +80,7 @@ public class PruebaController {
     public String guardarPrueba(@RequestBody PreguntaDTO[] preguntas) {
         
  		for (PreguntaDTO pregunta: preguntas) {
- 			System.out.println(" id " + pregunta.getId());
+ 			System.out.println(" id " + pregunta.getId() + " " + pregunta.getEnunciado());
  		}
         
         return "prueba/pruebasExistentes"; 
