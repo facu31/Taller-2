@@ -21,4 +21,8 @@ public interface PruebaDAO {
 	public List<Pregunta> filtrarPreguntasPorMateria(int materia);
 	public List<Pregunta> filtrarPreguntasPorTema(int tema);
 	public List<Pregunta> obtenerTodasLasPreguntas();
+	
+	public void altaPruebaPreguntas(int idPrueba, int idPregunta);
+	public void altaPrueba(Prueba prueba);
+	public int obtenerIdPrueba();
 }

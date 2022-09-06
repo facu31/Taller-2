@@ -10,6 +10,7 @@ import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.dao.PruebaDAO;
+import com.taller2.view.prueba.PreguntaDTO;
 
 @Service
 public class PruebaServiciosImpl implements PruebaServicios {
@@ -49,5 +50,17 @@ public class PruebaServiciosImpl implements PruebaServicios {
 		if (idMateria != 0 && idTema ==0) return pruebaDAO.filtrarPreguntasPorMateria(idMateria);
 		if (idMateria == 0 && idTema !=0) return pruebaDAO.filtrarPreguntasPorTema(idTema);
 		return pruebaDAO.obtenerTodasLasPreguntas();
+	}
+
+	@Override
+	public void guardarPrueba(Prueba prueba, List<PreguntaDTO> preguntas) {
+		//guardar registro en tabla prueba
+		prueba.setId(pruebaDAO.obtenerIdPrueba());
+		pruebaDAO.altaPrueba(prueba);
+		
+		//guardar regisros en relación
+		for(PreguntaDTO pregunta: preguntas) {
+			pruebaDAO.altaPruebaPreguntas(prueba.getId(), pregunta.getId());
+		}
 	}
 }

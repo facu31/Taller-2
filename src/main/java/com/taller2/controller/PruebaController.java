@@ -1,5 +1,6 @@
 package com.taller2.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,8 +81,14 @@ public class PruebaController {
     public String guardarPrueba(@RequestBody PreguntaDTO[] preguntas) {
         
  		for (PreguntaDTO pregunta: preguntas) {
- 			System.out.println(" id " + pregunta.getId() + " " + pregunta.getEnunciado());
+ 			System.out.println(" id " 
+ 					+ pregunta.getId() + " " + pregunta.getEnunciado());
  		}
+ 		
+ 		Prueba prueba = new Prueba();
+ 		prueba.setDesc("hola");
+ 		prueba.setTitulo("mundo");
+ 		pruebaServiciosImpl.guardarPrueba(prueba, Arrays.asList(preguntas));
         
         return "prueba/pruebasExistentes"; 
     }

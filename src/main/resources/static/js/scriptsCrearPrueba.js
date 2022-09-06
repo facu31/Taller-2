@@ -31,7 +31,10 @@
 		function enviarPreguntas() {
 			var data = $('#tabla-preguntas').tableToJSON();
 			var url = '/prueba/guardarPrueba';
+			
+			data.
 
+			alert(JSON.stringify(data));
 			fetch(url, {
 				method: "POST",
 				body: JSON.stringify(data),

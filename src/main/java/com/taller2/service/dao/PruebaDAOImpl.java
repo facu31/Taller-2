@@ -3,10 +3,12 @@ package com.taller2.service.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
@@ -15,6 +17,9 @@ import com.taller2.model.prueba.Tema;
 
 @Service
 public class PruebaDAOImpl implements PruebaDAO{
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
 	
 	@Autowired
 	private NamedParameterJdbcTemplate namejdbcTemplate;
@@ -193,5 +198,26 @@ public class PruebaDAOImpl implements PruebaDAO{
 					);
 	}
 
+	@Override
+	public void altaPruebaPreguntas(int idPrueba, int idPregunta) {
+		jdbcTemplate.update("INSERT INTO taller2.pruebaPreguntas (idPrueba, idPregunta) values (?,?)",
+				idPrueba,
+				idPregunta);
+	}
+
+	@Override
+	public void altaPrueba(Prueba prueba) {
+		jdbcTemplate.update("INSERT INTO taller2.pruebas (id, titulo, descripcion) values (?,?,?)",
+				prueba.getId(),
+				prueba.getTitulo(),
+				prueba.getDesc());
+	}
+
+	@Override
+	public int obtenerIdPrueba() {
+		 String sql = "select max(id)+1 from taller2.pruebas;";
+
+		 return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
 	
 }

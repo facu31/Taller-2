@@ -2,44 +2,38 @@
 <html>
 <head>
 <title>Insert title here</title>
-
-
-
 </head>
+
 <body>
-<th:block th:fragment="headerBarra">
+	<th:block th:fragment="headerBarra">
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">
+
+		<link rel="stylesheet"
+		<div th:fragment="menuVar">
 
 
-			
-			<link rel="stylesheet"
+			<nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+				<a class="navbar-brand" href="#"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link" href="#">Inicio</a> 
+						<a class="nav-link" href="/prueba/crearPrueba">Prueba nueva</a> 
+						<a class="nav-link" href="/prueba/crearPregunta">Pregunta</a>
+						<a class="nav-link" href="/prueba/listar">Listar Pruebas</a>
+					</div>
+				</div>
+			</nav>
 
-	
-	
-	<div th:fragment="menuVar">
-
-	
-	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="href="http://localhost:8080/prueba/crearPrueba">Prueba nueva</a>
-      <a class="nav-link" href="href="http://localhost:8080/prueba/crearPregunta">Pregunta</a>
-      <a class="nav-link" href="http://localhost:8080/prueba/listar">Listar Pruebas</a>
-    </div>
-  </div>
-</nav>
-
-</div>
-
-	
+		</div>
 </body>
 </html>
