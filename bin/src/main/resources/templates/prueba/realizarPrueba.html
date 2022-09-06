@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<div th:replace="barraMenu :: headerBarra"></div>
 <meta charset="ISO-8859-1">
 <title>Nueva Prueba</title>
 <link rel="stylesheet"
@@ -9,11 +8,8 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 </head>
-<header>
-<div th:replace="barraMenu :: menuVar"></div>
-</header>
 <body>
-
+<nav th:replace= "Menu :: nav_bar"></nav>
 	<div class="container my-2" align="center">
 
 		<h1 th:text="${prueba.titulo}"></h1>

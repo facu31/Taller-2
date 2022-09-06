@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="326px" preserveAspectRatio="none" style="width:566px;height:326px;background:#FFFFFF;" version="1.1" viewBox="0 0 566 326" width="566px" zoomAndPan="magnify"><defs/><g><rect height="26.2969" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="292" x="130.25" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="282" x="135.25" y="22.9951">Cu03- Mostrar Resultado de prueba</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><g id="elem_User"><ellipse cx="22" cy="51.2969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M22,59.2969 L22,86.2969 M9,67.2969 L35,67.2969 M22,86.2969 L9,101.2969 M22,86.2969 L35,101.2969 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="6" y="115.792">User</text></g><!--MD5=[98d549edf24acc2c6cdc78721964eae1]
+entity Sys--><g id="elem_Sys"><ellipse cx="546.5" cy="149.2969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M546.5,157.2969 L546.5,184.2969 M533.5,165.2969 L559.5,165.2969 M546.5,184.2969 L533.5,199.2969 M546.5,184.2969 L559.5,199.2969 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="534.5" y="213.792">Sys</text></g><g id="elem_Usuario realiza la prueba"><ellipse cx="285.2923" cy="80.5553" fill="#F1F1F1" rx="101.7923" ry="22.7585" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="201.2923" y="83.402">Usuario realiza la prueba</text></g><g id="elem_Sistema corrobora de forma interna las respuestas"><ellipse cx="285.5533" cy="178.7075" fill="#F1F1F1" rx="187.5533" ry="39.9107" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="348" x="111.5533" y="181.5542">Sistema corrobora de forma interna las respuestas</text></g><g id="elem_Sistema muestra la calificación al usuario"><ellipse cx="285.5966" cy="287.0162" fill="#F1F1F1" rx="154.0966" ry="33.2193" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="279" x="146.0966" y="289.8629">Sistema muestra la calificación al usuario</text></g><!--MD5=[c6be2057ac149b65adeda4c550176200]
+link User to Usuario realiza la prueba--><g id="link_User_Usuario realiza la prueba"><path d="M38.19,80.7969 C65.38,80.7969 124.54,80.7969 178.07,80.7969 " fill="none" id="User-to-Usuario realiza la prueba" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="183.23,80.7969,174.23,76.7969,178.23,80.7969,174.23,84.7969,183.23,80.7969" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[db2fabf23fc13d693859700d17655728]
+link Usuario realiza la prueba to Sys--><g id="link_Usuario realiza la prueba_Sys"><path d="M375.05,91.8669 C406.96,98.0069 442.58,107.4269 473,121.7969 C494.44,131.9269 515.33,149.4069 529.14,162.3469 " fill="none" id="Usuario realiza la prueba-to-Sys" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="532.84,165.8669,529.0823,156.7631,529.2197,162.4182,523.5645,162.5556,532.84,165.8669" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[8f66a5f39ebcf0621824ed986ed7f90b]
+link Sistema corrobora de forma interna las respuestas to Sys--><g id="link_Sistema corrobora de forma interna las respuestas_Sys"><path d="M473.01,178.7969 C495.16,178.7969 514.52,178.7969 527.66,178.7969 " fill="none" id="Sistema corrobora de forma interna las respuestas-to-Sys" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="532.89,178.7969,523.89,174.7969,527.89,178.7969,523.89,182.7969,532.89,178.7969" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[141fc89351f98aae64b7818c1741f18c]
+reverse link Sistema muestra la calificación al usuario to Sys--><g id="link_Sistema muestra la calificación al usuario_Sys"><path d="M404.69,263.0169 C427.99,256.1569 451.78,247.5369 473,236.7969 C496.3,225.0069 519.14,204.9169 532.78,191.7469 " fill="none" id="Sistema muestra la calificación al usuario-backto-Sys" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="399.73,264.4569,409.4863,265.8037,404.5338,263.0701,407.2674,258.1175,399.73,264.4569" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4214eb0157bd4129f0962abfe77251e4]
+@startuml
+title Cu03- Mostrar Resultado de prueba
+
+left to right direction
+
+actor User
+actor Sys
+
+
+User - -> (Usuario realiza la prueba)
+(Usuario realiza la prueba) - -> Sys
+
+(Sistema corrobora de forma interna las respuestas) - -> Sys
+
+(Sistema muestra la calificación al usuario) <- - Sys
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 13:29:17 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

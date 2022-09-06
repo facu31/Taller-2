@@ -1,0 +1,82 @@
+<html>
+<style>
+body {
+   font-family: arial, sans-serif;
+}
+.nuevaPregunta {
+  background-color: gray;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+  <h1>Nueva Prueba</h1>
+  <div>
+      <div>
+        <p>Nombre</p>
+        <input type="text" name="nombre">
+      </div>
+    <div>
+      <p>Descripcion</p>
+      <input type="text" name="desc">
+    </div>
+  </div>
+  <div class="nuevaPregunta">
+    <div>
+      <p>Nueva pregunta</p>
+      <input type="text" id="nuevaPregunta" name="titulo">
+    </div>
+    <div>
+      <p>Indique respuesta correcta</p>
+      <input type="radio" id="verdadero" name="respCorrecta" value="V">
+      <label for="verdadero">Verdadero</label><br>
+      <input type="radio" id="falso" name="respCorrecta" value="F">
+      <label for="falso">Falso</label><br>
+      <input type="button" value="Agregar" onclick="addRow()">
+    </div>
+  </div>
+  
+  <div>
+    <p>Preguntas de la encuesta</p>
+     <table id="preguntas">
+       <tr>
+         <td>Titulo</td>
+         <td>Respuesta correcta</td>
+       </tr>
+    </table>
+       
+  </div>
+    <script>
+      function addRow () {
+  
+	var table = document.getElementById("preguntas");
+	var row = table.insertRow();
+	var cel = row.insertCell();
+	cel.innerHTML=document.getElementById("nuevaPregunta").value;
+	cel = row.insertCell();
+	cel.innerHTML=obtenerRespuestaCorrecta();
+      }
+      
+      function obtenerRespuestaCorrecta() {
+            var ele = document.getElementsByName('respCorrecta');
+              
+            for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                  return ele[i].value;
+            }
+        }
+  </script>
+</html>
+

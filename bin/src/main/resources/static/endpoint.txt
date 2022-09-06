@@ -1,0 +1,7 @@
+hasta que no exista un menú se guardan aca los endpoint para probar la aplicacion
+
+http://localhost:8080/prueba/listar
+http://localhost:8080/prueba/crearPrueba
+http://localhost:8080/prueba/crearPregunta
+
+

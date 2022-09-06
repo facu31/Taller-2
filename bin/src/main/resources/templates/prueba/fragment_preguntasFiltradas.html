@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+</head>
+
+<body>
+	<div th:fragment="fragmentoPreguntasFiltradas" id="bloque-preguntas">
+		<table class="table table-striped table-sm">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Pregunta filtradas</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pregunta : ${preguntasfiltradas}">
+					<td th:text="${pregunta.id}"></td>
+					<td th:text="${pregunta.enunciado}"></td>
+					<td><a class="btn btn-success btn-sm" 
+					th:attr="onclick=|agregarPregunta('${pregunta.id}', '${pregunta.enunciado}')|">Agregar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
