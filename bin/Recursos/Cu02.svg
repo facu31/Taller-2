@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="295px" preserveAspectRatio="none" style="width:518px;height:295px;background:#FFFFFF;" version="1.1" viewBox="0 0 518 295" width="518px" zoomAndPan="magnify"><defs/><g><rect height="26.2969" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="288" x="108.25" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="278" x="113.25" y="22.9951">Cu02- Realizar Pruebas Pendientes</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><g id="elem_User"><ellipse cx="22" cy="131.7969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M22,139.7969 L22,166.7969 M9,147.7969 L35,147.7969 M22,166.7969 L9,181.7969 M22,166.7969 L35,181.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="6" y="196.292">User</text></g><!--MD5=[98d549edf24acc2c6cdc78721964eae1]
+entity Sys--><g id="elem_Sys"><ellipse cx="498.5" cy="131.7969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M498.5,139.7969 L498.5,166.7969 M485.5,147.7969 L511.5,147.7969 M498.5,166.7969 L485.5,181.7969 M498.5,166.7969 L511.5,181.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="486.5" y="196.292">Sys</text></g><g id="elem_Usuario selecciona prueba a realizar"><ellipse cx="261.7348" cy="73.5438" fill="#F1F1F1" rx="139.2348" ry="30.247" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="248" x="137.7348" y="76.3905">Usuario selecciona prueba a realizar</text></g><g id="elem_Sistema muestra prueba"><ellipse cx="261.7481" cy="161.1465" fill="#F1F1F1" rx="102.2481" ry="22.8496" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="177.2481" y="163.9932">Sistema muestra prueba</text></g><g id="elem_Usuario realiza a prueba y preciosa finalizar."><ellipse cx="261.2652" cy="254.3499" fill="#F1F1F1" rx="163.2652" ry="35.053" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="298" x="112.2652" y="257.1966">Usuario realiza a prueba y preciosa finalizar.</text></g><!--MD5=[4174bdbfd1a5c0c593b4147da4826b0e]
+link User to Usuario selecciona prueba a realizar--><g id="link_User_Usuario selecciona prueba a realizar"><path d="M38.03,151.7969 C52.83,142.7569 76.32,129.2269 98,120.2969 C119.08,111.6069 142.32,103.8669 164.46,97.2969 " fill="none" id="User-to-Usuario selecciona prueba a realizar" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="169.47,95.8269,159.7064,94.5336,164.6739,97.24,161.9675,102.2075,169.47,95.8269" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[54906c13bc930fa9346f4af5bc8e324e]
+reverse link Sistema muestra prueba to Sys--><g id="link_Sistema muestra prueba_Sys"><path d="M368.8,161.2969 C414.54,161.2969 462.56,161.2969 484.8,161.2969 " fill="none" id="Sistema muestra prueba-backto-Sys" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="363.52,161.2969,372.5314,165.2711,368.52,161.2826,372.5085,157.2712,363.52,161.2969" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5061b33d08742b96bc81a6037e2d6d2d]
+reverse link User to Sistema muestra prueba--><g id="link_User_Sistema muestra prueba"><path d="M43.43,161.2969 C69.39,161.2969 116.04,161.2969 159.47,161.2969 " fill="none" id="User-backto-Sistema muestra prueba" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="38.22,161.2969,47.22,165.2969,43.22,161.2969,47.22,157.2969,38.22,161.2969" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b3670cded1d3823480fbe9245978ccec]
+link User to Usuario realiza a prueba y preciosa finalizar.--><g id="link_User_Usuario realiza a prueba y preciosa finalizar."><path d="M38.13,170.3769 C53.01,179.0669 76.55,192.1569 98,201.2969 C117.59,209.6369 138.96,217.4669 159.58,224.4169 " fill="none" id="User-to-Usuario realiza a prueba y preciosa finalizar." style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="164.52,226.0669,157.2528,219.4195,159.778,224.4815,154.7161,227.0067,164.52,226.0669" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b58a39302579297bb9115573717f83ac]
+@startuml
+title Cu02- Realizar Pruebas Pendientes
+
+left to right direction
+
+actor User
+actor Sys
+
+User - -> (Usuario selecciona prueba a realizar)
+
+(Sistema muestra prueba) <- - Sys
+User <- - (Sistema muestra prueba)
+ 
+User - -> (Usuario realiza a prueba y preciosa finalizar.)
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 13:29:17 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

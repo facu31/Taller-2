@@ -9,7 +9,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<div th:replace="barraMenu :: headerBarra"></div>
+<nav th:replace= "Menu :: nav_bar"></nav>
 	<div class="container my-2" align="center">
 
 		<h1 th:text="${prueba.titulo}"></h1>
@@ -35,13 +35,13 @@
 								<div th:each="opcion:${pregunta.opciones}">
 									<input type="radio" th:id="${opcion.id}"
 										th:value="${opcion.id}" th:name="${pregunta.id}"
-										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionIngresada}"required>
+										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionIngresada}">
 
 									<label th:for="${opcion.id}" th:text="${opcion.descOpcion}"></label>
 									<input type="hidden"
-										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}"required>
+										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
 									<input type="hidden"
-										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}"required>
+										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
 
 								</div>
 							</td>

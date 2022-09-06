@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Profesores</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+ 
+<h3>Lista de Profesores</h3>
+<a th:href="@{/agregarProfesor}" class="btn btn-primary btn-sm mb-3" >Nuevo Profesor</a>
+    <table style="width:80%" border="1"
+           class = "table table-striped table-responsive-md">
+    <thead>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+    <th>Direccion</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="profesor:${profesores}">
+        <td th:text="${profesor.id}"></td>
+        <td th:text="${profesor.nombre}"></td>
+        <td th:text="${profesor.apellido}"></td>
+        <td th:text="${profesor.email}"></td>
+        <td th:text="${profesor.direccion}"></td>
+        <td> <a th:href="@{/showFormForUpdate/{id}(id=${profesor.id})}"
+                class="btn btn-primary">Editar</a>
+                <a th:href="@{/deleteEmployee/{id}(id=${profesor.id})}"
+                class="btn btn-danger">Borrar</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

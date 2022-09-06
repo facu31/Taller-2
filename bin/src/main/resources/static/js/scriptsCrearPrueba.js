@@ -32,12 +32,7 @@
 			var data = $('#tabla-preguntas').tableToJSON();
 			var url = '/prueba/guardarPrueba';
 
-			alert("Prueba guardada");
-
 			fetch(url, {
-			
-			
-			
 				method: "POST",
 				body: JSON.stringify(data),
 				headers: { "Content-type": "application/json; charset=UTF-8" }
