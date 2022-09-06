@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+<div th:replace="barraMenu :: headerBarra"></div>
 <meta charset="ISO-8859-1">
 <title>Crear Pruebas</title>
 
@@ -27,8 +28,8 @@
 
 
 <script type="text/javascript">
-	//Invoco al servidor solo para pedir la porción de la página que contiene las 
-	//preguntas filtradas según el criterio del usuario 
+	//Invoco al servidor solo para pedir la porciï¿½n de la pï¿½gina que contiene las 
+	//preguntas filtradas segï¿½n el criterio del usuario 
 	
 	function cargarFragmentoVerdaderoFalso() {
 		$(".nav-link").removeClass('active');
@@ -66,7 +67,7 @@
 		p.parentNode.removeChild(p);
 	}
 
-	//realizo una invocación http para enviar al servidor en formato json las preguntas seleccionadas
+	//realizo una invocaciï¿½n http para enviar al servidor en formato json las preguntas seleccionadas
 	function enviarPreguntas() {
 		var data = $('#tabla-preguntas').tableToJSON();
 		var url = '/prueba/guardarPrueba';
@@ -103,9 +104,13 @@
 </script>
 
 </head>
+
+<header>
+<div th:replace="barraMenu :: menuVar"></div>
+</header>
+
 <body>
 
-<nav th:replace= "Menu :: nav_bar"></nav>
 
 	<div class="cabezal">
 		<div class="container my-2" align="center">
