@@ -17,7 +17,7 @@ public class ProfesorController {
 	@Autowired
 	private ProfesorServiciosImpl profesorServiciosImpl;
 	
-	/* este request se invoca cuando de llama a la página de nuevo empleado */
+	/* este request se invoca cuando de llama a la página de nuevo profesor */
 	@GetMapping("/agregarProfesor")
     public String grabarProfesor(Model model) {
 		Profesor profesor = new Profesor();

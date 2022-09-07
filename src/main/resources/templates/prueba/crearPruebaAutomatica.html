@@ -10,28 +10,6 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<style>
-.cabezal {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.preguntas {
-	display: flex;
-	flex-direction: row;
-	align-items: start;
-}
-</style>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/table-to-json@1.0.0/lib/jquery.tabletojson.min.js"
-	integrity="sha256-H8xrCe0tZFi/C2CgxkmiGksqVaxhW0PFcUKZJZo1yNU="
-	crossorigin="anonymous"></script>
-<script src="/js/jquery.tabletojson.js"></script>
-<script src="/js/scriptsCrearPrueba.js"></script>
-
 </head>
 
 
@@ -40,67 +18,39 @@
 </header>
 
 <body>
+	<div class="container">
+		<hr>
+		<h2>Generacion pruebas automaticas</h2>
 
-  <form action="#" th:action="@{/prueba/crearPruebaAutomatica}" th:object="${pruebaAutomaticaDTO}" method="POST">
+		<form action="#" th:action="@{/prueba/generarPruebaAutomatica}"
+			th:object="${pruebaAutomaticaDTO}" method="POST">
 
-	<div class="cabezal">
-		<div class="container my-2" align="center">
+			<input type="text" th:field="*{titulo}" placeholder="Titulo"
+				class="form-control mb-4 col-4"> 
+				
+			<input type="text" th:field="*{descripcion}" placeholder="Descripcion"
+				class="form-control mb-4 col-4"> 
+			
+			<input type="text" th:field="*{cantPreguntas}"	placeholder="Cantidad maxima preguntas"
+				class="form-control mb-4 col-4"> 
+				
+			<input type="text" th:field="*{puntajeTotal}" placeholder="Puntaje total prueba"
+				class="form-control mb-4 col-4">
+				
+			<select name="temaSeleccionado" id="materias-combo"
+				class="form-select form-select-sm form-control mb-4 col-4"
+				aria-label=".form-select-sm example" th:field="*{temaSeleccionado}">
+				<option th:each="tema : ${temas}" th:value="${tema.id}"	th:text="${tema.desc}">
+					</option>
+				
+			</select> 
 
-			<div class="card">
-				<h5 class="card-header">Nueva prueba automatica</h5>
-				<div class="card-body">
-					<div class="input-group input-group-sm mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
-						</div>
-						<input type="text" class="form-control" aria-label="Small"
-							aria-describedby="inputGroup-sizing-sm"
-							th:text="${prueba.titulo}">
-					</div>
+			<button type="submit" class="btn btn-info col-2">Generar Prueba</button>
+		</form>
 
-					<div class="input-group input-group-sm mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
-						</div>
-						<input type="text" class="form-control" aria-label="Small"
-							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.descripcion}">
-					</div>
-
-					<div class="input-group input-group-sm mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-sm">Tema</span>
-						</div>
-						<input type="text" class="form-control" aria-label="Small"
-							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.idTema}">
-					</div>
-
-					<div class="input-group input-group-sm mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-sm">Cantidad
-								maxima de preguntas</span>
-						</div>
-						<input type="text" class="form-control" aria-label="Small"
-							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.cantPreguntas}">
-					</div>
-
-					<div class="input-group input-group-sm mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-sm">Puntaje
-								total</span>
-						</div>
-						<input type="text" class="form-control" aria-label="Small"
-							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.puntajeTotal}">
-					</div>
-
-					 <button type="submit" class="btn btn-info col-2">Generar Prueba</button>
-
-				</div>
-			</div>
-
-		</div>
+		<hr>
 
 	</div>
-</form>
 </body>
 
 </html>
