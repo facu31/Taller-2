@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 *.log
+.class
+
 
 ### STS ###
 .apt_generated
@@ -13,6 +15,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+.class
 
 ### IntelliJ IDEA ###
 .idea
@@ -29,6 +32,12 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+.class
 
 ### VS Code ###
 .vscode/
+
+### Eclipse ##
+!**/src/main/**/target/
+!**/src/test/**/target/
+.class
