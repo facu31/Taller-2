@@ -24,6 +24,10 @@ public class Pregunta {
 		
 	}
 
+	public Pregunta(int id) {
+		this.id = id;
+	}
+
 	public Integer getIdOpcionIngresada() {
 		return idOpcionIngresada;
 	}

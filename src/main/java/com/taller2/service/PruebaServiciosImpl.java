@@ -58,9 +58,13 @@ public class PruebaServiciosImpl implements PruebaServicios {
 		prueba.setId(pruebaDAO.obtenerIdPrueba());
 		pruebaDAO.altaPrueba(prueba);
 		
-		//guardar regisros en relación
+		//guardar registros en relación
 		for(PreguntaDTO pregunta: preguntas) {
 			pruebaDAO.altaPruebaPreguntas(prueba.getId(), pregunta.getId());
 		}
+	}
+
+	public List<Pregunta> obtenerPreguntasAleatoriamente(int cantPreguntas, int idTema) {
+		return pruebaDAO.obtenerPreguntasAleatoriamente(cantPreguntas, idTema);
 	}
 }

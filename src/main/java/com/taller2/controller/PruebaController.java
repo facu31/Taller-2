@@ -18,6 +18,7 @@ import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
 import com.taller2.view.prueba.PreguntaDTO;
+import com.taller2.view.prueba.PruebaAutomaticaDTO;
 
 @Controller
 public class PruebaController {
@@ -79,12 +80,7 @@ public class PruebaController {
  	
  	@PostMapping("prueba/guardarPrueba")
     public String guardarPrueba(@RequestBody PreguntaDTO[] preguntas) {
-        
- 		for (PreguntaDTO pregunta: preguntas) {
- 			System.out.println(" id " 
- 					+ pregunta.getId() + " " + pregunta.getEnunciado());
- 		}
- 		
+      
  		Prueba prueba = new Prueba();
  		prueba.setDesc("hola");
  		prueba.setTitulo("mundo");
@@ -93,6 +89,28 @@ public class PruebaController {
         return "prueba/pruebasExistentes"; 
     }
  	
+ 	@GetMapping("prueba/formularioCrearPruebaAutomatica")
+ 	public String crearPruebaAutomatica(Model model) {
+ 		PruebaAutomaticaDTO prueba = new PruebaAutomaticaDTO();
+		model.addAttribute("prueba", prueba);
+ 		return "prueba/crearPruebaAutomatica";
+ 	}
+ 	
+ 	@PostMapping("prueba/generarPruebaAutomatica")
+ 	public String generarPruebaAutomatica(@RequestBody com.taller2.view.prueba.PruebaAutomaticaDTO confPrueba) {
+ 		System.out.println(confPrueba);
+ 		
+ 		Prueba prueba = new Prueba();
+ 		prueba.setDesc(confPrueba.getDescripcion());
+ 		prueba.setTitulo(confPrueba.getTitulo());
+ 		
+ 		List<Pregunta> preguntas = pruebaServiciosImpl.obtenerPreguntasAleatoriamente(
+ 				confPrueba.getCantPreguntas(), confPrueba.getIdTema());
+ 		
+ 		
+ 		pruebaServiciosImpl.guardarPrueba(prueba, PreguntaDTO.buildPreguntaDTO(preguntas));
+ 		return "prueba/pruebasExistentes";
+ 	}
  	
  	@GetMapping("/prueba/crearPregunta")
     public String agregarPregunta (Model model) {

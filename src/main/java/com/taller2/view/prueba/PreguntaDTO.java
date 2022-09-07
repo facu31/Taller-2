@@ -1,6 +1,9 @@
 package com.taller2.view.prueba;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.taller2.model.prueba.Pregunta;
 
 public class PreguntaDTO {
 	@JsonAlias("Id")
@@ -19,6 +22,10 @@ public class PreguntaDTO {
 	}
 	
 	
+	public PreguntaDTO(int id2) {
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -36,6 +43,15 @@ public class PreguntaDTO {
 	}
 	public void setPuntos(int puntos) {
 		this.puntos = puntos;
+	}
+
+
+	public static List<PreguntaDTO> buildPreguntaDTO(List<Pregunta> preguntas) {
+		List<PreguntaDTO> preguntasDTO = new java.util.ArrayList<PreguntaDTO>();
+		for (Pregunta pre: preguntas) {
+			preguntasDTO.add(new PreguntaDTO(pre.getId()));
+		}
+		return preguntasDTO;
 	}
 	
 	

@@ -14,6 +14,7 @@ import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
+import com.taller2.view.prueba.PreguntaDTO;
 
 @Service
 public class PruebaDAOImpl implements PruebaDAO{
@@ -218,6 +219,18 @@ public class PruebaDAOImpl implements PruebaDAO{
 		 String sql = "select max(id)+1 from taller2.pruebas;";
 
 		 return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+
+	@Override
+	public List<Pregunta> obtenerPreguntasAleatoriamente(int cantPreguntas, int idTema) {
+		String sql = "select * from taller2.preguntas where idTema = ? order by rand() limit " + cantPreguntas;
+		
+		return namejdbcTemplate.query(sql,
+				(rs, rowNum)-> 
+					new Pregunta(
+							rs.getInt("id"))
+					);
+
 	}
 	
 }

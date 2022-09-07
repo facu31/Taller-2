@@ -7,6 +7,7 @@ import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
+import com.taller2.view.prueba.PreguntaDTO;
 
 public interface PruebaDAO {
 	
@@ -25,4 +26,5 @@ public interface PruebaDAO {
 	public void altaPruebaPreguntas(int idPrueba, int idPregunta);
 	public void altaPrueba(Prueba prueba);
 	public int obtenerIdPrueba();
+	public List<Pregunta> obtenerPreguntasAleatoriamente(int cantPreguntas, int idTema);
 }
