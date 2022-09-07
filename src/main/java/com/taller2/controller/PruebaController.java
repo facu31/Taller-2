@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
@@ -92,12 +93,17 @@ public class PruebaController {
  	@GetMapping("prueba/formularioCrearPruebaAutomatica")
  	public String crearPruebaAutomatica(Model model) {
  		PruebaAutomaticaDTO prueba = new PruebaAutomaticaDTO();
-		model.addAttribute("prueba", prueba);
+ 		
+ 		List<Tema> temas = pruebaServiciosImpl.obtenerTemas();
+ 		
+		model.addAttribute("pruebaAutomaticaDTO", prueba);
+		model.addAttribute("temas", temas);
+		
  		return "prueba/crearPruebaAutomatica";
  	}
  	
  	@PostMapping("prueba/generarPruebaAutomatica")
- 	public String generarPruebaAutomatica(@RequestBody com.taller2.view.prueba.PruebaAutomaticaDTO confPrueba) {
+ 	public String generarPruebaAutomatica(@ModelAttribute("pruebaAutomaticaDTO") PruebaAutomaticaDTO confPrueba) {
  		System.out.println(confPrueba);
  		
  		Prueba prueba = new Prueba();
@@ -105,7 +111,7 @@ public class PruebaController {
  		prueba.setTitulo(confPrueba.getTitulo());
  		
  		List<Pregunta> preguntas = pruebaServiciosImpl.obtenerPreguntasAleatoriamente(
- 				confPrueba.getCantPreguntas(), confPrueba.getIdTema());
+ 				confPrueba.getCantPreguntas(), confPrueba.getTemaSeleccionado());
  		
  		
  		pruebaServiciosImpl.guardarPrueba(prueba, PreguntaDTO.buildPreguntaDTO(preguntas));
