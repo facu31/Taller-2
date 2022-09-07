@@ -73,7 +73,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 				new Pregunta(
 						rs.getInt("id"),
 						rs.getString("enunciado"), 
-						rs.getInt("idOpcionCorrecta")));
+						rs.getInt("idOpcionCorrecta"),
+						rs.getInt("idMateria")));
 
 	}
 
@@ -137,8 +138,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 					new Pregunta(
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
-							rs.getInt("idOpcionCorrecta"))
-					);
+							rs.getInt("idOpcionCorrecta"),
+							rs.getInt("IdTema")));
 	}
 
 	@Override
@@ -158,8 +159,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 					new Pregunta(
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
-							rs.getInt("idOpcionCorrecta"))
-					);
+							rs.getInt("idOpcionCorrecta"),
+							rs.getInt("idMateria")));
 	}
 
 	@Override
@@ -179,8 +180,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 					new Pregunta(
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
-							rs.getInt("idOpcionCorrecta"))
-					);
+							rs.getInt("idOpcionCorrecta"),
+							rs.getInt("idMateria")));
 	}
 
 	@Override
@@ -195,8 +196,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 					new Pregunta(
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
-							rs.getInt("idOpcionCorrecta"))
-					);
+							rs.getInt("idOpcionCorrecta"),
+							rs.getInt("idMateria")));
 	}
 
 	@Override
@@ -237,5 +238,18 @@ public class PruebaDAOImpl implements PruebaDAO{
 					);
 
 	}
+	
+
+	@Override
+	public void altaPregunta(Pregunta pregunta) {
+		jdbcTemplate.update("INSERT INTO taller2.preguntas (id, enunciado, idOpcionCorrecta, idTema) values (?,?,?,?)",
+				pregunta.getId(),
+				pregunta.getEnunciado(),
+				pregunta.getIdOpcionCorrecta(),
+				pregunta.getOpciones(),
+				pregunta.getIdTema());
+	}
+	
+	
 	
 }
