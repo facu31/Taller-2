@@ -224,7 +224,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 	@Override
 	public List<Pregunta> obtenerPreguntasAleatoriamente(int cantPreguntas, int idTema) {
-		String sql = "select * from taller2.preguntas where idTema = :idTema order by rand() limit " + cantPreguntas;
+		String sql = "select id from taller2.preguntas where idTema = :idTema order by rand() limit " + cantPreguntas;
 		
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("idTema", idTema);

@@ -46,11 +46,19 @@
 			</select> 
 
 			<button type="submit" class="btn btn-info col-2">Generar Prueba</button>
+		
+	</div>
 		</form>
 
 		<hr>
 
+<div th:if="${errorMessage}">
+    <div th:text="${errorMessage}"></div>
+</div>
 	</div>
+	
+
+	
 </body>
 
 </html>

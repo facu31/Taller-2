@@ -6,13 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
@@ -103,7 +104,8 @@ public class PruebaController {
  	}
  	
  	@PostMapping("prueba/generarPruebaAutomatica")
- 	public String generarPruebaAutomatica(@ModelAttribute("pruebaAutomaticaDTO") PruebaAutomaticaDTO confPrueba) {
+ 	public String generarPruebaAutomatica(@ModelAttribute("pruebaAutomaticaDTO") PruebaAutomaticaDTO confPrueba,  
+ 			Errors errors, RedirectAttributes redirectAttributes) {
  		System.out.println(confPrueba);
  		
  		Prueba prueba = new Prueba();
@@ -113,9 +115,14 @@ public class PruebaController {
  		List<Pregunta> preguntas = pruebaServiciosImpl.obtenerPreguntasAleatoriamente(
  				confPrueba.getCantPreguntas(), confPrueba.getTemaSeleccionado());
  		
+ 		if (preguntas.size() > 0) {
+ 			pruebaServiciosImpl.guardarPrueba(prueba, PreguntaDTO.buildPreguntaDTO(preguntas));
+ 		} else {
+ 			System.out.println("No existen preguntas para el tema.");
+ 			redirectAttributes.addFlashAttribute("errorMessage",  "No hay preguntas para ese tema, no se puede crear Prueba");
+ 		}
  		
- 		pruebaServiciosImpl.guardarPrueba(prueba, PreguntaDTO.buildPreguntaDTO(preguntas));
- 		return "prueba/pruebasExistentes";
+ 		return "redirect:/prueba/formularioCrearPruebaAutomatica";
  	}
  	
  	@GetMapping("/prueba/crearPregunta")
@@ -127,13 +134,18 @@ public class PruebaController {
  	
  	@GetMapping("/prueba/crearPregunta/verdaderoFalso")
     public String verdaderoFalsoPrincipal (Model model) {
+ 		List<Tema> temas = pruebaServiciosImpl.obtenerTemas();
  		
+		model.addAttribute("temas", temas);
+		
  		return "prueba/fragment_preguntaVF:: fragmento";
  	}
  	
  	@GetMapping("/prueba/crearPregunta/multipleOpcion")
     public String multipleOpcionPrincipal (Model model) {
+ 		List<Tema> temas = pruebaServiciosImpl.obtenerTemas();
  		
+		model.addAttribute("temas", temas);
  		return "prueba/fragment_preguntaMOpcion:: fragmento";
  	}
  	

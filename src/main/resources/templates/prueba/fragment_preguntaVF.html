@@ -17,6 +17,15 @@
 				</div>
 				<input type="text" class="form-control" aria-label="Small"
 					aria-describedby="inputGroup-sizing-sm">
+					
+					
+				<select name="temaSeleccionado" id="materias-combo"
+				class="form-select form-select-sm form-control mb-4 col-4"
+				aria-label=".form-select-sm example" th:field="*{temaSeleccionado}">
+				<option th:each="tema : ${temas}" th:value="${tema.id}"	th:text="${tema.desc}">
+				</option>
+				
+			</select> 
 			</div>
 
 

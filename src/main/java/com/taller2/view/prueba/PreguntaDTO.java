@@ -29,7 +29,8 @@ public class PreguntaDTO {
 	}
 	
 	
-	public PreguntaDTO(int id2) {
+	public PreguntaDTO(int id) {
+		this.id = id;
 	}
 
 
