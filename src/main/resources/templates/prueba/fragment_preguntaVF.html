@@ -7,6 +7,9 @@
 
 <body>
 	<div th:fragment="fragmento">
+		<form action="#" th:action="@{/prueba/grabarPreguntaVF}"
+			th:object="${preguntaVFDTO}" method="POST">
+			
 		<div class="card-body">
 
 			<div class="input-group input-group-sm mb-3">
@@ -21,7 +24,7 @@
 					
 				<select name="temaSeleccionado" id="materias-combo"
 				class="form-select form-select-sm form-control mb-4 col-4"
-				aria-label=".form-select-sm example" th:field="*{temaSeleccionado}">
+				aria-label=".form-select-sm example" th:field="*{idTema}">
 				<option th:each="tema : ${temas}" th:value="${tema.id}"	th:text="${tema.desc}">
 				</option>
 				
@@ -43,9 +46,9 @@
 					for="flexRadioDefault2">Falso</label>
 			</div>
 
-			<button type="submit" class="btn btn-primary btn-sm"
-				onclick="guardarPregunta()">Guardar Pregunta</button>
+			<button type="submit" class="btn btn-primary btn-sm">Guardar Pregunta</button>
 		</div>
+		</form>
 	</div>
 </body>
 </html>

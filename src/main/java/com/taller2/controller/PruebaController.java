@@ -21,6 +21,7 @@ import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
 import com.taller2.view.prueba.PreguntaDTO;
 import com.taller2.view.prueba.PruebaAutomaticaDTO;
+import com.taller2.view.prueba.crearpreguntavf.PreguntaVFDTO;
 
 @Controller
 public class PruebaController {
@@ -125,28 +126,5 @@ public class PruebaController {
  		return "redirect:/prueba/formularioCrearPruebaAutomatica";
  	}
  	
- 	@GetMapping("/prueba/crearPregunta")
-    public String agregarPregunta (Model model) {
- 		
- 		return "prueba/crearPregunta";
- 	}
- 	
- 	
- 	@GetMapping("/prueba/crearPregunta/verdaderoFalso")
-    public String verdaderoFalsoPrincipal (Model model) {
- 		List<Tema> temas = pruebaServiciosImpl.obtenerTemas();
- 		
-		model.addAttribute("temas", temas);
-		
- 		return "prueba/fragment_preguntaVF:: fragmento";
- 	}
- 	
- 	@GetMapping("/prueba/crearPregunta/multipleOpcion")
-    public String multipleOpcionPrincipal (Model model) {
- 		List<Tema> temas = pruebaServiciosImpl.obtenerTemas();
- 		
-		model.addAttribute("temas", temas);
- 		return "prueba/fragment_preguntaMOpcion:: fragmento";
- 	}
  	
 }
