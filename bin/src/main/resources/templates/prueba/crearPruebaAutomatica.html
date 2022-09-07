@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<div th:replace="barraMenu :: headerBarra"></div>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<style>
+.cabezal {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.preguntas {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/table-to-json@1.0.0/lib/jquery.tabletojson.min.js"
+	integrity="sha256-H8xrCe0tZFi/C2CgxkmiGksqVaxhW0PFcUKZJZo1yNU="
+	crossorigin="anonymous"></script>
+<script src="/js/jquery.tabletojson.js"></script>
+<script src="/js/scriptsCrearPrueba.js"></script>
+
+</head>
+
+
+<header>
+	<div th:replace="barraMenu :: menuVar"></div>
+</header>
+
+<body>
+
+  <form action="#" th:action="@{/prueba/crearPruebaAutomatica}" th:object="${pruebaAutomaticaDTO}" method="POST">
+
+	<div class="cabezal">
+		<div class="container my-2" align="center">
+
+			<div class="card">
+				<h5 class="card-header">Nueva prueba automatica</h5>
+				<div class="card-body">
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm"
+							th:text="${prueba.titulo}">
+					</div>
+
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.descripcion}">
+					</div>
+
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Tema</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.idTema}">
+					</div>
+
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Cantidad
+								maxima de preguntas</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.cantPreguntas}">
+					</div>
+
+					<div class="input-group input-group-sm mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-sm">Puntaje
+								total</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Small"
+							aria-describedby="inputGroup-sizing-sm" th:text="${prueba.puntajeTotal}">
+					</div>
+
+					 <button type="submit" class="btn btn-info col-2">Generar Prueba</button>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</form>
+</body>
+
+</html>

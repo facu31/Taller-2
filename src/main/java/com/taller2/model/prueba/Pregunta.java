@@ -8,19 +8,16 @@ public class Pregunta {
 	private List<Opcion> opciones;
 	private int idOpcionCorrecta;
 	private int puntaje;
+	private int IdTema;
 	
 	
 	private Integer idOpcionIngresada;
 	
-
-	public Pregunta() {
-		
-	}
-	
-	public Pregunta(int id, String enunciado, int idOpcCorrecta) {
+	public Pregunta(int id, String enunciado, int idOpcCorrecta, int IdTema) {
 		this.id = id;
 		this.enunciado = enunciado;
 		this.idOpcionCorrecta = idOpcCorrecta;
+		this.IdTema = IdTema;
 		
 	}
 
@@ -75,6 +72,16 @@ public class Pregunta {
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;
 	}
+
+	public int getIdTema() {
+		return IdTema;
+	}
+
+	public void setIdTema(int idTema) {
+		IdTema = idTema;
+	}
+
+	
 	
 	
 }

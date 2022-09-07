@@ -15,10 +15,17 @@ public class PreguntaDTO {
 	@JsonAlias("Puntos")
 	private int puntos;
 	
-	public PreguntaDTO(int id, String enunciado, int puntos) {
+	@JsonAlias("idMateria")
+	private int idMateria;
+	
+	
+	
+	
+	public PreguntaDTO(int id, String enunciado, int puntos, int idMateria) {
 		this.id = id;
 		this.enunciado = enunciado;
 		this.puntos = puntos;
+		this.idMateria= idMateria;
 	}
 	
 	
@@ -43,6 +50,9 @@ public class PreguntaDTO {
 	}
 	public void setPuntos(int puntos) {
 		this.puntos = puntos;
+	}
+	public void setidMateria(int idMateria) {
+		this.idMateria = idMateria;
 	}
 
 
