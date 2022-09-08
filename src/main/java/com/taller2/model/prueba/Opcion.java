@@ -3,11 +3,17 @@ package com.taller2.model.prueba;
 public class Opcion {
 	private int id;
 	private String descOpcion;
+	private int idPregunta;
 	
 	
 	
 	public Opcion(int id, String descOpcion) {
 		this.id = id;
+		this.descOpcion = descOpcion;
+	}
+	
+
+	public Opcion(String descOpcion) {
 		this.descOpcion = descOpcion;
 	}
 	
@@ -26,4 +32,17 @@ public class Opcion {
 		this.descOpcion = descOpcion;
 	}
 
+
+
+	public int getIdPregunta() {
+		return idPregunta;
+	}
+
+
+
+	public void setIdPregunta(int idPregunta) {
+		this.idPregunta = idPregunta;
+	}
+
+	
 }

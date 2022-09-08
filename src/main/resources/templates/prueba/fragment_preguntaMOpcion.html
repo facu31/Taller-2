@@ -8,27 +8,28 @@
 
 <body>
 	<div th:fragment="fragmento">
+	
 		<div class="card-body">
 			<div class="input-group input-group-sm mb-3">
-				<div class="input-group-prepend">
-				
-				<span class="input-group-text" id="inputGroup-sizing-sm">Pregunta :</span>
+				<div class="input-group-prepend">	
+					<span class="input-group-text" id="inputGroup-sizing-sm">Enunciado de la pregunta:</span>
 				</div>
 				<input type="text" class="form-control" aria-label="Small"
-					aria-describedby="inputGroup-sizing-sm" id="Pregunta">
-					
-				<span class="input-group-text" id="inputGroup-sizing-sm">Titulo	opcion:</span>
+					aria-describedby="inputGroup-sizing-sm" id="enunciado">
+				
+				<select name="temaSeleccionado" id="temasCombo"
+					class="form-select form-select-sm form-control mb-4 col-4"
+					aria-label=".form-select-sm example">
+					<option th:each="tema : ${temas}" th:value="${tema.id}"	th:text="${tema.desc}">	</option>
+				</select> 
+			</div>
+			<div class="input-group input-group-sm mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-sm">Titulo	opcion:</span>
 				</div>
 				<input type="text" class="form-control" aria-label="Small"
 					aria-describedby="inputGroup-sizing-sm" id="tituloOpcion">
-					
-					<select name="temaSeleccionado" id="materias-combo"
-				class="form-select form-select-sm form-control mb-4 col-4"
-				aria-label=".form-select-sm example" th:field="*{temaSeleccionado}">
-				<option th:each="tema : ${temas}" th:value="${tema.id}"	th:text="${tema.desc}">
-					</option>
-				
-			</select> 
+
 			</div>
 			<button type="submit" class="btn btn-success btn-sm"
 				onclick="agregarOpcion()">Agregar Opción</button>
@@ -50,6 +51,8 @@
 			</div>
 			<button type="submit" class="btn btn-primary btn-sm"
 				onclick="guardarPregunta()">Guardar Pregunta</button>
+				
+				
 		</div>
 	</div>
 </body>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.taller2.model.prueba.Materia;
+import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
@@ -66,5 +67,17 @@ public class PruebaServiciosImpl implements PruebaServicios {
 
 	public List<Pregunta> obtenerPreguntasAleatoriamente(int cantPreguntas, int idTema) {
 		return pruebaDAO.obtenerPreguntasAleatoriamente(cantPreguntas, idTema);
+	}
+
+	@Override
+	public void altaPreguntaConOpciones(Pregunta pregunta) {
+		pregunta.setId(pruebaDAO.obtenerIdPregunta());
+		pruebaDAO.altaPregunta(pregunta);
+		int idOpcion = 0;
+		for (Opcion op: pregunta.getOpciones()) {
+			op.setId(idOpcion++);
+			op.setIdPregunta(pregunta.getId());
+			pruebaDAO.altaOpcion(op);
+		}
 	}
 }

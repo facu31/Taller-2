@@ -18,4 +18,7 @@ public interface PruebaServicios {
 	public List<Pregunta> filtrarPreguntas(int idMateria, int idTema);
 	
 	public void guardarPrueba(Prueba prueba, List<PreguntaDTO> preguntas);
+	
+	public void altaPreguntaConOpciones(Pregunta pregunta);
+
 }

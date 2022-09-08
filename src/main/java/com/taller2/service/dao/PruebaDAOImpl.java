@@ -246,8 +246,21 @@ public class PruebaDAOImpl implements PruebaDAO{
 				pregunta.getId(),
 				pregunta.getEnunciado(),
 				pregunta.getIdOpcionCorrecta(),
-				pregunta.getOpciones(),
 				pregunta.getIdTema());
+	}
+	@Override
+	public void altaOpcion(Opcion opcion) {
+		jdbcTemplate.update("INSERT INTO taller2.opcionesPreguntas (idOpcion, idPregunta, descripcion) values (?,?,?)",
+				opcion.getId(),
+				opcion.getIdPregunta(),
+				opcion.getDescOpcion());
+	}
+
+	@Override
+	public int obtenerIdPregunta() {
+		 String sql = "select max(id)+1 from taller2.preguntas;";
+
+		 return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 	
 	

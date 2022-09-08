@@ -20,6 +20,10 @@ public class Pregunta {
 		this.IdTema = IdTema;
 		
 	}
+	
+	public Pregunta() {
+		
+	}
 
 	public Pregunta(int id) {
 		this.id = id;

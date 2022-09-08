@@ -27,5 +27,8 @@ public interface PruebaDAO {
 	public void altaPrueba(Prueba prueba);
 	public int obtenerIdPrueba();
 	public List<Pregunta> obtenerPreguntasAleatoriamente(int cantPreguntas, int idTema);
-	void altaPregunta(Pregunta pregunta);
+	
+	public void altaPregunta(Pregunta pregunta);
+	public void altaOpcion(Opcion opcion);
+	public int obtenerIdPregunta();
 }

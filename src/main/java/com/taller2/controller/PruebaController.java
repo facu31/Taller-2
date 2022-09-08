@@ -21,7 +21,7 @@ import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
 import com.taller2.view.prueba.PreguntaDTO;
 import com.taller2.view.prueba.PruebaAutomaticaDTO;
-import com.taller2.view.prueba.crearpreguntavf.PreguntaVFDTO;
+import com.taller2.view.prueba.crearpregunta.PreguntaVFDTO;
 
 @Controller
 public class PruebaController {
