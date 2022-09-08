@@ -24,14 +24,14 @@ create table materias (
 create table temas (
 	idTema int not null,
 	idMateria int not null,
-	descripcion varchar(30) not null,
+	descripcion varchar(100) not null,
 	primary key (idTema),
 	foreign key (idMateria) references materias(idMateria));
     
 create table pruebas (
 	id int not null primary key,
-    titulo varchar(20),
-    descripcion varchar (50)
+    titulo varchar(200),
+    descripcion varchar (200)
 );
 
 create table preguntas (

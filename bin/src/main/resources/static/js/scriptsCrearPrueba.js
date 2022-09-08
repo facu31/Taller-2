@@ -29,20 +29,22 @@
 
 		//realizo una invocación http para enviar al servidor en formato json las preguntas seleccionadas
 		function enviarPreguntas() {
-			var data = $('#tabla-preguntas').tableToJSON();
+			var preguntasTabla = $('#tabla-preguntas').tableToJSON();
+			
+			var datosPrueba = {};
+			datosPrueba.titulo = document.getElementById('titulo').value
+			datosPrueba.desc =  document.getElementById('desc').value
+			datosPrueba.preguntas = preguntasTabla;
+			
 			var url = '/prueba/guardarPrueba';
 			
-			
-
-			alert(JSON.stringify(data));
 			fetch(url, {
-			
-			
-			
 				method: "POST",
-				body: JSON.stringify(data),
+				body: JSON.stringify(datosPrueba),
 				headers: { "Content-type": "application/json; charset=UTF-8" }
 			})
+			
+			alert("se guardo la prueba");
 
 		}
 	

@@ -26,16 +26,16 @@
 			th:object="${pruebaAutomaticaDTO}" method="POST">
 
 			<input type="text" th:field="*{titulo}" placeholder="Titulo"
-				class="form-control mb-4 col-4"> 
+				class="form-control mb-4 col-4"required > 
 				
 			<input type="text" th:field="*{descripcion}" placeholder="Descripcion"
-				class="form-control mb-4 col-4"> 
+				class="form-control mb-4 col-4"required > 
 			
 			<input type="text" th:field="*{cantPreguntas}"	placeholder="Cantidad maxima preguntas"
-				class="form-control mb-4 col-4"> 
+				class="form-control mb-4 col-4"required > 
 				
 			<input type="text" th:field="*{puntajeTotal}" placeholder="Puntaje total prueba"
-				class="form-control mb-4 col-4">
+				class="form-control mb-4 col-4"required >
 				
 			<select name="temaSeleccionado" id="materias-combo"
 				class="form-select form-select-sm form-control mb-4 col-4"
@@ -53,7 +53,7 @@
 	<hr>
 
 	<div th:if="${errorMessage}">
-	    <div th:text="${errorMessage}"></div>
+	    <div th:text="Guardado"></div>
 	</div>
 </div>
 	

@@ -19,7 +19,7 @@
 
 				</div>
 				<input type="text" class="form-control" aria-label="Small"
-					aria-describedby="inputGroup-sizing-sm" th:field="*{enunciado}">
+					aria-describedby="inputGroup-sizing-sm" th:field="*{enunciado}"required >
 					
 					
 				<select name="temaSeleccionado" id="materias-combo"
@@ -46,7 +46,16 @@
 			
 			
 
-			<button type="submit" class="btn btn-primary btn-sm">Guardar Pregunta</button>
+			<button onclick="mymensage()" type="submit" class="btn btn-primary btn-sm">Guardar Pregunta</button>
+
+
+<script>
+
+function mymensage() {
+  alert("Guardo Correctamente");
+}
+</script>
+
 		</div>
 		</form>
 	</div>

@@ -1,9 +1,8 @@
 borrar pruebas
 borrar pregunas (solo las que no esten asignadas a pruebas)
+
+
 ** prueba automatica
-controlar que se ingresen valores (sino se produce un error)
+
 mostrar mensaje de que no hay preguntas para el tema, en color rojo
 
-** nueva pregunta
-hacer que es borre el mensaje de confirmacion que aparece despues de que se graba una pregunta
-controlar que se ingese enunciado

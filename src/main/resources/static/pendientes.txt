@@ -7,14 +7,8 @@ en la pantalla de crear pruebas
 	los combos de filtro, que aparezcan en la opción (todos) (todos) al iniciar
 	que pregunte al usuario antes de borrar una pregunta
 	que el botón guardar valide que se hayan ingresado preguntas (no crear prueba sin preguntas)
-	guardar prueba en la base
 	
-hacer pantalla para borrar pruebas y para consultar preguntas de una prueba
-
-en la pantalla donde se muestran las pruebas se puede agregar un boton "nueva" que lleve a la pantalla de crear prueba
-
-pasar los js que estan en el html a un archivo externo 
-
-si queda más claro se puede dividir el controlador PruebaController en dos para que tenga menos métodos
+	
+hacer pantalla para borrar pruebas 
 
 en la pantalla de crear preguntas faltan muchos controles (igual que en crer pruebas)
