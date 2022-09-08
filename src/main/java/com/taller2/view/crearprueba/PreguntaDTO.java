@@ -1,4 +1,4 @@
-package com.taller2.view.prueba;
+package com.taller2.view.crearprueba;
 
 import java.util.List;
 
@@ -63,6 +63,13 @@ public class PreguntaDTO {
 			preguntasDTO.add(new PreguntaDTO(pre.getId()));
 		}
 		return preguntasDTO;
+	}
+
+
+	@Override
+	public String toString() {
+		return "PreguntaDTO [id=" + id + ", enunciado=" + enunciado + ", puntos=" + puntos + ", idMateria=" + idMateria
+				+ "]";
 	}
 	
 	

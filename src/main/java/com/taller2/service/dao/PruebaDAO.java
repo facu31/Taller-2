@@ -7,7 +7,7 @@ import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
-import com.taller2.view.prueba.PreguntaDTO;
+import com.taller2.view.crearprueba.PreguntaDTO;
 
 public interface PruebaDAO {
 	

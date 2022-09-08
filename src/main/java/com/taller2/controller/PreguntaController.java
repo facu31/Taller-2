@@ -17,8 +17,8 @@ import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
-import com.taller2.view.prueba.crearpregunta.PreguntaMultipleOpcionDTO;
-import com.taller2.view.prueba.crearpregunta.PreguntaVFDTO;
+import com.taller2.view.crearpregunta.PreguntaMultipleOpcionDTO;
+import com.taller2.view.crearpregunta.PreguntaVFDTO;
 
 @Controller
 public class PreguntaController {

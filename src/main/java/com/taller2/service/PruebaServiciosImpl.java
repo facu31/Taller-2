@@ -11,7 +11,7 @@ import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.dao.PruebaDAO;
-import com.taller2.view.prueba.PreguntaDTO;
+import com.taller2.view.crearprueba.PreguntaDTO;
 
 @Service
 public class PruebaServiciosImpl implements PruebaServicios {
@@ -80,4 +80,6 @@ public class PruebaServiciosImpl implements PruebaServicios {
 			pruebaDAO.altaOpcion(op);
 		}
 	}
+
+	
 }

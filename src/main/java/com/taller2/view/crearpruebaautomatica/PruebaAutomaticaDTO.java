@@ -1,4 +1,4 @@
-package com.taller2.view.prueba;
+package com.taller2.view.crearpruebaautomatica;
 
 import java.util.List;
 

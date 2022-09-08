@@ -1,4 +1,4 @@
-package com.taller2.view.prueba.crearpregunta;
+package com.taller2.view.crearpregunta;
 
 public class PreguntaVFDTO {
 	private int idTema;

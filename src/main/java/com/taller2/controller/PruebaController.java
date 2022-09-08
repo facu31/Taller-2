@@ -19,9 +19,9 @@ import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
-import com.taller2.view.prueba.PreguntaDTO;
-import com.taller2.view.prueba.PruebaAutomaticaDTO;
-import com.taller2.view.prueba.crearpregunta.PreguntaVFDTO;
+import com.taller2.view.crearprueba.PreguntaDTO;
+import com.taller2.view.crearprueba.PruebaDTO;
+import com.taller2.view.crearpruebaautomatica.PruebaAutomaticaDTO;
 
 @Controller
 public class PruebaController {
@@ -82,12 +82,13 @@ public class PruebaController {
  	
  	
  	@PostMapping("prueba/guardarPrueba")
-    public String guardarPrueba(@RequestBody PreguntaDTO[] preguntas) {
-      
+    public String guardarPrueba(@RequestBody PruebaDTO pruebaDTO) {
+ 		System.out.println("Se esta guardando la prueba");
+ 		
  		Prueba prueba = new Prueba();
- 		prueba.setDesc("hola");
- 		prueba.setTitulo("mundo");
- 		pruebaServiciosImpl.guardarPrueba(prueba, Arrays.asList(preguntas));
+ 		prueba.setDesc(pruebaDTO.getDesc());
+ 		prueba.setTitulo(pruebaDTO.getTitulo());
+ 		pruebaServiciosImpl.guardarPrueba(prueba, Arrays.asList(pruebaDTO.getPreguntas()));
         
         return "prueba/pruebasExistentes"; 
     }
@@ -118,6 +119,8 @@ public class PruebaController {
  		
  		if (preguntas.size() > 0) {
  			pruebaServiciosImpl.guardarPrueba(prueba, PreguntaDTO.buildPreguntaDTO(preguntas));
+ 			//esto quedo bastante feo, corregir cuando se pueda
+ 			redirectAttributes.addFlashAttribute("errorMessage",  "Preba guardadad");
  		} else {
  			System.out.println("No existen preguntas para el tema.");
  			redirectAttributes.addFlashAttribute("errorMessage",  "No hay preguntas para ese tema, no se puede crear Prueba");

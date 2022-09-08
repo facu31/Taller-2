@@ -18,20 +18,6 @@
 				'/prueba/crearPregunta/multipleOpcion'); //llamada axaj
 	}
 
-	//Construye a mano el html que representa una fila de la tabla
-	function agregarPregunta(idPreg, enunciado) {
-		var colId = '<td>' + idPreg + '</td>';
-		var colEnunciado = '<td>' + enunciado + '</td>';
-		var colNotas = '<td> <input type="text" size="2" value="1"></td>';
-		var botonBorrar = '<td><a class="btn btn-warning btn-sm" id="botonBorrar" onclick="quitar(this)">Quitar</a></td>'
-
-		var fila = '<tr>' + colId + colEnunciado + colNotas + botonBorrar
-				+ '</tr>';
-
-		//agrega fila a la tabla
-		$('#tabla-preguntas tr:last').after(fila);
-	}
-
 	//Elimina fila al apretar el boton Quitar
 	function quitar(boton) {
 		var p = boton.parentNode.parentNode;
@@ -39,15 +25,19 @@
 	}
 
 	function marcarCorrecta(boton) {
-		if (document.getElementById('r1').checked
-		p.value = 1;
+		var t = document.getElementById('tabla-opciones');
+		var totalRowCount = t.rows.length;
+		console.log(totalRowCount);
+		
+
 	}
 
 
-	//realizo una invocaciï¿½n http para enviar al servidor en formato json las preguntas seleccionadas
+
+	//realizo una invocacion http para enviar al servidor en formato json las opciones creadas
 	function enviarPreguntas() {
-		var data = $('#tabla-preguntas').tableToJSON();
-		var url = '/prueba/guardarPrueba';
+		var data = $('#tabla-opciones').tableToJSON();
+		var url = '/prueba/guardarPreguntaMultipleOpcion';
 
 		fetch(url, {
 			method : "POST",
@@ -62,8 +52,12 @@
 	function agregarOpcion() {
 		var enunciado = document.getElementById('tituloOpcion').value;
 		var colEnunciado = '<td>' + enunciado + '</td>';
-
-		var radio = '<input type="radio" name="radio" onclick="marcarCorrecta(this)"/>';
+		
+		var idRadio ='id="' +  enunciado+'"';
+		var valueRadio = 'value="' + enunciado +'"';
+		
+		var radio = '<input type="radio" name="radio" '  + idRadio + valueRadio + ' onclick="marcarCorrecta(this)"/>';
+	
 		var colCorrecta = '<td> <div> ' + radio + ' </div> </td>';
 
 		var botonBorrar = '<td><a class="btn btn-warning btn-sm" id="botonBorrar" onclick="quitar(this)">Quitar</a></td>'
@@ -78,19 +72,30 @@
 			var data = $('#tabla-opciones').tableToJSON();
 			var url = '/prueba/guardarPreguntaMultipleOpcion';
 		
+			var opcionSeleccionada = obtenerOpcionCorrecta();
+			
 			var infoGrilla = {};
 			infoGrilla.enunciado = document.getElementById('enunciado').value
 			infoGrilla.idTema = document.getElementById('temasCombo').value;
 			infoGrilla.opciones = data;
-			alert(JSON.stringify(infoGrilla));
+			infoGrilla.opcionCorrecta = opcionSeleccionada;
+			
 			fetch(url, {
-			
-			
-			
 				method: "POST",
-				body: JSON.stringify(data),
+				body: JSON.stringify(infoGrilla),
 				headers: { "Content-type": "application/json; charset=UTF-8" }
 			})
+	}
+	
+	//recorro la tabla y obtenfo el valor del radio button que esta seleccionado
+	function obtenerOpcionCorrecta() {
+		const radioButtons = document.querySelectorAll('input[name="radio"]');
+		for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    return radioButton.value;
+                    break;
+                }
+            }
 	}
 	
 	$( document ).ready(function() {
