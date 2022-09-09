@@ -17,6 +17,7 @@ import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
+import com.taller2.view.crearpregunta.OpcionDTO;
 import com.taller2.view.crearpregunta.PreguntaMultipleOpcionDTO;
 import com.taller2.view.crearpregunta.PreguntaVFDTO;
 
@@ -73,12 +74,28 @@ public class PreguntaController {
  	
  	
  	@PostMapping("prueba/guardarPreguntaMultipleOpcion")
-    public String guardarPregunta(@RequestBody PreguntaMultipleOpcionDTO pregunta, 
+    public String guardarPregunta(@RequestBody PreguntaMultipleOpcionDTO preguntaMTO, 
     		RedirectAttributes redirectAttributes) {
-      
- 		System.out.println(pregunta);
+ 		
+ 		System.out.println(preguntaMTO);
+ 		
+ 		Pregunta pregunta = new Pregunta();
+ 		pregunta.setEnunciado(preguntaMTO.getEnunciado());
+ 		pregunta.setIdOpcionCorrecta(preguntaMTO.getOpcionCorrecta());
+ 		pregunta.setIdTema(preguntaMTO.getIdTema());
+ 		List<Opcion> opciones = new java.util.ArrayList<Opcion>();
+ 		
+ 		for(OpcionDTO opc:preguntaMTO.getOpciones()) {   //Recorre las opciones ingresadas
+ 			
+ 			opciones.add(new Opcion(opc.getEnunciado()));
+ 		}
+ 		
+ 		
+ 		pregunta.setOpciones(opciones);
+ 		
+ 		
         
- 		//pruebaServiciosImpl.altaPreguntaConOpciones(new Pregunta());
+ 		pruebaServiciosImpl.altaPreguntaConOpciones(new Pregunta());
  		
  		redirectAttributes.addFlashAttribute("mensajeOk",  "La pregunta se guardo correctamente");
  		return "redirect:/prueba/crearPregunta";
