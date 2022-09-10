@@ -85,6 +85,8 @@
 				body: JSON.stringify(infoGrilla),
 				headers: { "Content-type": "application/json; charset=UTF-8" }
 			})
+			
+			alert("Se guardo la pregunta");
 	}
 	
 	//recorro la tabla y obtenfo el valor del radio button que esta seleccionado

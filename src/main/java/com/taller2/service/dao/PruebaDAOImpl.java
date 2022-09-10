@@ -122,10 +122,10 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 	@Override
 	public List<Pregunta> filtrarPreguntasPorMateriaTema(int materia, int tema) {
-		String sql = "SELECT id, enunciado, idOpcionCorrecta "
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
-				+ "and m.idMateria =:idMateria and t.idTema =:idTema ";
+				+ "and m.idMateria =:idMateria and t.idTema =:idTema order by p.id";
 		
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("idMateria", materia);
@@ -139,7 +139,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
 							rs.getInt("idOpcionCorrecta"),
-							rs.getInt("IdTema")));
+							rs.getInt("idTema")));
 	}
 
 	@Override
@@ -147,7 +147,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
-				+ "and m.idMateria =:idMateria ";
+				+ "and m.idMateria =:idMateria order by p.id";
 		
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("idMateria", materia);
@@ -168,7 +168,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
-				+ "and t.idTema =:idTema ";
+				+ "and t.idTema =:idTema order by p.id";
 		
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("idTema", tema);
@@ -188,7 +188,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 	public List<Pregunta> obtenerTodasLasPreguntas() {
 		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
-				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria ";
+				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria order by p.id ";
 	
 		
 		return namejdbcTemplate.query(sql,

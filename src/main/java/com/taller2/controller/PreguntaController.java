@@ -62,8 +62,8 @@ public class PreguntaController {
  		pregunta.setIdOpcionCorrecta(preguntaVF.getOpcionCorrecta());
  		pregunta.setIdTema(preguntaVF.getIdTema());
  		List<Opcion> opciones = new java.util.ArrayList<Opcion>();
- 		opciones.add(new Opcion("Verdadero"));
- 		opciones.add(new Opcion("Falso"));
+ 		opciones.add(new Opcion(1, "Verdadero"));
+ 		opciones.add(new Opcion(2, "Falso"));
  		pregunta.setOpciones(opciones);
  		
  		pruebaServiciosImpl.altaPreguntaConOpciones(pregunta);
@@ -79,23 +79,26 @@ public class PreguntaController {
  		
  		System.out.println(preguntaMTO);
  		
- 		Pregunta pregunta = new Pregunta();
- 		pregunta.setEnunciado(preguntaMTO.getEnunciado());
- 		pregunta.setIdOpcionCorrecta(preguntaMTO.getOpcionCorrecta());
- 		pregunta.setIdTema(preguntaMTO.getIdTema());
+ 		int idOpcion = 1;
+ 		int idOpcionCorrecta = 0;
  		List<Opcion> opciones = new java.util.ArrayList<Opcion>();
- 		
  		for(OpcionDTO opc:preguntaMTO.getOpciones()) {   //Recorre las opciones ingresadas
- 			
- 			opciones.add(new Opcion(opc.getEnunciado()));
+ 			opciones.add(new Opcion(idOpcion++, opc.getEnunciado()));
+ 			System.out.println(opc.getEnunciado() + " " + preguntaMTO.getOpcionCorrecta());
+ 			if (opc.getEnunciado().trim().equals(preguntaMTO.getOpcionCorrecta().trim())) {
+ 				idOpcionCorrecta = idOpcion;
+ 			}
  		}
  		
- 		
+ 		Pregunta pregunta = new Pregunta();
+ 		pregunta.setEnunciado(preguntaMTO.getEnunciado());
+ 		pregunta.setIdOpcionCorrecta(idOpcionCorrecta);
+ 		pregunta.setIdTema(preguntaMTO.getIdTema());
  		pregunta.setOpciones(opciones);
  		
  		
         
- 		pruebaServiciosImpl.altaPreguntaConOpciones(new Pregunta());
+ 		pruebaServiciosImpl.altaPreguntaConOpciones(pregunta);
  		
  		redirectAttributes.addFlashAttribute("mensajeOk",  "La pregunta se guardo correctamente");
  		return "redirect:/prueba/crearPregunta";

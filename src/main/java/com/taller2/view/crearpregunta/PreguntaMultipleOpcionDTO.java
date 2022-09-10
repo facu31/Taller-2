@@ -6,7 +6,7 @@ public class PreguntaMultipleOpcionDTO {
 	private String enunciado;
 	private int idTema;
 	private OpcionDTO[] opciones;
-	private int opcionCorrecta;
+	private String opcionCorrecta;
 	
 	public String getEnunciado() {
 		return enunciado;
@@ -26,10 +26,10 @@ public class PreguntaMultipleOpcionDTO {
 	public void setOpciones(OpcionDTO[] opciones) {
 		this.opciones = opciones;
 	}
-	public int getOpcionCorrecta() {
+	public String getOpcionCorrecta() {
 		return opcionCorrecta;
 	}
-	public void setOpcionCorrecta(int opcionCorrecta) {
+	public void setOpcionCorrecta(String opcionCorrecta) {
 		this.opcionCorrecta = opcionCorrecta;
 	}
 	@Override

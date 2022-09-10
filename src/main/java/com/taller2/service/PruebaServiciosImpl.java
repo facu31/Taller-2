@@ -73,9 +73,8 @@ public class PruebaServiciosImpl implements PruebaServicios {
 	public void altaPreguntaConOpciones(Pregunta pregunta) {
 		pregunta.setId(pruebaDAO.obtenerIdPregunta());
 		pruebaDAO.altaPregunta(pregunta);
-		int idOpcion = 0;
+
 		for (Opcion op: pregunta.getOpciones()) {
-			op.setId(idOpcion++);
 			op.setIdPregunta(pregunta.getId());
 			pruebaDAO.altaOpcion(op);
 		}
