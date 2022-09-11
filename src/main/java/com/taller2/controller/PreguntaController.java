@@ -92,7 +92,7 @@ public class PreguntaController {
  		
  		Pregunta pregunta = new Pregunta();
  		pregunta.setEnunciado(preguntaMTO.getEnunciado());
- 		pregunta.setIdOpcionCorrecta(idOpcionCorrecta);
+ 		pregunta.setIdOpcionCorrecta(idOpcionCorrecta-1);
  		pregunta.setIdTema(preguntaMTO.getIdTema());
  		pregunta.setOpciones(opciones);
  		
