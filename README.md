@@ -366,7 +366,7 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 ![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
 
-# Requerimientos Iteración II.
+## Requerimientos Iteración II.
 
 1. Como profesor debo crear preguntas nuevas de tipo verdadero o falso, ingredando un enunciado y determinando la opción correcta.
 
@@ -375,7 +375,7 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
 asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
 
-# Requerimientos Iteración III.
+## Requerimientos Iteración III.
 
 1. Como profesor necesito que el sistema genere pruebas de forma automática a partir de ciertos criterios ingresados, como ser tema de la pregunta. 
 
@@ -388,7 +388,9 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 ![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
 
-## Diagrama de clases completo luego de finalizada la Iteración III.
+## Diagrama de clases de capa de persistencia implementada en Iteración III.
+
+![imagen](https://user-images.githubusercontent.com/63823685/190023720-5cca0b0e-760c-4e03-b2ef-1fa29112cc91.png)
 
 ## Base de Datos
 
