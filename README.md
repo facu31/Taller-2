@@ -397,6 +397,11 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 ![imagen](https://user-images.githubusercontent.com/63823685/190024035-e7e6df79-fdb9-4314-b569-740acf60f1bf.png)
 
 
+## Diagrama de Data Transfer Objects creados en Iteración III.
+
+![imagen](https://user-images.githubusercontent.com/63823685/190026565-b8ee987e-a040-4dbd-aceb-da3b616db986.png)
+
+
 ## Base de Datos
 
 Debido a que en la actual iteracion ( II) 22/08/2022 no se guardan pruebas ni preguntas en la base de datos, aun no se a realizado el Mer , ni la normalización.
@@ -414,6 +419,8 @@ Se cumple con la segunda forma normal ya que:
 Se cumple con la tercera forma normal ya que:
 - se cumple con la primer y segunda forma normal
 - no existen dependencias funcionales transitivas
+
+Consideramos que la tercera formal normal se adapta a los requerimientos de normalización de los datos del sistema.
 
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
