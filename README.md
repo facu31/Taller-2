@@ -310,7 +310,7 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 3. Como estudiante quiero ver la puntación recibida al finalizar la prueba indicando cuantas preguntas se contestaron correctamente.
 
 
-## Caso de uso.
+## Casos de uso.
 
 <br /> 
 
@@ -365,7 +365,22 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
-## Diagrama de Clases 
+
+# Requerimientos Iteración II.
+
+1. Como profesor debo crear preguntas nuevas de tipo verdadero o falso, ingredando un enunciado y determinando la opción correcta.
+
+2. Como profesor debo crear preguntas nuevas de tipo multiple opción, ingresando un enunciado para la pregunta y las diferentes opciones que se le ofrecerán al alumno. Debo indicaar cual de las opciones ingresadas es la correcta.
+
+3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
+asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
+
+# Requerimientos Iteración III.
+
+1. Como profesor necesito que el sistema genere pruebas de forma automática a partir de ciertos criterios ingresados, como ser tema de la pregunta. 
+
+
+## Diagrama de Clases correspondiente a Iteración I y II.
 
 ![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
 
@@ -373,6 +388,7 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
 
+## Diagrama de clases completo luego de finalizada la Iteración III.
 
 ## Base de Datos
 
@@ -380,5 +396,7 @@ Debido a que en la actual iteracion ( II) 22/08/2022 no se guardan pruebas ni pr
 Esto si sera tenido en cuenta para la iteración (III) en la cual se espera que el software grabe en una base de datos preguntas y cuestionarios armados.
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
+
+
 
 
