@@ -388,14 +388,33 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 ![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
 
-## Diagrama de clases de capa de persistencia implementada en Iteración III.
+## Diagrama de clases de capa de persistencia finalizada en Iteración III.
 
 ![imagen](https://user-images.githubusercontent.com/63823685/190023720-5cca0b0e-760c-4e03-b2ef-1fa29112cc91.png)
+
+## Diagrama de capa de servicios finalizada en Iteración III.
+
+![imagen](https://user-images.githubusercontent.com/63823685/190024035-e7e6df79-fdb9-4314-b569-740acf60f1bf.png)
+
 
 ## Base de Datos
 
 Debido a que en la actual iteracion ( II) 22/08/2022 no se guardan pruebas ni preguntas en la base de datos, aun no se a realizado el Mer , ni la normalización.
 Esto si sera tenido en cuenta para la iteración (III) en la cual se espera que el software grabe en una base de datos preguntas y cuestionarios armados.
+
+### Normalización.
+
+Se cumple con la primera forma normal ya que:
+- todos los atributos son atómicos
+
+Se cumple con la segunda forma normal ya que:
+- se cumple con la primer forma normal
+- todos los atributos que no forman parte de ninguna clave dependen de forma completa a la clave principal.
+
+Se cumple con la tercera forma normal ya que:
+- se cumple con la primer y segunda forma normal
+- no existen dependencias funcionales transitivas
+
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
 
