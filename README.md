@@ -365,6 +365,18 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
+|Cu04 |Cu04- Crear Prueba Aleatoria. | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá crear una prueba en base a las condiciones ingresadas por el usuario |
+|**Actores** |Docente|
+|**Precondiciones**| Prueba creada.|
+| | | 
+|**Flujo Normal**|1-Usuario ingresa al filtro de pruebas y lo completa. |
+| |2. Sistema genera una prueba aleatoria|
+| |3-Sistema guarda prueba para su realizacion|
+|**Flujo Alternativo**|2.1) No se encuentran cantidad de preguntas necesarias.|
+|**Poscondiciones**|Prueba creada correctamente.|
+|**Prioridad** |Alta|
 
 ## Requerimientos Iteración II.
 
@@ -406,6 +418,9 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 Debido a que en la actual iteracion ( II) 22/08/2022 no se guardan pruebas ni preguntas en la base de datos, aun no se a realizado el Mer , ni la normalización.
 Esto si sera tenido en cuenta para la iteración (III) en la cual se espera que el software grabe en una base de datos preguntas y cuestionarios armados.
+
+https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
+
 
 ### Normalización.
 
