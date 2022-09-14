@@ -37,6 +37,14 @@
 			datosPrueba.preguntas = preguntasTabla;
 			
 			var url = '/prueba/guardarPrueba';
+	
+	if(document.getElementById('titulo').value.length < 2 ){
+    	todo_correcto = false;
+    	alert('Algunos campos no están correctos, vuelva a revisarlos');
+
+}
+else {	
+		
 			
 			fetch(url, {
 				method: "POST",
@@ -45,7 +53,8 @@
 			})
 			
 			alert("se guardo la prueba");
-
+}
+	
 		}
 	
 		

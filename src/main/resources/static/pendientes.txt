@@ -1,8 +1,7 @@
 en la pantalla de crear pruebas
-	controlar que se ingrese un titulo
-	controlar que se ingrese una descripcion
+	
 	controlar que no se ingresen preguntas repetidas
-	controlar que se ingrese un número maximo de preguntas
+	
 	controlar los puntos ingresados (que sean numeros y esten dentro del rango)
 	los combos de filtro, que aparezcan en la opción (todos) (todos) al iniciar
 	que pregunte al usuario antes de borrar una pregunta
@@ -11,4 +10,3 @@ en la pantalla de crear pruebas
 	
 hacer pantalla para borrar pruebas 
 
-en la pantalla de crear preguntas faltan muchos controles (igual que en crer pruebas)

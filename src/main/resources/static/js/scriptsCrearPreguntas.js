@@ -71,7 +71,7 @@
 	function guardarPregunta() {
 			var data = $('#tabla-opciones').tableToJSON();
 			var url = '/prueba/guardarPreguntaMultipleOpcion';
-		
+			var  todo_correcto;
 			var opcionSeleccionada = obtenerOpcionCorrecta();
 			
 			var infoGrilla = {};
@@ -80,6 +80,12 @@
 			infoGrilla.opciones = data;
 			infoGrilla.opcionCorrecta = opcionSeleccionada;
 			
+	if(document.getElementById('enunciado').value.length < 2 ){
+    	todo_correcto = false;
+    	alert('Algunos campos no están correctos, vuelva a revisarlos');
+
+}
+else {
 			fetch(url, {
 				method: "POST",
 				body: JSON.stringify(infoGrilla),
@@ -87,6 +93,7 @@
 			})
 			
 			alert("Se guardo la pregunta");
+			}
 	}
 	
 	//recorro la tabla y obtenfo el valor del radio button que esta seleccionado
