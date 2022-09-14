@@ -416,8 +416,8 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 ## Base de Datos
 
-Debido a que en la actual iteracion ( II) 22/08/2022 no se guardan pruebas ni preguntas en la base de datos, aun no se a realizado el Mer , ni la normalización.
-Esto si sera tenido en cuenta para la iteración (III) en la cual se espera que el software grabe en una base de datos preguntas y cuestionarios armados.
+ ## MER
+![image](https://github.com/facu31/Taller-2/blob/6e2ca318da75abaa07c10b0f4f1ce96681e6333d/Recursos/MER.png)
 
 https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
 
@@ -442,6 +442,7 @@ Tablas:
 ![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd1.PNG)
 ![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd2.PNG)
 
+## BD MySql
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
 
