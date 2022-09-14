@@ -365,18 +365,6 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
-|Cu04 |Cu04- Crear Prueba Aleatoria. | 
-| -------------- | --------------|
-|**Descripción** |El sistema deberá crear una prueba en base a las condiciones ingresadas por el usuario |
-|**Actores** |Docente|
-|**Precondiciones**| Prueba creada.|
-| | | 
-|**Flujo Normal**|1-Usuario ingresa al filtro de pruebas y lo completa. |
-| |2. Sistema genera una prueba aleatoria|
-| |3-Sistema guarda prueba para su realizacion|
-|**Flujo Alternativo**|2.1) No se encuentran cantidad de preguntas necesarias.|
-|**Poscondiciones**|Prueba creada correctamente.|
-|**Prioridad** |Alta|
 
 ## Requerimientos Iteración II.
 
@@ -391,6 +379,18 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 1. Como profesor necesito que el sistema genere pruebas de forma automática a partir de ciertos criterios ingresados, como ser tema de la pregunta. 
 
+|Cu04 |Cu04- Crear Prueba Aleatoria. | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá crear una prueba en base a las condiciones ingresadas por el usuario |
+|**Actores** |Docente|
+|**Precondiciones**| Prueba creada.|
+| | | 
+|**Flujo Normal**|1-Usuario ingresa al filtro de pruebas y lo completa. |
+| |2. Sistema genera una prueba aleatoria|
+| |3-Sistema guarda prueba para su realizacion|
+|**Flujo Alternativo**|2.1) No se encuentran cantidad de preguntas necesarias.|
+|**Poscondiciones**|Prueba creada correctamente.|
+|**Prioridad** |Alta|
 
 ## Diagrama de Clases correspondiente a Iteración I y II.
 
