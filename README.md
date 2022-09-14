@@ -439,8 +439,9 @@ Consideramos que la tercera formal normal se adapta a los requerimientos de norm
 
 Tablas:
 
-![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd1.PNG)
-![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd2.PNG)
+![imagen](https://user-images.githubusercontent.com/63823685/190274886-f043d4a1-51a7-4be8-b7ad-faff0fdd937c.png)
+![imagen](https://user-images.githubusercontent.com/63823685/190274944-8ae65628-7baa-4973-81f4-9e3efe9514dc.png)
+
 
 ## BD MySql
 
