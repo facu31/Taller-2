@@ -437,6 +437,11 @@ Se cumple con la tercera forma normal ya que:
 
 Consideramos que la tercera formal normal se adapta a los requerimientos de normalización de los datos del sistema.
 
+Tablas:
+
+![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd1.PNG)
+![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd2.PNG)
+
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
 
