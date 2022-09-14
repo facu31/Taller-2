@@ -310,7 +310,7 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 3. Como estudiante quiero ver la puntación recibida al finalizar la prueba indicando cuantas preguntas se contestaron correctamente.
 
 
-## Caso de uso.
+## Casos de uso.
 
 <br /> 
 
@@ -365,7 +365,34 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/3467575cd746f37ed9921ebc0ec35bd0984927b9/Dise%C3%B1o/Cu03.svg)
 
-## Diagrama de Clases 
+
+## Requerimientos Iteración II.
+
+1. Como profesor debo crear preguntas nuevas de tipo verdadero o falso, ingredando un enunciado y determinando la opción correcta.
+
+2. Como profesor debo crear preguntas nuevas de tipo multiple opción, ingresando un enunciado para la pregunta y las diferentes opciones que se le ofrecerán al alumno. Debo indicaar cual de las opciones ingresadas es la correcta.
+
+3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
+asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
+
+## Requerimientos Iteración III.
+
+1. Como profesor necesito que el sistema genere pruebas de forma automática a partir de ciertos criterios ingresados, como ser tema de la pregunta. 
+
+|Cu04 |Cu04- Crear Prueba Aleatoria. | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá crear una prueba en base a las condiciones ingresadas por el usuario |
+|**Actores** |Docente|
+|**Precondiciones**| Prueba creada.|
+| | | 
+|**Flujo Normal**|1-Usuario ingresa al filtro de pruebas y lo completa. |
+| |2. Sistema genera una prueba aleatoria|
+| |3-Sistema guarda prueba para su realizacion|
+|**Flujo Alternativo**|2.1) No se encuentran cantidad de preguntas necesarias.|
+|**Poscondiciones**|Prueba creada correctamente.|
+|**Prioridad** |Alta|
+
+## Diagrama de Clases correspondiente a Iteración I y II.
 
 ![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
 
@@ -373,12 +400,52 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 ![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
 
+## Diagrama de clases de capa de persistencia finalizada en Iteración III.
+
+![imagen](https://user-images.githubusercontent.com/63823685/190023720-5cca0b0e-760c-4e03-b2ef-1fa29112cc91.png)
+
+## Diagrama de capa de servicios finalizada en Iteración III.
+
+![imagen](https://user-images.githubusercontent.com/63823685/190024035-e7e6df79-fdb9-4314-b569-740acf60f1bf.png)
+
+
+## Diagrama de Data Transfer Objects creados en Iteración III.
+
+![imagen](https://user-images.githubusercontent.com/63823685/190026565-b8ee987e-a040-4dbd-aceb-da3b616db986.png)
+
 
 ## Base de Datos
 
-Debido a que en la actual iteracion ( II) 22/08/2022 no se guardan pruebas ni preguntas en la base de datos, aun no se a realizado el Mer , ni la normalización.
-Esto si sera tenido en cuenta para la iteración (III) en la cual se espera que el software grabe en una base de datos preguntas y cuestionarios armados.
+ ## MER
+![image](https://github.com/facu31/Taller-2/blob/6e2ca318da75abaa07c10b0f4f1ce96681e6333d/Recursos/MER.png)
+
+https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
+
+
+### Normalización.
+
+Se cumple con la primera forma normal ya que:
+- todos los atributos son atómicos
+
+Se cumple con la segunda forma normal ya que:
+- se cumple con la primer forma normal
+- todos los atributos que no forman parte de ninguna clave dependen de forma completa a la clave principal.
+
+Se cumple con la tercera forma normal ya que:
+- se cumple con la primer y segunda forma normal
+- no existen dependencias funcionales transitivas
+
+Consideramos que la tercera formal normal se adapta a los requerimientos de normalización de los datos del sistema.
+
+Tablas:
+
+![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd1.PNG)
+![image](https://github.com/facu31/Taller-2/blob/01b776191af999f93fdf288aba8bbd32b543e293/Recursos/tablas%20bd2.PNG)
+
+## BD MySql
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
+
+.
 
 
