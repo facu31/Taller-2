@@ -1,5 +1,7 @@
 # Taller 2     🖥️🖱️📚
 
+[![GitHub Actions Status Badge](![image](https://user-images.githubusercontent.com/80772423/190495242-68dd1946-b37e-4764-89ce-780d0e06cc29.png))]
+
 Composición grupo de trabajo:
 
 -Gabriel Aramburu.
