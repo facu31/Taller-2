@@ -1,7 +1,5 @@
 # Taller 2
 
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
-
 Composición grupo de trabajo:
 
 -Gabriel Aramburu.
@@ -60,7 +58,7 @@ Nos permite comenzar a trabajar con un nivel de requerimientos suficiente pero n
 Permite planificar los plazos de entregas, dividiendo la construcción en intervalos de tiempo tomando en cuenta la limitaciones de horas de trabajo y fecha límite de entrega. 
 Estas características también las ofrece la metodología Scrum, sin embargo creemos que la iterativa incremental se adapta mejor a las característica del equipo y el cliente.
 
-- [ ] ### Ventajas
+### Ventajas
 
 -Se reduce el tiempo de desarrollo inicial, ya que se implementa la funcionalidad parcial.
 
@@ -75,7 +73,7 @@ avances.
 -Resulta más sencillo acomodar cambios al acotar el tamaño
 de los incrementos.
 
-- [x] ### Desventajas
+### Desventajas
 
 -El modelo Incremental no es recomendable para casos de sistemas de tiempo real, de alto nivel de seguridad, de procesamiento distribuido
 y/o de alto índice de riesgos.
