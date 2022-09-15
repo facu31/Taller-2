@@ -1,6 +1,9 @@
 # Taller 2     🖥️🖱️📚
 
 ![image](https://user-images.githubusercontent.com/80772423/190495738-685cccfb-cf22-4c2a-b854-a1480ebcff3b.png)
+https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+
+
 
 Composición grupo de trabajo:
 
