@@ -1,6 +1,6 @@
 # Taller 2     🖥️🖱️📚
 
-[![GitHub Actions Status Badge](![image](https://user-images.githubusercontent.com/80772423/190495350-fafd3f39-3b6d-4f30-a6d2-dbe14ba28712.png)))]
+[![GitHub Actions Status Badge](https://miracomohacerlo.com/wp-content/uploads/2016/10/actualizar-Java-2.jpg)]
 
 Composición grupo de trabajo:
 
