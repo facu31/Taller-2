@@ -1,5 +1,7 @@
 # Taller 2
 
+[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+
 Composición grupo de trabajo:
 
 -Gabriel Aramburu.
