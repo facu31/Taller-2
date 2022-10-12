@@ -13,5 +13,20 @@ public class MenuController {
     public String menu (Model model) {
  		
  		return "Menu";
- 	}
+
+	}
+	
+ 		@GetMapping("/MenuEstudiante")
+ 	    public String MenuEstudiante (Model model) {
+ 	 		
+ 	 		return "MenuEstudiante";
+
+	}
+ 		
+ 		@GetMapping("/MenuProfesor")
+ 	    public String MenuProfesor (Model model) {
+ 	 		
+ 	 		return "MenuProfesor";
+
+	}
 }
