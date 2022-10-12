@@ -173,7 +173,46 @@ A continuación se muestra un diagrama Gant con el detalle de las tareas a reali
 
 ## Planificación.
 
-Elaboración del cronograma.
+Iteraciones:
+
+##### Acta Reunion Inicial:
+
+El día 25/06/2022 se realiza la primer reunion formal con el cliente, en la cual este brinda los 
+requerimientos pretendidos para el sistema.
+El equipo toma nota de ello y comienza a trabajar.
+
+##### Acta N°02:
+
+Se deja constancia que en el día 28/07/2022 fue realizada una reunión con el fin de
+presentar al cliente Juan Pablo Sales el prototipo del software anteriormente solicitado. En
+la reunión se encontraban presentes quienes conforman el equipo de desarrollo: Facundo
+Olaizola, Nicolás Gandaria, Gabriel Aramburú y Javier Balado.
+A continuación se realiza un planteamiento de los puntos hablados en dicha reunión.
+¿Qué hablamos?
+Se le mostró al cliente los requerimientos implementados en la Iteración I. El mismo
+quedó conforme con lo implementado y el prototipo presentado.
+Futuras iteraciones
+Se priorizará para la siguiente iteración, la realización de la funcionalidad de ingreso
+de pruebas. La misma debería estar lista dentro de un plazo de 2 o 3 semanas.
+
+
+##### Acta N°03:
+Se deja constancia que en el día 23/08/2022 fue realizada una reunión con el fin de
+presentar al cliente Juan Pablo Sales el prototipo del software anteriormente solicitado. En
+la reunión se encontraban presentes quienes conforman el equipo de desarrollo: Facundo
+Olaizola, Diego Gandaria, Gabriel Aramburú y Javier Balado.
+A continuación se realiza un planteamiento de los puntos hablados en dicha reunión.
+¿Qué hablamos?
+Se le mostró al cliente los requerimientos implementados en la Iteración II. El mismo
+quedó conforme con lo implementado y el prototipo presentado.
+Futuras iteraciones
+Se priorizará para la siguiente iteración ,la creación aleatoria de pruebas, con una cantidad
+configurable de preguntas por el usuario.
+Se sugiere ver la implementación de alguno de los siguientes parámetros: Puntaje, tiempo
+o resta puntos.
+Próxima Iteración 7 -14 Septiembre.
+
+
 
 ## Análisis de requerimientos iniciales.
 
