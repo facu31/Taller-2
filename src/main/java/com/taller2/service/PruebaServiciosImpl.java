@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.taller2.dto.crearprueba.PreguntaDTO;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.dao.PruebaDAO;
-import com.taller2.view.crearprueba.PreguntaDTO;
 
 @Service
 public class PruebaServiciosImpl implements PruebaServicios {
@@ -24,6 +24,11 @@ public class PruebaServiciosImpl implements PruebaServicios {
 		return pruebaDAO.obtenerPruebas();
 	}
 
+	@Override
+	public List<Prueba> obtenerPruebasPublicadas() {
+		return pruebaDAO.obtenerPruebasPublicadas();
+	}
+	
 	@Override
 	public Prueba obtenerPrueba(int idPrueba) {
 		Prueba prueba = pruebaDAO.obtenerPrueba(idPrueba);
@@ -79,6 +84,33 @@ public class PruebaServiciosImpl implements PruebaServicios {
 			pruebaDAO.altaOpcion(op);
 		}
 	}
+
+	@Override
+	public List<Pregunta> obtenerPreguntasExistentes() {
+		return pruebaDAO.obtenerTodasLasPreguntas();
+	}
+
+	@Override
+	public void borrarPregunta(int idPregunta) {
+		pruebaDAO.borrarPregunta(idPregunta);
+	}
+
+	@Override
+	public Pregunta obtenerPregunta(int idPregunta) {
+		Pregunta pregunta = pruebaDAO.obtenerPregunta(idPregunta);
+		pregunta.setOpciones(pruebaDAO.obtenerOpciones(idPregunta));
+		return pregunta;
+	}
+
+	public void borrarPrueba(int id) {
+		pruebaDAO.borrarPrueba(id);
+	}
+
+	public void publicarPrueba(int id) {
+		pruebaDAO.publicarPrueba(id);
+	}
+
+
 
 	
 }

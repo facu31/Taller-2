@@ -3,42 +3,38 @@
 <head>
 <div th:replace="barraMenu :: headerBarra"></div>
 <meta charset="ISO-8859-1">
-<title>Pruebas</title>
+<title>Listado de opciones</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 </head>
-
 <header>
 <div th:replace="barraMenu :: menuVar"></div>
 </header>
-
 <body>
+
 	<div class="container my-2" align="center">
 
-		<h3>Lista de Pruebas</h3>
+		<h1 th:text="${pregunta.id}"></h1>
+		<h2 th:text="${pregunta.enunciado}"></h2>
 
 		<table style="width: 80%" border="1"
 			class="table table-striped table-responsive-md">
 			<thead class="thead-dark">
 				<tr>
 					<th>Id</th>
-					<th>Titulo</th>
 					<th>Descripcion</th>
-					<th>Accion</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="prueba:${pruebas}">
-					<td th:text="${prueba.id}"></td>
-					<td th:text="${prueba.titulo}"></td>
-					<td th:text="${prueba.desc}"></td>
-					<td><a th:href="@{/prueba/realizar/{id}(id=${prueba.id})}"
-						class="btn btn-primary">Realizar</a></td>
+				<tr th:each="opcion:${pregunta.opciones}">
+					<td th:text="${opcion.id}"></td>
+					<td th:text="${opcion.descOpcion}"></td>
 				</tr>
 			</tbody>
 		</table>
+		
 	</div>
 </body>
 </html>

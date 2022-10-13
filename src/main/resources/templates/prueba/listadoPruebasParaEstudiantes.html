@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="barraMenu :: headerBarra"></div>
+<meta charset="ISO-8859-1">
+<title>Pruebas publicadas</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+
+<header>
+<div th:replace="barraMenu :: menuVar"></div>
+</header>
+
+<body>
+	<div class="container my-2" align="center">
+
+		<h3>Pruebas publicadas listas para realizar</h3>
+
+		<table style="width: 80%" border="1"
+			class="table table-striped table-responsive-md">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>Titulo</th>
+					<th>Descripcion</th>
+					<th>Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="prueba:${pruebas}">
+					<td th:text="${prueba.id}"></td>
+					<td th:text="${prueba.titulo}"></td>
+					<td th:text="${prueba.desc}"></td>
+					
+					
+					<td><a th:href="@{/prueba/realizar/{id}(id=${prueba.id})}" class="btn-sm btn-primary">Realizar</a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

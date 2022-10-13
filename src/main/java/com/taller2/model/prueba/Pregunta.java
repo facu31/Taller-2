@@ -3,12 +3,16 @@ package com.taller2.model.prueba;
 import java.util.List;
 
 public class Pregunta {
+	public static final int TIPO_SELECCION = 0;
+	public static final int TIPO_INGRESO = 1;
+	
 	private int id;
 	private String enunciado;
 	private List<Opcion> opciones;
 	private int idOpcionCorrecta;
 	private int puntaje;
 	private int IdTema;
+	private int tipo;
 	
 	
 	private Integer idOpcionIngresada;
@@ -18,6 +22,7 @@ public class Pregunta {
 		this.enunciado = enunciado;
 		this.idOpcionCorrecta = idOpcCorrecta;
 		this.IdTema = IdTema;
+		this.tipo = 1;
 		
 	}
 	
@@ -83,6 +88,14 @@ public class Pregunta {
 
 	public void setIdTema(int idTema) {
 		IdTema = idTema;
+	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
 	}
 
 	

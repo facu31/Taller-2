@@ -1,8 +1,8 @@
-package com.taller2.view.crearpregunta;
+package com.taller2.dto.crearpregunta;
 
-public class PreguntaVFDTO {
+public class PreguntaRespuestaCortaDTO {
 	private int idTema;
-	private int opcionCorrecta;
+	private String opcionCorrecta;
 	private String enunciado;
 	
 	
@@ -12,10 +12,11 @@ public class PreguntaVFDTO {
 	public void setIdTema(int idTema) {
 		this.idTema = idTema;
 	}
-	public int getOpcionCorrecta() {
+	
+	public String getOpcionCorrecta() {
 		return opcionCorrecta;
 	}
-	public void setOpcionCorrecta(int opcionCorrecta) {
+	public void setOpcionCorrecta(String opcionCorrecta) {
 		this.opcionCorrecta = opcionCorrecta;
 	}
 	public String getEnunciado() {

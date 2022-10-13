@@ -1,6 +1,6 @@
 package com.taller2.controller;
 
-import java.util.Arrays;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,18 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.taller2.dto.crearpregunta.OpcionDTO;
+import com.taller2.dto.crearpregunta.PreguntaMultipleOpcionDTO;
+import com.taller2.dto.crearpregunta.PreguntaRespuestaCortaDTO;
+import com.taller2.dto.crearpregunta.PreguntaVFDTO;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
-import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
-import com.taller2.view.crearpregunta.OpcionDTO;
-import com.taller2.view.crearpregunta.PreguntaMultipleOpcionDTO;
-import com.taller2.view.crearpregunta.PreguntaVFDTO;
 
 @Controller
 public class PreguntaController {
@@ -49,6 +50,17 @@ public class PreguntaController {
 		model.addAttribute("temas", temas);
  		return "prueba/fragment_preguntaMOpcion:: fragmento";
  	}
+	
+	@GetMapping("/prueba/crearPregunta/respuestaCorta")
+    public String respuestaCortaPrincipal (Model model) {
+ 		List<Tema> temas = pruebaServiciosImpl.obtenerTemas();
+ 		PreguntaRespuestaCortaDTO preguntaRC = new PreguntaRespuestaCortaDTO();
+ 		
+		model.addAttribute("temas", temas);
+		model.addAttribute("preguntaRespuestaCortaDTO", preguntaRC);
+ 		return "prueba/fragment_preguntaRespuestaCorta:: fragmento";
+ 	}
+	
 	
  	
  	@PostMapping("/prueba/grabarPreguntaVF")
@@ -103,5 +115,55 @@ public class PreguntaController {
  		redirectAttributes.addFlashAttribute("mensajeOk",  "La pregunta se guardo correctamente");
  		return "redirect:/prueba/crearPregunta";
     }
+ 	
+ 	@PostMapping("/prueba/grabarPreguntaRespuestaCorta")
+    public String grabarPreguntaRespuestaCorta(@ModelAttribute("preguntaRespuestaCortaDTO") PreguntaRespuestaCortaDTO preguntaRespuestaCorta,
+    		RedirectAttributes redirectAttributes) {
+ 		
+ 		System.out.println(preguntaRespuestaCorta);
+ 		
+ 		Pregunta pregunta = new Pregunta();
+ 		pregunta.setEnunciado(preguntaRespuestaCorta.getEnunciado());
+ 		pregunta.setIdOpcionCorrecta(1); //en este tipo de pregunta siempre se ingresa la opcion correcta
+ 		pregunta.setIdTema(preguntaRespuestaCorta.getIdTema());
+ 		
+ 		
+ 		List<Opcion> opciones = new java.util.ArrayList<Opcion>();
+ 		opciones.add(new Opcion(1, preguntaRespuestaCorta.getOpcionCorrecta()));
+ 		pregunta.setOpciones(opciones);
+ 		
+ 		pruebaServiciosImpl.altaPreguntaConOpciones(pregunta);
+ 		
+ 		return "redirect:/prueba/crearPregunta";
+ 	}
+ 	
+ 	@GetMapping("/pregunta/listarPreguntas")
+    public String listarPreguntas(Model model) {
+ 		model.addAttribute("preguntas", pruebaServiciosImpl.obtenerPreguntasExistentes());
+        return "pregunta/preguntasExistentes"; 
+ 	}
+ 	
+ 	
+ 	@GetMapping("pregunta/borrar/{id}")
+    public String borrarPregunta(@PathVariable(value = "id") int id, Model model) {
+ 		try {
+ 			pruebaServiciosImpl.borrarPregunta(id);
+ 			return "redirect:/pregunta/listarPreguntas";
+ 		}catch (Exception e) {
+ 			System.out.println(e.getMessage());
+ 			model.addAttribute("mensaje", "No se puede borrar una pregunta que este incluida en una Prueba.");
+ 			return "error/error";
+ 		}
+    }
+ 	
+ 	@GetMapping("pregunta/verOpciones/{id}")
+    public String verOpciones(@PathVariable(value = "id") int id, Model model) {
+		model.addAttribute("pregunta", pruebaServiciosImpl.obtenerPregunta(id));
+		return "pregunta/listarOpciones";
+ 		
+    }
+ 	
+	
+ 	
  	
 }

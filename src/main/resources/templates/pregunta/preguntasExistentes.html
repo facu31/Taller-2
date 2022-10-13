@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="barraMenu :: headerBarra"></div>
+<meta charset="ISO-8859-1">
+<title>Pruebas</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	
+</head>
+
+<header>
+<div th:replace="barraMenu :: menuVar"></div>
+</header>
+
+<body>
+	<div class="container my-2" align="center">
+
+		<h3>Lista de Preguntas</h3>
+
+		<table style="width: 80%" border="1"
+			class="table table-striped table-responsive-md">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>Enunciado</th>
+					<th>Tema</th>
+					<th>Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pregunta:${preguntas}">
+					<td th:text="${pregunta.id}"></td>
+					<td th:text="${pregunta.enunciado}"></td>
+					<td th:text="${pregunta.idTema}"></td>
+					<td>
+						<a th:href="@{/pregunta/verOpciones/{id}(id=${pregunta.id})}"
+						class="btn-sm btn-success">Ver Opciones</a>
+						
+						<a th:href="@{/pregunta/borrar/{id}(id=${pregunta.id})}"
+						class="btn-sm btn-danger">Borrar</a>
+						</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

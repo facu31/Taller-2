@@ -4,20 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prueba {
+	public static final int PUBLICADA = 1;
+	public static final int NO_PUBLICADA = 0;
+	
 	private int id;
 	private String titulo;
 	private String desc;
 	private List<Pregunta> preguntas; ; 
+	private int publicada;
 	
 	public Prueba() {
 		
 	}
 	
-	public Prueba(int id, String titulo, String desc) {
+	public Prueba(int id, String titulo, String desc, int publicada) {
 		this.id = id;
 		this.titulo = titulo;
 		this.desc = desc;
 		this.preguntas = new ArrayList<Pregunta>();
+		this.publicada = publicada;
 	}
 	
 	public int getId() {
@@ -51,10 +56,23 @@ public class Prueba {
 		this.preguntas = preguntas;
 	}
 	
+	public int getPublicada() {
+		return publicada;
+	}
+
+	public void setPublicada(int publicada) {
+		this.publicada = publicada;
+	}
+
 	public String calcularResultado() {
 		int totOk = 0;
 		for(Pregunta preg: preguntas) {
-			if (preg.getIdOpcionIngresada().equals(preg.getIdOpcionCorrecta())) totOk++;
+			if (preg.getTipo() == Pregunta.TIPO_SELECCION) {
+				if (preg.getIdOpcionIngresada().equals(preg.getIdOpcionCorrecta())) totOk++;
+			} else {
+				//if (preg)
+			}
+			
 		}
 		return totOk + " preguntas correctas de un total de " + preguntas.size();
 	}

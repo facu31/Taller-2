@@ -17,6 +17,10 @@
 		$("#seccion-crear-opciones").load(
 				'/prueba/crearPregunta/multipleOpcion'); //llamada axaj
 	}
+	
+	
+	
+	
 
 	//Elimina fila al apretar el boton Quitar
 	function quitar(boton) {

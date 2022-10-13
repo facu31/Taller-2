@@ -1,4 +1,4 @@
-package com.taller2.view.crearpregunta;
+package com.taller2.dto.crearpregunta;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 

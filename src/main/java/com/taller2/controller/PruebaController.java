@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.taller2.dto.crearprueba.PreguntaDTO;
+import com.taller2.dto.crearprueba.PruebaDTO;
+import com.taller2.dto.crearpruebaautomatica.PruebaAutomaticaDTO;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
-import com.taller2.view.crearprueba.PreguntaDTO;
-import com.taller2.view.crearprueba.PruebaDTO;
-import com.taller2.view.crearpruebaautomatica.PruebaAutomaticaDTO;
 
 @Controller
 public class PruebaController {
@@ -29,10 +29,10 @@ public class PruebaController {
 	@Autowired
 	private PruebaServiciosImpl pruebaServiciosImpl;
 	
- 	@GetMapping("prueba/listar")
-    public String viewHomePage(Model model) {
+ 	@GetMapping("prueba/listadoPruebasParaProfesores")
+    public String listadoPruebasParaProfesores(Model model) {
         model.addAttribute("pruebas", pruebaServiciosImpl.obtenerPruebasExistentes());
-        return "prueba/pruebasExistentes"; 
+        return "prueba/listadoPruebasParaProfesores"; 
     }
  	
  	@GetMapping("prueba/realizar/{id}")
@@ -42,6 +42,12 @@ public class PruebaController {
         model.addAttribute("prueba", prueba);
 
         return "prueba/realizarPrueba";
+    }
+ 	
+ 	@GetMapping("prueba/listadoPruebasParaEstudiantes")
+    public String viewHomePage(Model model) {
+        model.addAttribute("pruebas", pruebaServiciosImpl.obtenerPruebasPublicadas());
+        return "prueba/listadoPruebasParaEstudiantes"; 
     }
  	
  	@PostMapping("prueba/corregir")
@@ -129,5 +135,23 @@ public class PruebaController {
  		return "redirect:/prueba/formularioCrearPruebaAutomatica";
  	}
  	
+ 	
+	@GetMapping("prueba/borrar/{id}")
+    public String borrarPrueba(@PathVariable(value = "id") int id, Model model) {
+ 		try {
+ 			pruebaServiciosImpl.borrarPrueba(id);
+ 			return "redirect:/prueba/listadoPruebasParaProfesores";
+ 		}catch (Exception e) {
+ 			System.out.println(e.getMessage());
+ 			model.addAttribute("mensaje", "No se puede borrar una prueba que tenga resultados ingresados");
+ 			return "error/error";
+ 		}
+    }
+	
+	@GetMapping("prueba/publicar/{id}")
+    public String publicarPrueba(@PathVariable(value = "id") int id, Model model) {
+		pruebaServiciosImpl.publicarPrueba(id);
+		return "redirect:/prueba/listadoPruebasParaProfesores";
+    }
  	
 }

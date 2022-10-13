@@ -31,16 +31,18 @@ create table temas (
 create table pruebas (
 	id int not null primary key,
     titulo varchar(200),
-    descripcion varchar (200)
+    descripcion varchar (200),
+    publicada int not null
 );
 
 create table preguntas (
 	id int not null  primary key,
     enunciado varchar(100) not null,
-    idOpcionCorrecta int not null,
+    idOpcionCorrecta int,
     idTema int not null,
     foreign key (idTema) references temas (idTema)
 );
+
 
 create table pruebaPreguntas (
 	idPrueba int not null,
@@ -54,6 +56,7 @@ create table opcionesPreguntas (
 	idOpcion int not null,
 	idPregunta int not null,
     descripcion varchar(30) not null,
+    valorCorrecto varchar(30),
     primary key (idPregunta, idOpcion),
     foreign key (idPregunta) references preguntas(id)
 );
@@ -70,9 +73,9 @@ insert into temas (idTema,idMateria, descripcion) values (4,2,"Tema 4 de materia
 insert into temas (idTema,idMateria, descripcion) values (5,2,"Tema 5 de materia B");
 insert into temas (idTema,idMateria, descripcion) values (6,2,"Tema 6 de materia B");
 
-insert into pruebas (id, titulo, descripcion) values (1, "Prueba Prog", "Programación 1");
-insert into pruebas (id, titulo, descripcion) values (2, "Prueba Prog 3", "Programacion 3");
-insert into pruebas (id, titulo, descripcion) values (3, "Prueba Logica", "Logica");
+insert into pruebas (id, titulo, descripcion, publicada) values (1, "Prueba Prog", "Programación 1", 0);
+insert into pruebas (id, titulo, descripcion, publicada) values (2, "Prueba Prog 3", "Programacion 3", 0);
+insert into pruebas (id, titulo, descripcion, publicada) values (3, "Prueba Logica", "Logica", 0);
 
 insert into preguntas (id, enunciado, idOpcionCorrecta, idTema) values (1, "¿Existe  una opción en eclipse para genearar automaticamente los Getter And Setter?", 1, 1);
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (1,1,"Verdadero");

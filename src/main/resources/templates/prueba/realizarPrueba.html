@@ -36,17 +36,24 @@
 							<td th:text="${pregunta.id}"></td>
 							<td th:text="${pregunta.enunciado}"></td>
 							<td>
-								<div th:each="opcion:${pregunta.opciones}">
-									<input type="radio" th:id="${opcion.id}"
-										th:value="${opcion.id}" th:name="${pregunta.id}"
-										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionIngresada}">
-
-									<label th:for="${opcion.id}" th:text="${opcion.descOpcion}"></label>
-									<input type="hidden"
-										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
-									<input type="hidden"
-										th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
-
+								<div th:each="opcion, iteratorOpciones:${pregunta.opciones}">
+									<div th:if="${pregunta.tipo == 0}"
+										<input type="radio" th:id="${opcion.id}"
+											th:value="${opcion.id}" th:name="${pregunta.id}"
+											th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionIngresada}">
+	
+										<label th:for="${opcion.id}" th:text="${opcion.descOpcion}"></label>
+										<input type="hidden"
+											th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
+										<input type="hidden"
+											th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
+	
+									</div>
+									
+									<div th:if="${pregunta.tipo == 1}">
+										<input type="text" th:value="${opcion.descOpcion}"
+											th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].opciones[__${iteratorOpciones.index}__].valor}">
+									</div>
 								</div>
 							</td>
 

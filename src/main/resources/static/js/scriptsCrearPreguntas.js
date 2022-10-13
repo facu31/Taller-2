@@ -17,6 +17,14 @@
 		$("#seccion-crear-opciones").load(
 				'/prueba/crearPregunta/multipleOpcion'); //llamada axaj
 	}
+	
+	function cargarFragmentoRespuestaCorta() {
+		$(".nav-link").removeClass('active');
+		$("#tabRC").addClass('active');
+		
+		$("#seccion-crear-opciones").load(
+				'/prueba/crearPregunta/respuestaCorta'); //llamada axaj
+	}
 
 	//Elimina fila al apretar el boton Quitar
 	function quitar(boton) {

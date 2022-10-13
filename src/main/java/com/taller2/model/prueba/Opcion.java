@@ -4,8 +4,11 @@ public class Opcion {
 	private int id;
 	private String descOpcion;
 	private int idPregunta;
+	private String valor;
 	
-	
+	public Opcion() {
+		
+	}
 	
 	public Opcion(int id, String descOpcion) {
 		this.id = id;
@@ -42,6 +45,16 @@ public class Opcion {
 
 	public void setIdPregunta(int idPregunta) {
 		this.idPregunta = idPregunta;
+	}
+
+
+	public String getValor() {
+		return valor;
+	}
+
+
+	public void setValor(String valor) {
+		this.valor = valor;
 	}
 
 	

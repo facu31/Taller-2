@@ -8,13 +8,13 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.taller2.dto.crearprueba.PreguntaDTO;
 import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Tema;
-import com.taller2.view.crearprueba.PreguntaDTO;
 
 @Service
 public class PruebaDAOImpl implements PruebaDAO{
@@ -39,7 +39,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 						new Prueba(
 		                rs.getInt("id"),
 		                rs.getString("titulo"),
-		                rs.getString("descripcion")
+		                rs.getString("descripcion"),
+		                rs.getInt("publicada")
 		        ));
 	}
 
@@ -53,10 +54,25 @@ public class PruebaDAOImpl implements PruebaDAO{
 						new Prueba(
 		                rs.getInt("id"),
 		                rs.getString("titulo"),
-		                rs.getString("descripcion")
+		                rs.getString("descripcion"),
+		                rs.getInt("publicada")
 		        ));
 	}
 	
+	@Override
+	public List<Prueba> obtenerPruebasPublicadas() {
+		String sql = "select * from taller2.pruebas where publicada = 1;";
+		
+		return namejdbcTemplate.query(
+				sql, 
+				(rs, rowNum) ->
+						new Prueba(
+		                rs.getInt("id"),
+		                rs.getString("titulo"),
+		                rs.getString("descripcion"),
+		                rs.getInt("publicada")
+		        ));
+	}
 	
 	@Override
 	public List<Pregunta> obtenerPreguntas(int idPrueba) {
@@ -209,10 +225,11 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 	@Override
 	public void altaPrueba(Prueba prueba) {
-		jdbcTemplate.update("INSERT INTO taller2.pruebas (id, titulo, descripcion) values (?,?,?)",
+		jdbcTemplate.update("INSERT INTO taller2.pruebas (id, titulo, descripcion, publicada) values (?,?,?,?)",
 				prueba.getId(),
 				prueba.getTitulo(),
-				prueba.getDesc());
+				prueba.getDesc(),
+				prueba.getPublicada());
 	}
 
 	@Override
@@ -262,7 +279,49 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 		 return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
+
+	@Override
+	public void borrarPregunta(int idPregunta) {
+		
+		jdbcTemplate.update("delete from taller2.opcionesPreguntas where idPregunta = ?", idPregunta);
+		jdbcTemplate.update("delete from taller2.preguntas where id = ?", idPregunta);
+	}
+
+	@Override
+	public Pregunta obtenerPregunta(int idPregunta) {
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
+				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
+				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria and p.id = :idPregunta";
+		
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("idPregunta", idPregunta);
+		
+		
+		return namejdbcTemplate.queryForObject(
+				sql,
+				param,
+				(rs, rowNum)-> 
+					new Pregunta(
+							rs.getInt("id"),
+							rs.getString("enunciado"), 
+							rs.getInt("idOpcionCorrecta"),
+							rs.getInt("idTema")));
+	}
+
+	@Override
+	public void borrarPrueba(int id) {
+		jdbcTemplate.update("delete from taller2.pruebaPreguntas where idPrueba = ?", id);
+		jdbcTemplate.update("delete from taller2.pruebas where id = ?", id);
+	}
+
 	
+	@Override
+	public void publicarPrueba(int id) {
+		jdbcTemplate.update("update taller2.pruebas set publicada = 1 where id = ?",
+				id);
+	}
+	
+
 	
 	
 }
