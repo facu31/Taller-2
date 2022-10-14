@@ -2,7 +2,6 @@ package com.taller2.service.dao;
 
 import java.util.List;
 
-import com.taller2.dto.crearprueba.PreguntaDTO;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
@@ -30,11 +29,13 @@ public interface PruebaDAO {
 	
 	public void altaPregunta(Pregunta pregunta);
 	public void altaOpcion(Opcion opcion);
+	
 	public int obtenerIdPregunta();
 	public void borrarPregunta(int idPregunta);
 	public Pregunta obtenerPregunta(int idPregunta);
 	public void borrarPrueba(int id);
 	public List<Prueba> obtenerPruebasPublicadas();
 	public void publicarPrueba(int id);
+	
 
 }

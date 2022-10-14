@@ -3,26 +3,26 @@ package com.taller2.model.prueba;
 import java.util.List;
 
 public class Pregunta {
-	public static final int TIPO_SELECCION = 0;
-	public static final int TIPO_INGRESO = 1;
+	public static final int TIPO_SELECCION = 1;
+	public static final int TIPO_INGRESO = 2;
 	
 	private int id;
+	private int tipo;
 	private String enunciado;
 	private List<Opcion> opciones;
 	private int idOpcionCorrecta;
 	private int puntaje;
 	private int IdTema;
-	private int tipo;
 	
 	
 	private Integer idOpcionIngresada;
 	
-	public Pregunta(int id, String enunciado, int idOpcCorrecta, int IdTema) {
+	public Pregunta(int id, String enunciado, int idOpcCorrecta, int IdTema, int tipo) {
 		this.id = id;
 		this.enunciado = enunciado;
 		this.idOpcionCorrecta = idOpcCorrecta;
 		this.IdTema = IdTema;
-		this.tipo = 1;
+		this.tipo = tipo;
 		
 	}
 	

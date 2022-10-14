@@ -4,7 +4,7 @@
 	
 	function cargarFragmentoVerdaderoFalso() {
 		$(".nav-link").removeClass('active');
-		$("#tabFV").addClass('active');
+		$("#tabVF").addClass('active');
 		
 		$("#seccion-crear-opciones").load(
 				'/prueba/crearPregunta/verdaderoFalso'); //llamada axaj
@@ -25,6 +25,15 @@
 		$("#seccion-crear-opciones").load(
 				'/prueba/crearPregunta/respuestaCorta'); //llamada axaj
 	}
+	
+	function cargarFragmentoCorrelacion() {
+		$(".nav-link").removeClass('active');
+		$("#tabCorrelacion").addClass('active');
+		
+		$("#seccion-crear-opciones").load(
+				'/prueba/crearPregunta/correlacion'); //llamada axaj
+	}
+	
 
 	//Elimina fila al apretar el boton Quitar
 	function quitar(boton) {
@@ -36,8 +45,6 @@
 		var t = document.getElementById('tabla-opciones');
 		var totalRowCount = t.rows.length;
 		console.log(totalRowCount);
-		
-
 	}
 
 
@@ -75,34 +82,83 @@
 		//agrega fila a la tabla
 		$('#tabla-opciones tr:last').after(fila);
 	}
+	
+	function agregarOpcionCorrelacion() {
+		var enunciado = document.getElementById('tituloOpcion').value;
+		var colEnunciado = '<td>' + enunciado + '</td>';
+		
+		var idRadio ='id="' +  enunciado+'"';
+		
+		var texto = '<input type="text" '  + idRadio + '/>';
+	
+		var colCorrecta = '<td> <div> ' + texto + ' </div> </td>';
+
+		var botonBorrar = '<td><a class="btn btn-warning btn-sm" id="botonBorrar" onclick="quitar(this)">Quitar</a></td>'
+
+		var fila = '<tr>' + colEnunciado + colCorrecta + botonBorrar + '</tr>';
+
+		//agrega fila a la tabla
+		$('#tabla-opciones tr:last').after(fila);
+	}
+	
+	
 
 	function guardarPregunta() {
-			var data = $('#tabla-opciones').tableToJSON();
-			var url = '/prueba/guardarPreguntaMultipleOpcion';
-			var  todo_correcto;
-			var opcionSeleccionada = obtenerOpcionCorrecta();
-			
-			var infoGrilla = {};
-			infoGrilla.enunciado = document.getElementById('enunciado').value
-			infoGrilla.idTema = document.getElementById('temasCombo').value;
-			infoGrilla.opciones = data;
-			infoGrilla.opcionCorrecta = opcionSeleccionada;
-			
-	if(document.getElementById('enunciado').value.length < 2 ){
-    	todo_correcto = false;
-    	alert('Algunos campos no están correctos, vuelva a revisarlos');
-
-}
-else {
+		var data = $('#tabla-opciones').tableToJSON();
+		var url = '/prueba/guardarPreguntaMultipleOpcion';
+		var todo_correcto;
+		var opcionSeleccionada = obtenerOpcionCorrecta();
+	
+		var infoGrilla = {};
+		infoGrilla.enunciado = document.getElementById('enunciado').value
+		infoGrilla.idTema = document.getElementById('temasCombo').value;
+		infoGrilla.opciones = data;
+		infoGrilla.opcionCorrecta = opcionSeleccionada;
+	
+		if (document.getElementById('enunciado').value.length < 2) {
+			todo_correcto = false;
+			alert('Algunos campos no están correctos, vuelva a revisarlos');
+	
+		}
+		else {
 			fetch(url, {
 				method: "POST",
 				body: JSON.stringify(infoGrilla),
 				headers: { "Content-type": "application/json; charset=UTF-8" }
 			})
-			
+	
 			alert("Se guardo la pregunta");
-			}
+		}
 	}
+	
+	function guardarPreguntaCorrelacion() {
+		var data = $('#tabla-opciones').tableToJSON();
+		var url = '/prueba/guardarPreguntaCorrelacion';
+		var todo_correcto;
+		var opcionSeleccionada = obtenerOpcionCorrecta();
+	
+		var infoGrilla = {};
+		infoGrilla.enunciado = document.getElementById('enunciado').value
+		infoGrilla.idTema = document.getElementById('temasCombo').value;
+		infoGrilla.opciones = data;
+		infoGrilla.opcionCorrecta = opcionSeleccionada;
+	
+		if (document.getElementById('enunciado').value.length < 2) {
+			todo_correcto = false;
+			alert('Algunos campos no están correctos, vuelva a revisarlos');
+	
+		}
+		else {
+			fetch(url, {
+				method: "POST",
+				body: JSON.stringify(infoGrilla),
+				headers: { "Content-type": "application/json; charset=UTF-8" }
+			})
+	
+			alert("Se guardo la pregunta");
+		}
+	}
+	
 	
 	//recorro la tabla y obtenfo el valor del radio button que esta seleccionado
 	function obtenerOpcionCorrecta() {

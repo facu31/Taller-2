@@ -8,8 +8,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import com.taller2.dto.crearprueba.PreguntaDTO;
-import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
@@ -76,7 +74,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 	
 	@Override
 	public List<Pregunta> obtenerPreguntas(int idPrueba) {
-		String sql = "SELECT p.id, p.enunciado, p.idOpcionCorrecta, p.idTema "
+		String sql = "SELECT p.id, p.enunciado, p.idOpcionCorrecta, p.idTema, p.tipo "
 				+ " FROM taller2.pruebaPreguntas as pp, taller2.preguntas as p "
 				+ " WHERE pp.idPregunta = p.id and pp.idPrueba = :idPrueba";
 
@@ -90,13 +88,14 @@ public class PruebaDAOImpl implements PruebaDAO{
 						rs.getInt("id"),
 						rs.getString("enunciado"), 
 						rs.getInt("idOpcionCorrecta"),
-						rs.getInt("idTema")));
+						rs.getInt("idTema"),
+						rs.getInt("tipo")));
 
 	}
 
 	@Override
 	public List<Opcion> obtenerOpciones(int idPregunta) {
-		String sql = "SELECT idOpcion, idPregunta, descripcion from taller2.opcionesPreguntas "
+		String sql = "SELECT idOpcion, idPregunta, descripcion, valorCorrecto from taller2.opcionesPreguntas "
 				+ "where idPregunta=:idPregunta";
 		
 		MapSqlParameterSource param = new MapSqlParameterSource();
@@ -107,7 +106,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 				(rs, rowNum)-> 
 						new Opcion(
 						rs.getInt("idOpcion"),
-						rs.getString("descripcion")
+						rs.getString("descripcion"),
+						rs.getString("valorCorrecto")
 						));
 	}
 
@@ -138,7 +138,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 	@Override
 	public List<Pregunta> filtrarPreguntasPorMateriaTema(int materia, int tema) {
-		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema, tipo "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
 				+ "and m.idMateria =:idMateria and t.idTema =:idTema order by p.id";
@@ -155,12 +155,13 @@ public class PruebaDAOImpl implements PruebaDAO{
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
 							rs.getInt("idOpcionCorrecta"),
-							rs.getInt("idTema")));
+							rs.getInt("idTema"),
+							rs.getInt("tipo")));
 	}
 
 	@Override
 	public List<Pregunta> filtrarPreguntasPorMateria(int materia) {
-		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema, tipo "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
 				+ "and m.idMateria =:idMateria order by p.id";
@@ -176,12 +177,13 @@ public class PruebaDAOImpl implements PruebaDAO{
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
 							rs.getInt("idOpcionCorrecta"),
-							rs.getInt("idTema")));
+							rs.getInt("idTema"),
+							rs.getInt("tipo")));
 	}
 
 	@Override
 	public List<Pregunta> filtrarPreguntasPorTema(int tema) {
-		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema, tipo "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria "
 				+ "and t.idTema =:idTema order by p.id";
@@ -197,12 +199,13 @@ public class PruebaDAOImpl implements PruebaDAO{
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
 							rs.getInt("idOpcionCorrecta"),
-							rs.getInt("idTema")));
+							rs.getInt("idTema"),
+							rs.getInt("tipo")));
 	}
 
 	@Override
 	public List<Pregunta> obtenerTodasLasPreguntas() {
-		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema, tipo "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria order by p.id ";
 	
@@ -213,7 +216,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
 							rs.getInt("idOpcionCorrecta"),
-							rs.getInt("idTema")));
+							rs.getInt("idTema"),
+							rs.getInt("tipo")));
 	}
 
 	@Override
@@ -259,20 +263,22 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 	@Override
 	public void altaPregunta(Pregunta pregunta) {
-		jdbcTemplate.update("INSERT INTO taller2.preguntas (id, enunciado, idOpcionCorrecta, idTema) values (?,?,?,?)",
+		jdbcTemplate.update("INSERT INTO taller2.preguntas (id, enunciado, idOpcionCorrecta, idTema, tipo) values (?,?,?,?,?)",
 				pregunta.getId(),
 				pregunta.getEnunciado(),
 				pregunta.getIdOpcionCorrecta(),
-				pregunta.getIdTema());
+				pregunta.getIdTema(),
+				pregunta.getTipo());
 	}
 	@Override
 	public void altaOpcion(Opcion opcion) {
-		jdbcTemplate.update("INSERT INTO taller2.opcionesPreguntas (idOpcion, idPregunta, descripcion) values (?,?,?)",
+		jdbcTemplate.update("INSERT INTO taller2.opcionesPreguntas (idOpcion, idPregunta, descripcion, valorCorrecto) values (?,?,?,?)",
 				opcion.getId(),
 				opcion.getIdPregunta(),
-				opcion.getDescOpcion());
+				opcion.getDescOpcion(),
+				opcion.getValorCorrecto());
 	}
-
+	
 	@Override
 	public int obtenerIdPregunta() {
 		 String sql = "select max(id)+1 from taller2.preguntas;";
@@ -289,7 +295,7 @@ public class PruebaDAOImpl implements PruebaDAO{
 
 	@Override
 	public Pregunta obtenerPregunta(int idPregunta) {
-		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema "
+		String sql = "SELECT id, enunciado, idOpcionCorrecta, t.idTema as idTema, tipo "
 				+ " from taller2.preguntas as p, taller2.materias as m, taller2.temas as t "
 				+ "where p.idTema = t.idTema and t.idMateria = m.idMateria and p.id = :idPregunta";
 		
@@ -305,7 +311,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 							rs.getInt("id"),
 							rs.getString("enunciado"), 
 							rs.getInt("idOpcionCorrecta"),
-							rs.getInt("idTema")));
+							rs.getInt("idTema"),
+							rs.getInt("tipo")));
 	}
 
 	@Override
