@@ -13,7 +13,20 @@ create table profesores (
     apellido varchar(20),
     direccion varchar(20),
     email varchar(30),
-    fecha_nacimiento date
+    fecha_nacimiento date, 
+    usuario varchar(30),
+    contrasenia varchar(50)
+);
+
+create table alumnos (
+	id int not null auto_increment primary key,
+    nombre varchar(20),
+    apellido varchar(20),
+    direccion varchar(20),
+    email varchar(30),
+    fecha_nacimiento date, 
+    usuario varchar(30),
+    contrasenia varchar(50)
 );
 
 create table materias (

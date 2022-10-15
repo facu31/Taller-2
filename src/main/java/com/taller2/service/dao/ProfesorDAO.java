@@ -8,4 +8,8 @@ public interface ProfesorDAO {
 	public int altaProfesor(Profesor prof);
 
 	public List<Profesor> obtenerProfesores();
+
+	public Object borrarProfesor(int id);
+	
+	public Profesor buncarProfesor(String usuario);
 }

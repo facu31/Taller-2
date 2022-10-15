@@ -1,6 +1,6 @@
 package com.taller2.model;
 
-public class Profesor {
+public class Alumno {
 	private int id;
 	private String nombre;
 	private String apellido;
@@ -10,11 +10,11 @@ public class Profesor {
 	private String contrasenia;
 
 	
-	public Profesor() {
+	public Alumno() {
 		
 	}
 	
-	public Profesor(int id, String nombre, String apellido, String email, String direccion, String usuario, String contrasenia) {
+	public Alumno(int id, String nombre, String apellido, String email, String direccion, String usuario, String contrasenia) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

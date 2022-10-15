@@ -23,4 +23,8 @@ public class ProfesorServiciosImpl implements ProfesorServicios{
 		profesorDAO.altaProfesor(profesor);
 	}
 
+	public void borrarProfesor(int id) {
+		profesorDAO.borrarProfesor(id);
+	}
+
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+<div th:replace="barraMenu :: headerBarra"></div>
 <meta charset="ISO-8859-1">
 <title>Mantenimiento de Profesores</title>
 <link rel="stylesheet"
@@ -8,35 +9,46 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
 </head>
+
+<header>
+<div th:replace="barraMenu :: menuVar"></div>
+</header>
+
 <body>
     <div class="container">
-        <h1>Mantenimiento de profesores</h1>
         <hr>
-        <h2>Alta de profesor Profesor</h2>
+        <h2>Alta de Profesor</h2>
  
-        <form action="#" th:action="@{/saveProfesor}" th:object="${profesor}"
+        <form action="#" th:action="@{/profesor/saveProfesor}" th:object="${profesor}"
             method="POST">
             <input type="text" th:field="*{nombre}" placeholder="Nombre"
-                class="form-control mb-4 col-4"> 
+                class="form-control mb-4 col-4"/> 
                 
             <input type="text" th:field="*{apellido}" placeholder="Apellido"
-             class="form-control mb-4 col-4"> 
+             class="form-control mb-4 col-4"/> 
                 
             <input type="text"
                 th:field="*{email}" placeholder="Email"
-                class="form-control mb-4 col-4">
+                class="form-control mb-4 col-4"/>
                 
             <input type="text"
                 th:field="*{direccion}" placeholder="Direccion"
-                class="form-control mb-4 col-4">
+                class="form-control mb-4 col-4"/>
             
  
+ 			<input type="text"
+                th:field="*{usuario}" placeholder="Usuario"
+                class="form-control mb-4 col-4"/>
+                
+            <input type="password"
+                th:field="*{contrasenia}" placeholder="Password"
+                class="form-control mb-4 col-4"/>
+                
             <button type="submit" class="btn btn-info col-2">Guardar Profesor</button>
         </form>
  
         <hr>
- 
-        <a th:href="@{/}"> Volver a Profesores</a>
+
     </div>
 </body>
 </html>
