@@ -6,6 +6,7 @@ import com.taller2.dto.crearprueba.PreguntaDTO;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
+import com.taller2.model.prueba.Resultado;
 import com.taller2.model.prueba.Tema;
 
 public interface PruebaServicios {
@@ -26,7 +27,10 @@ public interface PruebaServicios {
 	
 	public void borrarPregunta(int idPregunta);
 	public Pregunta obtenerPregunta(int idPregunta);
-
+	
+	
+	public Resultado calcularResultado(Prueba prueba);
+	public void guardarResultado(Resultado resultado);
 	
 
 }

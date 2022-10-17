@@ -20,14 +20,18 @@ import com.taller2.dto.crearpruebaautomatica.PruebaAutomaticaDTO;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
+import com.taller2.model.prueba.Resultado;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.PruebaServiciosImpl;
+import com.taller2.sesion.SesionActiva;
 
 @Controller
 public class PruebaController {
 
 	@Autowired
 	private PruebaServiciosImpl pruebaServiciosImpl;
+	
+	
 	
  	@GetMapping("prueba/listadoPruebasParaProfesores")
     public String listadoPruebasParaProfesores(Model model) {
@@ -52,8 +56,9 @@ public class PruebaController {
  	
  	@PostMapping("prueba/corregir")
     public String corregir(@ModelAttribute("prueba") Prueba prueba, Model model) {
-        
- 		model.addAttribute("resultado", prueba.calcularResultado());
+ 		Resultado resultado = pruebaServiciosImpl.calcularResultado(prueba);
+ 		
+ 		model.addAttribute("resultado", resultado.toString());
         return "prueba/resultadoPrueba"; 
     }
  	
@@ -154,4 +159,16 @@ public class PruebaController {
 		return "redirect:/prueba/listadoPruebasParaProfesores";
     }
  	
+	
+	
+	@GetMapping("prueba/resultados")
+ 	public String listarResultados(Model model) {
+ 		PruebaAutomaticaDTO prueba = new PruebaAutomaticaDTO();
+ 		
+ 		//List<Tema> temas = pruebaServiciosImpl.obtenerResultados();
+ 		
+		model.addAttribute("pruebaAutomaticaDTO", prueba);
+		
+ 		return "prueba/resultadosDeAlumno";
+ 	}
 }

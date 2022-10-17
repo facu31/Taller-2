@@ -1,6 +1,7 @@
 package com.taller2.model.prueba;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Prueba {
@@ -64,7 +65,7 @@ public class Prueba {
 		this.publicada = publicada;
 	}
 
-	public String calcularResultado() {
+	public Resultado calcularResultado() {
 		int totOk = 0;
 		for(Pregunta preg: preguntas) {
 			if (preg.getTipo() == Pregunta.TIPO_SELECCION) {
@@ -74,7 +75,11 @@ public class Prueba {
 			}
 			
 		}
-		return totOk + " preguntas correctas de un total de " + preguntas.size();
+		
+		Resultado resultado = new Resultado();
+		resultado.setCantPregunasBien(totOk);
+		resultado.setCantPreguntas(preguntas.size());
+		return resultado;
 	}
 	
 }

@@ -4,4 +4,5 @@ import com.taller2.model.Alumno;
 
 public interface AlumnoDAO {
 	public Alumno buncarAlumno(String usuario);
+	
 }
