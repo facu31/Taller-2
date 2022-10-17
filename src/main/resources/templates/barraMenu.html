@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Insert title here</title>
-</head>
+<header>
+<script type="text/javascript">
+	function myFunction() {
+		alert("hola mundo");
+	}
 
+</script>
+</header>
+<head>
+</head>
 
 	<th:block th:fragment="headerBarra">
 		<link rel="stylesheet"
@@ -11,29 +17,52 @@
 			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 			crossorigin="anonymous">
 	</th:block>
-		
 			
-		<div th:fragment="menuVar">
-			<nav class="navbar navbar-expand-lg navbar-blue bg-dark">
-				<a class="navbar-brand" href="#"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div class="navbar-nav">
-						<a class="nav-link" href="/menu">Inicio</a> 
-						<a class="nav-link" href="/prueba/crearPrueba">Prueba nueva</a> 
-						<a class="nav-link" href="/prueba/crearPregunta">Pregunta</a>
-						<a class="nav-link" href="/prueba/listadoPruebasParaProfesores">Listar Pruebas</a>
-						<a class="nav-link" href="/prueba/formularioCrearPruebaAutomatica">Prueba Automatica</a>
-						<a class="nav-link" href="/pregunta/listarPreguntas">Listar preguntas</a>
-						
-					</div>
+	<div th:fragment="menuAlumno">
+		<div th:replace="barraMenu :: headerBarra"></div>
+		<nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+			
+			<!-- Alumno -->
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="/principal">Inicio</a> 
+					<a class="nav-link" href="/prueba/listadoPruebasParaEstudiantes">Realizar Pruebas</a>
+					<a class="nav-link" href="/prueba/resultados">Resultados</a>
 				</div>
-			</nav>
-		</div>
+			</div>
+		</nav>
+	</div>
+	
+	
+	<div th:fragment="menuProfesor">
+		<div th:replace="barraMenu :: headerBarra"></div>
+		<nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+			
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="/principal">Inicio</a> 
+					<a class="nav-link" href="/prueba/crearPrueba">Prueba nueva</a> 
+					<a class="nav-link" href="/prueba/listadoPruebasParaProfesores">Listado de Pruebas</a> 
+					<a class="nav-link" href="/prueba/crearPregunta">Pregunta</a>
+					<a class="nav-link" href="/prueba/formularioCrearPruebaAutomatica">Realizar Prueba Automatica</a>
+					<a class="nav-link" href="/pregunta/listarPreguntas">Listar preguntas</a>
+				</div>
+			</div>
+		</nav>
+	</div>	
+		
+	<div th:fragment="menuAdmin">
+		<div th:replace="barraMenu :: headerBarra"></div>
+		<nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+			
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="/principal">Inicio</a> 
+					<a class="nav-link" href="/profesor/listadoProfesores">Nuevo Profesor</a>
+					<a class="nav-link" href="/alumno/listadoPruebasParaEstudiantes">Nuevo Alumno</a>
+				</div>
+			</div>
+		</nav>
+	</div>
 
 </html>

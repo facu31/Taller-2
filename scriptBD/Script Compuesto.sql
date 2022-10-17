@@ -75,6 +75,15 @@ create table opcionesPreguntas (
     foreign key (idPregunta) references preguntas(id)
 );
 
+create table resultados (
+	idResultado int not null auto_increment primary key,
+    fecha date,
+    idPrueba int not null,
+    cantPreguntas int,
+    cantRespuestasBien int,
+    foreign key (idPrueba) references pruebas(id)
+);
+
 insert into materias (idMateria, descripcion) values (1,"Materia A");
 insert into materias (idMateria, descripcion) values (2,"Materia B");
 insert into materias (idMateria, descripcion) values (3,"Materia C");

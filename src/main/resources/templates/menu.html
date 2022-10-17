@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Menu Estudiantes</title>
+</head>
+
+
+	<div th:if="${usuario == 0}">
+		<div th:replace="barraMenu :: menuAlumno"> </div>		
+		<img src="https://static.vecteezy.com/system/resources/previews/002/173/392/non_2x/student-studying-at-home-free-vector.jpg">
+	</div>
+
+	<div th:if="${usuario == 1}">
+		<div th:replace="barraMenu :: menuProfesor"></div>			
+		<img src="https://i.ytimg.com/vi/3TmYBWOKtLo/maxresdefault.jpg">
+	</div>
+	
+	
+	<div th:if="${usuario == 2}">
+		<div th:replace="barraMenu :: menuAdmin"></div>	
+	</div>
+	
+
+</html>

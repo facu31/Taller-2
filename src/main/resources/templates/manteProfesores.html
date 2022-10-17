@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<div th:replace="barraMenu :: headerBarra"></div>
+
 <meta charset="ISO-8859-1">
 <title>Profesores</title>
 <link rel="stylesheet"
@@ -11,7 +11,7 @@
 </head>
 
 <header>
-<div th:replace="barraMenu :: menuVar"></div>
+	<div th:replace="barraMenu :: menuAdmin"></div>
 </header>
 
 
@@ -29,6 +29,7 @@
     <th>Apellido</th>
     <th>Email</th>
     <th>Direccion</th>
+    <th>Usuario</th>
     <th>Acciones</th>
   </tr>
   </thead>
@@ -39,6 +40,7 @@
         <td th:text="${profesor.apellido}"></td>
         <td th:text="${profesor.email}"></td>
         <td th:text="${profesor.direccion}"></td>
+        <td th:text="${profesor.usuario}"></td>
         <td> <a th:href="@{/showFormForUpdate/{id}(id=${profesor.id})}"
                 class="btn btn-primary">Editar</a>
                 <a th:href="@{/profesor/borrar/{id}(id=${profesor.id})}"

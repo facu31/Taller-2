@@ -1,37 +1,34 @@
 package com.taller2.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.taller2.dto.login.UsuarioDTO;
+import com.taller2.sesion.SesionActiva;
+
 @Controller
 public class MenuController {
 
-	@GetMapping("/menu")
-	public String menu(Model model) {
+	@Autowired
+	private SesionActiva sesion;
+	
+	@GetMapping("/principal")
+	public String principal(Model model) {
 
-		return "Menu";
-
-	}
-
-	@GetMapping("/MenuEstudiante")
-	public String menuEstudiante(Model model) {
-
-		return "MenuEstudiante";
-
-	}
-
-	@GetMapping("/MenuProfesor")
-	public String menuProfesor(Model model) {
-
-		return "MenuProfesor";
+		return "principal";
 
 	}
 	
-	@GetMapping("/MenuAdministrativo")
-	public String menuAdministrativo(Model model) {
-
-		return "MenuAdministrativo";
-
+	@GetMapping("/menu")
+	public String menu(Model model) {
+		model.addAttribute("usuario", sesion.getUsuario().getTipo());
+		
+		if (sesion.isEstudiante() ||sesion.isProfesor() || sesion.isAdmin()) {
+			return "menu";
+		}
+		return "redirect:/login";
 	}
+	
 }

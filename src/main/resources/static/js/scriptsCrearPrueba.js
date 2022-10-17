@@ -30,31 +30,31 @@
 		//realizo una invocación http para enviar al servidor en formato json las preguntas seleccionadas
 		function enviarPreguntas() {
 			var preguntasTabla = $('#tabla-preguntas').tableToJSON();
-			
+		
 			var datosPrueba = {};
 			datosPrueba.titulo = document.getElementById('titulo').value
-			datosPrueba.desc =  document.getElementById('desc').value
+			datosPrueba.desc = document.getElementById('desc').value
 			datosPrueba.preguntas = preguntasTabla;
-			
-			var url = '/prueba/guardarPrueba';
-	
-	if(document.getElementById('titulo').value.length < 2 ){
-    	todo_correcto = false;
-    	alert('Algunos campos no están correctos, vuelva a revisarlos');
-
-}
-else {	
 		
-			
-			fetch(url, {
-				method: "POST",
-				body: JSON.stringify(datosPrueba),
-				headers: { "Content-type": "application/json; charset=UTF-8" }
-			})
-			
-			alert("se guardo la prueba");
-}
-	
+			var url = '/prueba/guardarPrueba';
+		
+			if (document.getElementById('titulo').value.length < 2) {
+				todo_correcto = false;
+				alert('Algunos campos no están correctos, vuelva a revisarlos');
+		
+			}
+			else {
+		
+		
+				fetch(url, {
+					method: "POST",
+					body: JSON.stringify(datosPrueba),
+					headers: { "Content-type": "application/json; charset=UTF-8" }
+				})
+		
+				alert("se guardo la prueba");
+			}
+		
 		}
 	
 		
