@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.taller2.dto.crearprueba.PreguntaDTO;
+import com.taller2.dto.crearprueba.PruebaAutomaticaDTO;
 import com.taller2.dto.crearprueba.PruebaDTO;
-import com.taller2.dto.crearpruebaautomatica.PruebaAutomaticaDTO;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Pregunta;
 import com.taller2.model.prueba.Prueba;
@@ -31,6 +31,8 @@ public class PruebaController {
 	@Autowired
 	private PruebaServiciosImpl pruebaServiciosImpl;
 	
+	@Autowired 
+	private SesionActiva sesion;
 	
 	
  	@GetMapping("prueba/listadoPruebasParaProfesores")
@@ -165,9 +167,9 @@ public class PruebaController {
  	public String listarResultados(Model model) {
  		PruebaAutomaticaDTO prueba = new PruebaAutomaticaDTO();
  		
- 		//List<Tema> temas = pruebaServiciosImpl.obtenerResultados();
+ 		List<Resultado> resultados = pruebaServiciosImpl.obtenerResultados();
  		
-		model.addAttribute("pruebaAutomaticaDTO", prueba);
+		model.addAttribute("resultados", resultados);
 		
  		return "prueba/resultadosDeAlumno";
  	}

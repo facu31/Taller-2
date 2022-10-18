@@ -18,6 +18,11 @@ public class Prueba {
 		
 	}
 	
+	public Prueba(int id, String titulo) {
+		this.id =id;
+		this.titulo =titulo;
+	}
+	
 	public Prueba(int id, String titulo, String desc, int publicada) {
 		this.id = id;
 		this.titulo = titulo;
@@ -77,7 +82,7 @@ public class Prueba {
 		}
 		
 		Resultado resultado = new Resultado();
-		resultado.setCantPregunasBien(totOk);
+		resultado.setCantRespuestasBien(totOk);
 		resultado.setCantPreguntas(preguntas.size());
 		return resultado;
 	}

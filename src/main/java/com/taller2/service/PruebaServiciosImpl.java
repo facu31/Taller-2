@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.taller2.dto.crearprueba.PreguntaDTO;
+import com.taller2.model.Alumno;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
@@ -140,6 +141,11 @@ public class PruebaServiciosImpl implements PruebaServicios {
 		guardarResultado(resultado);
 		
 		return resultado;
+	}
+
+	public List<Resultado> obtenerResultados() {
+		Alumno alumno = alumnoDAO.buncarAlumno(sesion.getUsuario().getIdentificador());
+		return resultadoDAO.obtenerResultados(alumno.getId());
 	}
 
 
