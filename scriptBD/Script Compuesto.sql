@@ -18,6 +18,7 @@ create table profesores (
     contrasenia varchar(50)
 );
 
+
 create table alumnos (
 	id int not null auto_increment primary key,
     nombre varchar(20),
@@ -45,7 +46,9 @@ create table pruebas (
 	id int not null primary key,
     titulo varchar(200),
     descripcion varchar (200),
-    publicada int not null
+    publicada int not null,
+    idProfesor int not null,
+    foreign key (idProfesor) references profesores(id)
 );
 
 create table preguntas (
@@ -86,6 +89,9 @@ create table resultados (
     foreign key (idAlumno) references alumnos(id)
 );
 
+insert into profesores (nombre,usuario,constrasenia) values ("Juan","profesor","p");
+insert into alumnos (nombre,usuario,constrasenia) values ("Pedro","alumno","a");
+
 insert into materias (idMateria, descripcion) values (1,"Materia A");
 insert into materias (idMateria, descripcion) values (2,"Materia B");
 insert into materias (idMateria, descripcion) values (3,"Materia C");
@@ -98,9 +104,9 @@ insert into temas (idTema,idMateria, descripcion) values (4,2,"Tema 4 de materia
 insert into temas (idTema,idMateria, descripcion) values (5,2,"Tema 5 de materia B");
 insert into temas (idTema,idMateria, descripcion) values (6,2,"Tema 6 de materia B");
 
-insert into pruebas (id, titulo, descripcion, publicada) values (1, "Prueba Prog", "Programación 1", 0);
-insert into pruebas (id, titulo, descripcion, publicada) values (2, "Prueba Prog 3", "Programacion 3", 0);
-insert into pruebas (id, titulo, descripcion, publicada) values (3, "Prueba Logica", "Logica", 0);
+insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (1, "Prueba Prog", "Programación 1", 0,1);
+insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (2, "Prueba Prog 3", "Programacion 3", 0, 1);
+insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (3, "Prueba Logica", "Logica", 0, 1);
 
 insert into preguntas (id, tipo, enunciado, idOpcionCorrecta, idTema) values (1, 1, "¿Existe  una opción en eclipse para genearar automaticamente los Getter And Setter?", 1, 1);
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (1,1,"Verdadero");
