@@ -14,6 +14,10 @@ public class Alumno {
 		
 	}
 	
+	public Alumno(int id) {
+		this.id =id;
+	}
+	
 	public Alumno(int id, String nombre, String apellido, String email, String direccion, String usuario, String contrasenia) {
 		super();
 		this.id = id;

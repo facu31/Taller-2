@@ -34,9 +34,10 @@
 			<tbody>
 				<tr th:each="resultado:${resultados}">
 					<td th:text="${resultado.id}"></td>
-					<td th:text="${resultado.enunciado}"></td>
+					<td th:text="${resultado.prueba.titulo}"></td>
 					<td th:text="${resultado.fecha}"></td>
-
+					<td th:text="${resultado.cantPreguntas}"></td>
+					<td th:text="${resultado.cantRespuestasBien}"></td>
 				</tr>
 			</tbody>
 		</table>

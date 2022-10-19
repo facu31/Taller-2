@@ -34,4 +34,13 @@ public class SesionActiva {
 		return usuario.getTipo() == UsuarioActivo.USUARIO_ADMIN? true:false;
 	}
 	
+	
+	public String obtenerIdentificadorUsuarioActivo() {
+		if (this.usuario != null) {
+			return this.getUsuario().getIdentificador();
+		} else {
+			throw new RuntimeException ("No hay sesion activa");
+		}
+	}
+	
 }

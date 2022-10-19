@@ -440,7 +440,25 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 |**Poscondiciones**|Prueba creada correctamente.|
 |**Prioridad** |Alta|
 
-## Diagrama de Clases correspondiente a Iteración I y II.
+## Requerimientos Iteración IV.
+
+1. Como profesor deseo realizar preguntas de tipo respuesta corta, donde se posible ingresar una frase corta como respuesta a una pregunta.
+
+2. Como profesor deseo realizar preguntas de tipo correlación.
+
+3. Como profesor necesito que las pruebas realizadas solo sean visibles por los alumnos cuando las mismas se publiquen.
+
+4. Como profesor necesito ver las preguntas existentes y eliminar las que corresponda.
+
+5. Como profesor necesito ver las pruebas existentes y eliminar las que no corerspondan.
+
+6. Como administrador necesito realizar mantenimiento de Profesores y Alumnos.
+
+7. Como alumno necesito ver los resultados de las pruebas realizadas.
+
+# Documentación de Diseño
+
+## Diagrama de Clases 
 
 ![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
 
@@ -448,16 +466,16 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 ![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
 
-## Diagrama de clases de capa de persistencia finalizada en Iteración III.
+## Diagrama de clases de capa de persistencia 
 
 ![imagen](https://user-images.githubusercontent.com/63823685/190023720-5cca0b0e-760c-4e03-b2ef-1fa29112cc91.png)
 
-## Diagrama de capa de servicios finalizada en Iteración III.
+## Diagrama de capa de servicios 
 
 ![imagen](https://user-images.githubusercontent.com/63823685/190024035-e7e6df79-fdb9-4314-b569-740acf60f1bf.png)
 
 
-## Diagrama de Data Transfer Objects creados en Iteración III.
+## Diagrama de Data Transfer Objects 
 
 ![imagen](https://user-images.githubusercontent.com/63823685/190026565-b8ee987e-a040-4dbd-aceb-da3b616db986.png)
 

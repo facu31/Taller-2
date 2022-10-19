@@ -10,9 +10,21 @@ public class Resultado {
 	private Date fecha;
 	private Prueba prueba;
 	private int cantPreguntas;
-	private int cantPregunasBien;
+	private int cantRespuestasBien;
 	
 	
+	
+	public Resultado() {
+		
+	}
+	public Resultado(int id, Alumno alumno, Date fecha, Prueba prueba, int cantPreguntas, int cantRespuestasBien) {
+		this.id = id;
+		this.alumno = alumno;
+		this.fecha = fecha;
+		this.prueba = prueba;
+		this.cantPreguntas = cantPreguntas;
+		this.cantRespuestasBien = cantRespuestasBien;
+	}
 	public int getId() {
 		return id;
 	}
@@ -43,15 +55,15 @@ public class Resultado {
 	public void setCantPreguntas(int cantPreguntas) {
 		this.cantPreguntas = cantPreguntas;
 	}
-	public int getCantPregunasBien() {
-		return cantPregunasBien;
+	public int getCantRespuestasBien() {
+		return cantRespuestasBien;
 	}
-	public void setCantPregunasBien(int cantPregunasBien) {
-		this.cantPregunasBien = cantPregunasBien;
+	public void setCantRespuestasBien(int cantPregunasBien) {
+		this.cantRespuestasBien = cantPregunasBien;
 	}
 	@Override
 	public String toString() {
-		 return this.getCantPregunasBien()+ " preguntas correctas de un total de " + this.getCantPreguntas();
+		 return this.getCantRespuestasBien()+ " preguntas correctas de un total de " + this.getCantPreguntas();
 	}
 	
 }
