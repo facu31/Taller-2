@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<style>
+.logo img {
+
+  max-width: 100%;
+  height: auto;
+
+}
+</style>
+
 <head>
 <title>Menu Estudiantes</title>
 </head>
@@ -7,12 +17,12 @@
 
 	<div th:if="${usuario == 0}">
 		<div th:replace="barraMenu :: menuAlumno"> </div>		
-		<img src="https://static.vecteezy.com/system/resources/previews/002/173/392/non_2x/student-studying-at-home-free-vector.jpg">
+		<img src="https://static.vecteezy.com/system/resources/previews/003/591/908/non_2x/one-line-drawing-of-young-happy-male-college-student-studying-in-front-of-computer-and-gives-thumbs-up-gesture-graduate-student-concept-education-continuous-line-draw-design-illustration-vector.jpg" >
 	</div>
 
 	<div th:if="${usuario == 1}">
 		<div th:replace="barraMenu :: menuProfesor"></div>			
-		<img src="https://i.ytimg.com/vi/3TmYBWOKtLo/maxresdefault.jpg">
+		<img src="https://static.vecteezy.com/system/resources/previews/006/422/090/non_2x/welcome-back-to-school-with-chalkboard-background-ready-for-study-vector.jpg" width="100%">
 	</div>
 	
 	
