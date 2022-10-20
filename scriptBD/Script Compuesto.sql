@@ -89,8 +89,8 @@ create table resultados (
     foreign key (idAlumno) references alumnos(id)
 );
 
-insert into profesores (nombre,usuario,constrasenia) values ("Juan","profesor","p");
-insert into alumnos (nombre,usuario,constrasenia) values ("Pedro","alumno","a");
+insert into profesores (nombre,usuario,contrasenia) values ("Juan","profesor","p");
+insert into alumnos (nombre,usuario,contrasenia) values ("Pedro","alumno","a");
 
 insert into materias (idMateria, descripcion) values (1,"Materia A");
 insert into materias (idMateria, descripcion) values (2,"Materia B");
