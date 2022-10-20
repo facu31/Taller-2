@@ -74,9 +74,20 @@ public class Prueba {
 		int totOk = 0;
 		for(Pregunta preg: preguntas) {
 			if (preg.getTipo() == Pregunta.TIPO_SELECCION) {
-				if (preg.getIdOpcionIngresada().equals(preg.getIdOpcionCorrecta())) totOk++;
+				if (preg.getIdOpcionIngresada().equals(preg.getIdOpcionCorrecta())) {
+					totOk++;
+				}
 			} else {
-				//if (preg)
+				//preguntas de ingreso de texto libre o correlacion
+				int totOpcionOk = 0;
+				for (Opcion opcion:preg.getOpciones()) {
+					if (opcion.getValorCorrecto().toLowerCase().trim().equals(opcion.getValorIngresado().toLowerCase().trim())) {
+						totOpcionOk ++;
+					}
+				}
+				if (preg.getOpciones().size() == totOpcionOk) {
+					totOk ++;
+				}
 			}
 			
 		}

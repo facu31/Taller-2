@@ -172,6 +172,7 @@ public class PreguntaController {
  		pregunta.setTipo(Pregunta.TIPO_INGRESO);
  		pregunta.setIdOpcionCorrecta(0);
  		pregunta.setIdTema(preguntaDTO.getIdTema());
+ 		
  		pregunta.setOpciones(opciones);
  		
  		

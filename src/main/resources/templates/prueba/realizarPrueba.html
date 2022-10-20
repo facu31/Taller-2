@@ -12,6 +12,17 @@
 <header>
 	<div th:replace="barraMenu :: menuAlumno"></div>
 </header>
+
+									
+<style>
+	#row {
+	  display: flex;
+	  flex-direction: row;
+	  
+	}
+</style>
+
+
 <body>
 
 	<div class="container my-2" align="center">
@@ -19,7 +30,7 @@
 		<h1 th:text="${prueba.titulo}"></h1>
 		<h2 th:text="${prueba.desc}"></h2>
 
-		<table style="width: 80%" border="1"
+		<table style="width: 100%" border="1"
 			class="table table-striped table-responsive-md">
 			<thead class="thead-dark">
 				<tr>
@@ -54,10 +65,14 @@
 										<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
 	
 									</div>
-									
+
 									<div th:if="${pregunta.tipo == 2}">
-										<input type="text" th:value="${opcion.descOpcion}"
-											th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].opciones[__${iteratorOpciones.index}__].valorIngresado}">
+									<label th:text="${opcion.valorCorrecto}"></label>
+										<div id="row">
+											<label th:text="${opcion.descOpcion}" for="ingreso"></label><br>
+											<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].opciones[__${iteratorOpciones.index}__].valorCorrecto}">
+											<input id="ingreso" type="text" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].opciones[__${iteratorOpciones.index}__].valorIngresado}">
+										</div>
 									</div>
 								</div>
 							</td>

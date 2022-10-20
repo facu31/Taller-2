@@ -141,7 +141,7 @@
 		infoGrilla.enunciado = document.getElementById('enunciado').value
 		infoGrilla.idTema = document.getElementById('temasCombo').value;
 		infoGrilla.opciones = data;
-		infoGrilla.opcionCorrecta = opcionSeleccionada;
+		infoGrilla.valorCorrecto = opcionSeleccionada; 
 	
 		if (document.getElementById('enunciado').value.length < 2) {
 			todo_correcto = false;
