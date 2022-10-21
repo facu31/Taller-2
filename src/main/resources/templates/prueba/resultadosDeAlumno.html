@@ -29,6 +29,7 @@
 					<th>Fecha</th>
 					<th>Cantidad preguntas</th>
 					<th>Cantidad preguntas ok</th>
+					<th>Aprobacion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,6 +39,7 @@
 					<td th:text="${resultado.fecha}"></td>
 					<td th:text="${resultado.cantPreguntas}"></td>
 					<td th:text="${resultado.cantRespuestasBien}"></td>
+					<td th:text="${resultado.cantRespuestasBien>=resultado.cantPreguntas-1} ? 'Aprueba' : 'Desaprueba'" />
 				</tr>
 			</tbody>
 		</table>
