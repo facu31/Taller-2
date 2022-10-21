@@ -64,6 +64,7 @@ create table preguntas (
 create table pruebaPreguntas (
 	idPrueba int not null,
     idPregunta int not null,
+    puntaje int not null,
     primary key (idPrueba, idPregunta),
     foreign key (idPrueba) references pruebas(id),
     foreign key (idPregunta) references preguntas(id)
@@ -85,6 +86,8 @@ create table resultados (
     idPrueba int not null,
     cantPreguntas int,
     cantRespuestasBien int,
+    puntajeObtenido int,
+    puntajeMaximoPrueba int,
     foreign key (idPrueba) references pruebas(id),
     foreign key (idAlumno) references alumnos(id)
 );
@@ -104,9 +107,9 @@ insert into temas (idTema,idMateria, descripcion) values (4,2,"Tema 4 de materia
 insert into temas (idTema,idMateria, descripcion) values (5,2,"Tema 5 de materia B");
 insert into temas (idTema,idMateria, descripcion) values (6,2,"Tema 6 de materia B");
 
-insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (1, "Prueba Prog", "Programación 1", 0,1);
+insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (1, "Prueba Prog", "Programación 1", 1,1);
 insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (2, "Prueba Prog 3", "Programacion 3", 0, 1);
-insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (3, "Prueba Logica", "Logica", 0, 1);
+insert into pruebas (id, titulo, descripcion, publicada, idProfesor) values (3, "Prueba Logica", "Logica", 1, 1);
 
 insert into preguntas (id, tipo, enunciado, idOpcionCorrecta, idTema) values (1, 1, "¿Existe  una opción en eclipse para genearar automaticamente los Getter And Setter?", 1, 1);
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (1,1,"Verdadero");
@@ -148,18 +151,18 @@ insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (1,9,"q
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (2,9,"P");
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (3,9,"q");
 
-insert into pruebaPreguntas (idPrueba, idPregunta) values (1,1);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (1,2);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (1,6);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (1,7);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,1,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,2,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,6,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,7,1);
 
-insert into pruebaPreguntas (idPrueba, idPregunta) values (2,1);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (2,6);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (2,7);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (2,1,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (2,6,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (2,7,1);
 
-insert into pruebaPreguntas (idPrueba, idPregunta) values (3,3);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (3,4);
-insert into pruebaPreguntas (idPrueba, idPregunta) values (3,5);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,3,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,4,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,5,1);
 
 
     

@@ -14,6 +14,10 @@ public class Profesor {
 		
 	}
 	
+	public Profesor(int id) {
+		this.id = id;
+	}
+	
 	public Profesor(int id, String nombre, String apellido, String email, String direccion, String usuario, String contrasenia) {
 		super();
 		this.id = id;

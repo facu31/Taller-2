@@ -17,13 +17,21 @@ public class Pregunta {
 	
 	private Integer idOpcionIngresada;
 	
+	public Pregunta(int id, String enunciado, int idOpcCorrecta, int IdTema, int tipo, int puntaje) {
+		this.id = id;
+		this.enunciado = enunciado;
+		this.idOpcionCorrecta = idOpcCorrecta;
+		this.IdTema = IdTema;
+		this.tipo = tipo;
+		this.puntaje = puntaje;
+	}
+	
 	public Pregunta(int id, String enunciado, int idOpcCorrecta, int IdTema, int tipo) {
 		this.id = id;
 		this.enunciado = enunciado;
 		this.idOpcionCorrecta = idOpcCorrecta;
 		this.IdTema = IdTema;
 		this.tipo = tipo;
-		
 	}
 	
 	public Pregunta() {

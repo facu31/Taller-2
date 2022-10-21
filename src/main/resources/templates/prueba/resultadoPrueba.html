@@ -18,7 +18,8 @@
 	<div class="container my-2" align="center">
 
 		<h3>Resultado Prueba</h3>
-		<p th:text="${resultado}"></p>
+		<p th:text="${resultado.cantRespuestasBien} + ' preguntas bien de un total de ' + ${resultado.cantPreguntas}" ></p>
+		<p th:text="'Se obtuvieron ' + ${resultado.puntajeObtenido} + ' puntos de un total de ' + ${resultado.puntajeMaximoPrueba}" ></p>
 
 		<a th:href="@{/prueba/listadoPruebasParaEstudiantes}"> Volver a listado de pruebas</a>
 	</div>

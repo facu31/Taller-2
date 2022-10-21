@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.taller2.dto.crearprueba.PreguntaDTO;
 import com.taller2.model.Alumno;
+import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
@@ -15,6 +16,7 @@ import com.taller2.model.prueba.Prueba;
 import com.taller2.model.prueba.Resultado;
 import com.taller2.model.prueba.Tema;
 import com.taller2.service.dao.AlumnoDAO;
+import com.taller2.service.dao.ProfesorDAO;
 import com.taller2.service.dao.PruebaDAO;
 import com.taller2.service.dao.ResultadoDAO;
 import com.taller2.sesion.SesionActiva;
@@ -29,6 +31,9 @@ public class PruebaServiciosImpl implements PruebaServicios {
 
 	@Autowired
 	AlumnoDAO alumnoDAO;
+	
+	@Autowired
+	ProfesorDAO profesorDAO;
 	
 	@Autowired
 	private SesionActiva sesion;  
@@ -75,13 +80,18 @@ public class PruebaServiciosImpl implements PruebaServicios {
 
 	@Override
 	public void guardarPrueba(Prueba prueba, List<PreguntaDTO> preguntas) {
+		String identificador = sesion.getUsuario().getIdentificador();
+		Profesor profe = profesorDAO.buncarProfesor(identificador);
+		
 		//guardar registro en tabla prueba
 		prueba.setId(pruebaDAO.obtenerIdPrueba());
+		prueba.setProfesor(profe);
 		pruebaDAO.altaPrueba(prueba);
 		
 		//guardar registros en relación
 		for(PreguntaDTO pregunta: preguntas) {
-			pruebaDAO.altaPruebaPreguntas(prueba.getId(), pregunta.getId());
+			pregunta.setPuntos(1);
+			pruebaDAO.altaPruebaPreguntas(prueba.getId(), pregunta.getId(),  pregunta.getPuntos());
 		}
 	}
 

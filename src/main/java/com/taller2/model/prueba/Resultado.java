@@ -11,19 +11,22 @@ public class Resultado {
 	private Prueba prueba;
 	private int cantPreguntas;
 	private int cantRespuestasBien;
-	
-	
+	private int puntajeObtenido;
+	private int puntajeMaximoPrueba;
 	
 	public Resultado() {
 		
 	}
-	public Resultado(int id, Alumno alumno, Date fecha, Prueba prueba, int cantPreguntas, int cantRespuestasBien) {
+	public Resultado(int id, Alumno alumno, Date fecha, Prueba prueba, int cantPreguntas, int cantRespuestasBien,
+			int puntajeObtenido, int puntajeMaximoPrueba) {
 		this.id = id;
 		this.alumno = alumno;
 		this.fecha = fecha;
 		this.prueba = prueba;
 		this.cantPreguntas = cantPreguntas;
 		this.cantRespuestasBien = cantRespuestasBien;
+		this.puntajeObtenido = puntajeObtenido;
+		this.puntajeMaximoPrueba = puntajeMaximoPrueba;
 	}
 	public int getId() {
 		return id;
@@ -61,9 +64,19 @@ public class Resultado {
 	public void setCantRespuestasBien(int cantPregunasBien) {
 		this.cantRespuestasBien = cantPregunasBien;
 	}
-	@Override
-	public String toString() {
-		 return this.getCantRespuestasBien()+ " preguntas correctas de un total de " + this.getCantPreguntas();
+	
+	public int getPuntajeObtenido() {
+		return puntajeObtenido;
 	}
+	public void setPuntajeObtenido(int puntajeObtenido) {
+		this.puntajeObtenido = puntajeObtenido;
+	}
+	public int getPuntajeMaximoPrueba() {
+		return puntajeMaximoPrueba;
+	}
+	public void setPuntajeMaximoPrueba(int puntajeMaximoPrueba) {
+		this.puntajeMaximoPrueba = puntajeMaximoPrueba;
+	}
+	
 	
 }

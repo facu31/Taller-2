@@ -61,7 +61,7 @@
 	
 										<label th:for="${opcion.id}" th:text="${opcion.descOpcion}"></label>
 										<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
-										
+										<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].puntaje}">
 										<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].idOpcionCorrecta}">
 	
 									</div>

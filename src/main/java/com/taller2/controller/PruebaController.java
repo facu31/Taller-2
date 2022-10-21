@@ -60,7 +60,7 @@ public class PruebaController {
     public String corregir(@ModelAttribute("prueba") Prueba prueba, Model model) {
  		Resultado resultado = pruebaServiciosImpl.calcularResultado(prueba);
  		
- 		model.addAttribute("resultado", resultado.toString());
+ 		model.addAttribute("resultado", resultado);
         return "prueba/resultadoPrueba"; 
     }
  	

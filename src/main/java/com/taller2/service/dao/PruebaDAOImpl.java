@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.taller2.model.Profesor;
 import com.taller2.model.prueba.Materia;
 import com.taller2.model.prueba.Opcion;
 import com.taller2.model.prueba.Pregunta;
@@ -38,8 +39,9 @@ public class PruebaDAOImpl implements PruebaDAO{
 		                rs.getInt("id"),
 		                rs.getString("titulo"),
 		                rs.getString("descripcion"),
-		                rs.getInt("publicada")
-		        ));
+		                rs.getInt("publicada"),
+		                new Profesor(rs.getInt("idProfesor")
+		        )));
 	}
 
 	@Override
@@ -53,7 +55,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 		                rs.getInt("id"),
 		                rs.getString("titulo"),
 		                rs.getString("descripcion"),
-		                rs.getInt("publicada")
+		                rs.getInt("publicada"),
+		                new Profesor(rs.getInt("idProfesor"))
 		        ));
 	}
 	
@@ -68,13 +71,14 @@ public class PruebaDAOImpl implements PruebaDAO{
 		                rs.getInt("id"),
 		                rs.getString("titulo"),
 		                rs.getString("descripcion"),
-		                rs.getInt("publicada")
+		                rs.getInt("publicada"),
+		                new Profesor(rs.getInt("idProfesor"))
 		        ));
 	}
 	
 	@Override
 	public List<Pregunta> obtenerPreguntas(int idPrueba) {
-		String sql = "SELECT p.id, p.enunciado, p.idOpcionCorrecta, p.idTema, p.tipo "
+		String sql = "SELECT p.id, p.enunciado, p.idOpcionCorrecta, p.idTema, p.tipo, pp.puntaje "
 				+ " FROM taller2.pruebaPreguntas as pp, taller2.preguntas as p "
 				+ " WHERE pp.idPregunta = p.id and pp.idPrueba = :idPrueba";
 
@@ -89,7 +93,8 @@ public class PruebaDAOImpl implements PruebaDAO{
 						rs.getString("enunciado"), 
 						rs.getInt("idOpcionCorrecta"),
 						rs.getInt("idTema"),
-						rs.getInt("tipo")));
+						rs.getInt("tipo"),
+						rs.getInt("puntaje")));
 
 	}
 
@@ -221,19 +226,21 @@ public class PruebaDAOImpl implements PruebaDAO{
 	}
 
 	@Override
-	public void altaPruebaPreguntas(int idPrueba, int idPregunta) {
-		jdbcTemplate.update("INSERT INTO taller2.pruebaPreguntas (idPrueba, idPregunta) values (?,?)",
+	public void altaPruebaPreguntas(int idPrueba, int idPregunta, int puntos) {
+		jdbcTemplate.update("INSERT INTO taller2.pruebaPreguntas (idPrueba, idPregunta, puntaje) values (?,?, ?)",
 				idPrueba,
-				idPregunta);
+				idPregunta,
+				puntos);
 	}
 
 	@Override
 	public void altaPrueba(Prueba prueba) {
-		jdbcTemplate.update("INSERT INTO taller2.pruebas (id, titulo, descripcion, publicada) values (?,?,?,?)",
+		jdbcTemplate.update("INSERT INTO taller2.pruebas (id, titulo, descripcion, publicada, idProfesor) values (?,?,?,?,?)",
 				prueba.getId(),
 				prueba.getTitulo(),
 				prueba.getDesc(),
-				prueba.getPublicada());
+				prueba.getPublicada(),
+				prueba.getProfesor().getId());
 	}
 
 	@Override

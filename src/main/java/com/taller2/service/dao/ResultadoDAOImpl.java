@@ -24,18 +24,21 @@ public class ResultadoDAOImpl implements ResultadoDAO{
 	@Override
 	public void grabarResultado(Resultado resultado) {
 		String sql = "INSERT INTO taller2.resultados "
-				+ "(idAlumno, fecha, idPrueba, cantPreguntas, cantRespuestasBien) values (?,?,?,?,?)";
+				+ "(idAlumno, fecha, idPrueba, cantPreguntas, cantRespuestasBien, puntajeObtenido, puntajeMaximoPrueba) values (?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql,
 				resultado.getAlumno().getId(),
 				resultado.getFecha(),
 				resultado.getPrueba().getId(),
 				resultado.getCantPreguntas(),
-				resultado.getCantRespuestasBien());
+				resultado.getCantRespuestasBien(),
+				resultado.getPuntajeObtenido(),
+				resultado.getPuntajeMaximoPrueba());
 	}
 
 	@Override
 	public List<Resultado> obtenerResultados(int id) {
-		String sql = "SELECT r.idResultado, r.idAlumno, r.idPrueba, r.fecha, p.titulo, r.cantPreguntas, r.cantRespuestasBien "
+		String sql = "SELECT r.idResultado, r.idAlumno, r.idPrueba, r.fecha, p.titulo, r.cantPreguntas, r.cantRespuestasBien, "
+				+ " r.puntajeObtenido, r.puntajeMaximoPrueba "
 				+ " FROM taller2.resultados as r, taller2.pruebas as p "
 				+ " WHERE r.idPrueba= p.id and "
 				+ " r.idAlumno= :idAlumno";
@@ -52,7 +55,9 @@ public class ResultadoDAOImpl implements ResultadoDAO{
 						rs.getDate("fecha"),
 						new Prueba(rs.getInt("idPrueba"), rs.getString("titulo")),
 						rs.getInt("cantPreguntas"),
-						rs.getInt("cantRespuestasBien")));
+						rs.getInt("cantRespuestasBien"),
+						rs.getInt("puntajeObtenido"),
+						rs.getInt("puntajeMaximoPrueba")));
 
 	}
 	
