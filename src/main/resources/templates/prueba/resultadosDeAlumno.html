@@ -39,7 +39,7 @@
 					<td th:text="${resultado.fecha}"></td>
 					<td th:text="${resultado.cantPreguntas}"></td>
 					<td th:text="${resultado.cantRespuestasBien}"></td>
-					<td th:text="${resultado.cantRespuestasBien>=resultado.cantPreguntas-1} ? 'Aprueba' : 'Desaprueba'" />
+					<td th:text="${resultado.cantRespuestasBien>(resultado.cantPreguntas/2)} ? 'Aprueba' : 'Desaprueba'" />
 				</tr>
 			</tbody>
 		</table>
