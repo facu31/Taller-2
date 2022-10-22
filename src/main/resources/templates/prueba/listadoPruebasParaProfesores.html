@@ -26,7 +26,7 @@
 					<th>Id</th>
 					<th>Titulo</th>
 					<th>Descripcion</th>
-					<th>Publicada</th>
+					<th>Estado</th>
 					<th>Accion</th>
 				</tr>
 			</thead>
@@ -35,7 +35,7 @@
 					<td th:text="${prueba.id}"></td>
 					<td th:text="${prueba.titulo}"></td>
 					<td th:text="${prueba.desc}"></td>
-					<td th:text="${prueba.publicada}"></td>
+					<td th:text="${prueba.publicada>=(1)} ? 'Publicada' : 'Sin Publicar'" />
 					
 					<td>
 						<a th:href="@{/prueba/publicar/{id}(id=${prueba.id})}" class="btn-sm btn-primary">Publicar</a>
