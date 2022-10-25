@@ -42,8 +42,14 @@ public class ProfesorController {
 	
 	@GetMapping("/profesor/borrar/{id}")
     public String borrarProfesor(@PathVariable(value = "id") int id, Model model) {
-		profesorServiciosImpl.borrarProfesor(id);
-
+		try {
+			profesorServiciosImpl.borrarProfesor(id);
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			model.addAttribute("mensaje", "No se puede borrar un profesor que haya creado pruebas.");
+			return "error/error";
+		}
 		 return "redirect:/profesor/listadoProfesores";
     }
 	

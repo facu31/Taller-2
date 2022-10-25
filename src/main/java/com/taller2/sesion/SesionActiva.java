@@ -7,6 +7,11 @@ import org.springframework.web.context.annotation.SessionScope;
 @SessionScope
 public class SesionActiva {
 	private UsuarioActivo usuario;
+	
+	public SesionActiva() {
+		UsuarioActivo usr =new UsuarioActivo("profesor", UsuarioActivo.USUARIO_PROFESOR);
+		this.usuario = usr;
+	}
 
 	public UsuarioActivo getUsuario() {
 		return usuario;

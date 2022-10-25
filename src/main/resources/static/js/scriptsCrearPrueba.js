@@ -12,10 +12,11 @@
 		function agregarPregunta(idPreg, enunciado) {
 			var colId = '<td>' + idPreg + '</td>';
 			var colEnunciado = '<td>' + enunciado + '</td>';
-			var colNotas = '<td> <input type="text" size="2" value="1"></td>';
+			var colNotas = '<td> <input id="' +idPreg +'" type="text" size="2" value="" onchange ="cargarCelda(this)"></td>';
+			var colNotas2 = '<td id="td'+ idPreg +'">1</td>';
 			var botonBorrar = '<td><a class="btn btn-danger btn-sm" id="botonBorrar" onclick="quitar(this)">Quitar</a></td>'
 
-			var fila = '<tr>' + colId + colEnunciado + colNotas + botonBorrar + '</tr>';
+			var fila = '<tr>' + colId + colEnunciado + colNotas + colNotas2 + botonBorrar + '</tr>';
 
 			//agrega fila a la tabla
 			$('#tabla-preguntas tr:last').after(fila);
@@ -36,7 +37,11 @@
 			datosPrueba.desc = document.getElementById('desc').value
 			datosPrueba.preguntas = preguntasTabla;
 		
+			//alert( JSON.stringify(datosPrueba));
+			
 			var url = '/prueba/guardarPrueba';
+			
+			
 		
 			if (document.getElementById('titulo').value.length < 2) {
 				todo_correcto = false;
@@ -55,6 +60,12 @@
 				alert("se guardo la prueba");
 			}
 		
+		}
+		
+		function cargarCelda(cuadroTexto) {
+			var idCuadroTexto = cuadroTexto.id;
+			var x = document.getElementById("td"+idCuadroTexto);
+			x.innerHTML = cuadroTexto.value;
 		}
 	
 		

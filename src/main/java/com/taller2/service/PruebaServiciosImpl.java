@@ -90,7 +90,6 @@ public class PruebaServiciosImpl implements PruebaServicios {
 		
 		//guardar registros en relación
 		for(PreguntaDTO pregunta: preguntas) {
-			pregunta.setPuntos(1);
 			pruebaDAO.altaPruebaPreguntas(prueba.getId(), pregunta.getId(),  pregunta.getPuntos());
 		}
 	}
