@@ -8,10 +8,14 @@ import org.springframework.web.context.annotation.SessionScope;
 public class SesionActiva {
 	private UsuarioActivo usuario;
 	
+	/* Con esta linea podemos hackear la session para que se mantenga siempre activa, creando un constructor para profesor y no tener que logearnos
+	 * cada vez que realizemos un testing
+	
 	public SesionActiva() {
 		UsuarioActivo usr =new UsuarioActivo("profesor", UsuarioActivo.USUARIO_PROFESOR);
 		this.usuario = usr;
 	}
+	*/
 
 	public UsuarioActivo getUsuario() {
 		return usuario;
