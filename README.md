@@ -474,24 +474,29 @@ siguientes capas lógicas:
 
 ## Diagrama de Clases 
 
-![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
+Los diagramas de clases se presentan separados por capas lógicas para facilitar su interpretación.
 
-## Diagrama de Clases Dominio
+## Diagrama de clases del Dominio
 
-![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
+![imagen](https://user-images.githubusercontent.com/63823685/198405948-9202137b-2a58-4211-a883-56a42f9ec344.png)
 
-## Diagrama de clases de capa de persistencia 
+Nota: para mejorar la legibilidad del mismo, solo se incluye la información más relevante de cada clase.
 
-![imagen](https://user-images.githubusercontent.com/63823685/190023720-5cca0b0e-760c-4e03-b2ef-1fa29112cc91.png)
+## Diagrama de clases Persistencia 
 
-## Diagrama de capa de servicios 
-
-![imagen](https://user-images.githubusercontent.com/63823685/190024035-e7e6df79-fdb9-4314-b569-740acf60f1bf.png)
+![imagen](https://user-images.githubusercontent.com/63823685/198406148-fec561d2-a177-4d69-a27f-06db2da6945f.png)
 
 
-## Diagrama de Data Transfer Objects 
+## Diagrama de capa de Servicios 
 
-![imagen](https://user-images.githubusercontent.com/63823685/190026565-b8ee987e-a040-4dbd-aceb-da3b616db986.png)
+![imagen](https://user-images.githubusercontent.com/63823685/198406210-95461701-45de-427b-aca1-86ee40972ecb.png)
+
+
+## Diagrama de clases de Controladores
+
+![imagen](https://user-images.githubusercontent.com/63823685/198406857-c69da806-8169-41e0-be38-94bc28b2ded5.png)
+
+
 
 
 ## Base de Datos
