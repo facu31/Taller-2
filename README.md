@@ -458,6 +458,20 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 
 # Documentación de Diseño
 
+El siguiente diagrama describe la arquitectura general de la aplicación. La misma consiste en una arquitectura estándar de tres capas físicas las cuales ejecutan en máquinas separadas. La capa Cliente corresponde al browser y es la encargada de interactuar directamente con el usuario.
+La capa de Aplicación es un servidor Web donde reside la lógica del negocio. Finalmente la tercer capa fìsica la integra el servidor de base de datos relacional.
+
+Dentro de la capa física de Aplicación, podemos encontrar varias capas lógicas las cuales siguen patrones de diseño estándares. Podemos observar las 
+siguientes capas lógicas:
+
+- Vista: está formada por archivos html, javascript y css.
+- Modelo: contine la lógica de la aplicación
+- Controlador: implementa los puntos de entrada de las peticiones http, 
+- Service: contiene la lógica de los casos de usos, es la encargada de usar las clases del modelo y gestionar su persistencia.
+- DataAccesObject: encapsulan el acceso a la base de datos, en las misma se encuentran las sentencias SQL que se ejecutan
+
+![imagen](https://user-images.githubusercontent.com/63823685/198401759-91c472b3-b39c-4513-9d46-af628c75a344.png)
+
 ## Diagrama de Clases 
 
 ![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
