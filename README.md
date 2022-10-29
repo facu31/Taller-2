@@ -501,13 +501,16 @@ Nota: para mejorar la legibilidad del mismo, solo se incluye la información má
 
 ## Base de Datos
 
- ## MER
-![image](https://github.com/facu31/Taller-2/blob/6e2ca318da75abaa07c10b0f4f1ce96681e6333d/Recursos/MER.png)
+ ## MER Solo entidades y relaciones.
+![image](https://github.com/facu31/Taller-2/blob/a6e0c09e1002773fc133fb0aaef6f902d6eacff9/Recursos/Mer%20Sin%20Atributos.png)
 
-https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
+## MER Completo
 
+## En Proceso
 
 ### Normalización.
+
+https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
 
 Se cumple con la primera forma normal ya que:
 - todos los atributos son atómicos
