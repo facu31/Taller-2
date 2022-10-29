@@ -525,7 +525,7 @@ Consideramos que la tercera formal normal se adapta a los requerimientos de norm
 Tablas:
 
 ![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/TablasBdTaller2.PNG)
-![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas2BdTaller2.PNG)
+ ![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas2BdTaller2.PNG)
 ![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas3BdTaller2.PNG)
 
 
