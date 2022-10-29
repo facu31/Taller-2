@@ -532,6 +532,9 @@ Tablas:
 
 ![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
 
-.
+
+Manual de Usuario :
+
+https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
 
 
