@@ -501,13 +501,9 @@ Nota: para mejorar la legibilidad del mismo, solo se incluye la información má
 
 ## Base de Datos
 
- ## MER Solo entidades y relaciones.
- 
-![image](https://github.com/facu31/Taller-2/blob/d1e9f07b1b0e0e8b93e36879ee6eaf3ae246e4e1/Recursos/mer.PNG)
+## MER 
 
-## MER Completo
-
-![image](https://github.com/facu31/Taller-2/blob/b218160a1492ee3542963d5e239ba26fb79ca0ea/Recursos/Mer%20Final.PNG)
+![image](https://github.com/facu31/Taller-2/blob/5b6e58da4eb3dcbe8208fd0939222fe43f6522db/Recursos/Mer%20Final.PNG)
 
 ### Normalización.
 
