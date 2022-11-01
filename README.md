@@ -502,7 +502,8 @@ Nota: para mejorar la legibilidad del mismo, solo se incluye la información má
 ## Base de Datos
 
  ## MER Solo entidades y relaciones.
-![image](https://github.com/facu31/Taller-2/blob/a6e0c09e1002773fc133fb0aaef6f902d6eacff9/Recursos/Mer%20Sin%20Atributos.png)
+ 
+![image](https://github.com/facu31/Taller-2/blob/d1e9f07b1b0e0e8b93e36879ee6eaf3ae246e4e1/Recursos/mer.PNG)
 
 ## MER Completo
 
