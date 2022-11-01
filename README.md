@@ -507,7 +507,7 @@ Nota: para mejorar la legibilidad del mismo, solo se incluye la información má
 
 ## MER Completo
 
-## En Proceso
+![image](https://github.com/facu31/Taller-2/blob/b218160a1492ee3542963d5e239ba26fb79ca0ea/Recursos/Mer%20Final.PNG)
 
 ### Normalización.
 
