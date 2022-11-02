@@ -538,6 +538,44 @@ Tablas:
    ![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas2BdTaller2.PNG)
 ![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas3BdTaller2.PNG)
 
+# Deploy de la aplicación
+
+Con el objetivo de dejar la aplicación ejecutando en un servidor que pudiera ser accedido desde Internet, se utilizaron los servicios de Amazon Web Services.
+
+Dicha compañía ofrece servicios de infraestructura (Plataform As A Service)  los cuales pueden ser contratados para deployar aplicaciones de diversos tipos.
+
+A continuación se resumen los pasos seguidos para deployar la aplicación.
+
+Nota: Los mismos no pretenden ser una guía completa, solo un resumen general de lo realizado. La información completa de como crear/configurar el servidor de aplicaciones y de datos es provista por Amazon, siendo necesario estudiar la misma.
+
+1) Creamos una cuenta gratis por un año, en AWS.
+2) Siguiendo la documentación de Amazon, creamos una instancia de un servidor de aplicaciones denominada taller2-server
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623285-5c4b68e7-1ced-4861-880e-2f0f1b54ca6a.png)
+
+3) Siguiendo la documentación de Amazon, creamos una instancia del servidor de base de datos denominada: taller2
+4) Vinculamos ambas instancias creando una Virtual Private Cloud.
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623026-11785f2f-d730-4395-a55a-57f4f59ac8ab.png)
+
+5) Instalamos en el servidor de aplicaciones la versión de java que se utilizó para desarrollar la aplicación.
+6) Copiamos el .jar que contiene la aplicación realizada, al servidor de aplicaciones.
+7) Creamos la base de datos en el servidor de base de datos, ejecutando el script de creación que se encuentra en el repositorio (/scriptBD/Script Compuesto.sql)
+8) Ejecutamos la aplicación sobreescribiendo las propiedades que cambian respecto al ambiente de desarrollo local.
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623134-a9260f8a-f227-4c1f-a54b-bce658f90b96.png)
+
+Para acceder a las mismas se debe utilizar cualquiera de las siguientes direcciones:
+
+http://15.229.10.212:8080/principal
+
+http://ec2-15-229-10-212.sa-east-1.compute.amazonaws.com:8080/principal
+
+## Diagrama de deploy.
+
+El Diagrama de deploy quedò conformado de la siguiente forma:
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623399-d3e0280a-9919-4427-a2a9-192a63a7f265.png)
 
 Manual de Usuario :
 
