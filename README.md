@@ -534,3 +534,8 @@ Manual de Usuario :
 https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
 
 
+## Link para ingresar al AWS
+
+http://15.229.10.212:8080/principal
+
+
