@@ -17,6 +17,15 @@ Composición grupo de trabajo:
 -Facundo Olaizola.
 -Javier Balado
 
+# Pautas Principales :
+
+**Se solicita realizar un repositorio de evaluaciones para una institución educativa, en el cual los docentes
+almacenan pruebas de diferentes tipos que los estudiantes pueden realizar. El sistema debe permitir el
+ingreso de pruebas por parte de los docentes, la realización de dicha pruebas por parte de los alumnos y
+la calificación en linea de éstas.
+El sistema deberá ser construido en Java, respetando los principios de la POO. La interface deberá ser
+web (se sugiere investigar el Framework Spring para Java). Se deberá justificar el diseño arquitectónico
+usado. El control de versiones se debe hacer con Github.
 
 # Justificación de metodología de desarrollo.
 
