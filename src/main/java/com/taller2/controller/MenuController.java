@@ -23,12 +23,15 @@ public class MenuController {
 	
 	@GetMapping("/menu")
 	public String menu(Model model) {
-		model.addAttribute("usuario", sesion.getUsuario().getTipo());
-		
-		if (sesion.isEstudiante() ||sesion.isProfesor() || sesion.isAdmin()) {
-			return "menu";
+		if (sesion.getUsuario() != null)  {
+			model.addAttribute("usuario", sesion.getUsuario().getTipo());
+			if (sesion.isEstudiante() ||sesion.isProfesor() || sesion.isAdmin()) {
+				return "menu";
+			}
+			return "redirect:/login";
 		}
 		return "redirect:/login";
+		
 	}
 	
 }

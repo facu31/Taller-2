@@ -15,6 +15,10 @@ public class Materia {
 		this.desc = desc;
 	}
 	
+	public Materia(int idMateria) {
+		this.id = idMateria;
+	}
+	
 	public int getId() {
 		return id;
 	}

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 public class OpcionCorrelacionDTO {
 	@JsonAlias("Opcion")
 	private String enunciado;
+	
+	@JsonAlias("Valor Correcto")
 	private String valorCorrecto;
 	
 	public String getEnunciado() {

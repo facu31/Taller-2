@@ -4,6 +4,7 @@ public class PreguntaCorrelacionDTO {
 	private String enunciado;
 	private int idTema;
 	private OpcionCorrelacionDTO[] opciones;
+	
 	public String getEnunciado() {
 		return enunciado;
 	}

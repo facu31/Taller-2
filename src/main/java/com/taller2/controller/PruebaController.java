@@ -169,6 +169,11 @@ public class PruebaController {
  		
  		List<Resultado> resultados = pruebaServiciosImpl.obtenerResultados();
  		
+ 		for (Resultado res: resultados) { 			
+ 			 int por = (res.getCantRespuestasBien() * 100) /  res.getCantPreguntas();
+ 			 res.setPorcentaje(por);
+ 		}
+ 		
 		model.addAttribute("resultados", resultados);
 		
  		return "prueba/resultadosDeAlumno";

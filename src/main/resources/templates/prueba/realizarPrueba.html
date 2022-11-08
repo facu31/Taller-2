@@ -67,10 +67,12 @@
 									</div>
 
 									<div th:if="${pregunta.tipo == 2}">
-									<label th:text="${opcion.valorCorrecto}"></label>
+									
 										<div id="row">
 											<label th:text="${opcion.descOpcion}" for="ingreso"></label><br>
+											<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].id}">
 											<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].opciones[__${iteratorOpciones.index}__].valorCorrecto}">
+											<input type="hidden" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].puntaje}">
 											<input id="ingreso" type="text" th:field="${prueba.preguntas[__${iteratorPreguntas.index}__].opciones[__${iteratorOpciones.index}__].valorIngresado}">
 										</div>
 									</div>

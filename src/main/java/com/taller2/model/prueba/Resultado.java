@@ -13,6 +13,7 @@ public class Resultado {
 	private int cantRespuestasBien;
 	private int puntajeObtenido;
 	private int puntajeMaximoPrueba;
+	private int porcentaje;
 	
 	public Resultado() {
 		
@@ -77,6 +78,13 @@ public class Resultado {
 	public void setPuntajeMaximoPrueba(int puntajeMaximoPrueba) {
 		this.puntajeMaximoPrueba = puntajeMaximoPrueba;
 	}
+	public int getPorcentaje() {
+		return porcentaje;
+	}
+	public void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+	
 	
 	
 }

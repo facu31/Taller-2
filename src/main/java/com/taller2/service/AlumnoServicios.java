@@ -8,4 +8,5 @@ public interface AlumnoServicios
 {
 	public List<Alumno> obtenerAlumnos();
 	public void grabar(Alumno alumno);
+	void borrarAlumno(int id);
 }

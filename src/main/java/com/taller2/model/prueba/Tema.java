@@ -14,6 +14,12 @@ public class Tema {
 		this.desc = desc;
 	}
 	
+	public Tema(int id, String desc, int idMateria) {
+		this.id = id;
+		this.desc = desc;
+		this.materia =new Materia(idMateria);
+	}
+	
 	public int getId() {
 		return id;
 	}
