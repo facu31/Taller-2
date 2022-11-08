@@ -7,6 +7,7 @@
 ![GitHub Actions Status Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![GitHub Actions Status Badge](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white=)
 ![GitHub Actions Status Badge](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![GitHub Actions Status Badge](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 
 
 Composición grupo de trabajo:
@@ -16,6 +17,15 @@ Composición grupo de trabajo:
 -Facundo Olaizola.
 -Javier Balado
 
+# Pautas Principales :
+
+Se solicita realizar un repositorio de evaluaciones para una institución educativa, en el cual los docentes
+almacenan pruebas de diferentes tipos que los estudiantes pueden realizar. El sistema debe permitir el
+ingreso de pruebas por parte de los docentes, la realización de dicha pruebas por parte de los alumnos y
+la calificación en linea de éstas.
+El sistema deberá ser construido en Java, respetando los principios de la POO. La interface deberá ser
+web (se sugiere investigar el Framework Spring para Java). Se deberá justificar el diseño arquitectónico
+usado. El control de versiones se debe hacer con Github.
 
 # Justificación de metodología de desarrollo.
 
@@ -474,35 +484,40 @@ siguientes capas lógicas:
 
 ## Diagrama de Clases 
 
-![image](https://github.com/facu31/Taller-2/blob/3fd981303978179d207ce3504ef2d9dcc3a0a2b4/Recursos/Diagrama%20Clases%20Iteracion%202.png)
+Los diagramas de clases se presentan separados por capas lógicas para facilitar su interpretación.
 
-## Diagrama de Clases Dominio
+## Diagrama de clases del Dominio
 
-![image](https://github.com/facu31/Taller-2/blob/c77a2a1af4bad971677e5a9ff401ab942f47318b/Recursos/clases%20java%20Iteracion%202.png)
+![imagen](https://user-images.githubusercontent.com/63823685/198405948-9202137b-2a58-4211-a883-56a42f9ec344.png)
 
-## Diagrama de clases de capa de persistencia 
+Nota: para mejorar la legibilidad del mismo, solo se incluye la información más relevante de cada clase.
 
-![imagen](https://user-images.githubusercontent.com/63823685/190023720-5cca0b0e-760c-4e03-b2ef-1fa29112cc91.png)
+## Diagrama de clases Persistencia 
 
-## Diagrama de capa de servicios 
-
-![imagen](https://user-images.githubusercontent.com/63823685/190024035-e7e6df79-fdb9-4314-b569-740acf60f1bf.png)
+![imagen](https://user-images.githubusercontent.com/63823685/198406148-fec561d2-a177-4d69-a27f-06db2da6945f.png)
 
 
-## Diagrama de Data Transfer Objects 
+## Diagrama de capa de Servicios 
 
-![imagen](https://user-images.githubusercontent.com/63823685/190026565-b8ee987e-a040-4dbd-aceb-da3b616db986.png)
+![imagen](https://user-images.githubusercontent.com/63823685/198406210-95461701-45de-427b-aca1-86ee40972ecb.png)
+
+
+## Diagrama de clases de Controladores
+
+![imagen](https://user-images.githubusercontent.com/63823685/198406857-c69da806-8169-41e0-be38-94bc28b2ded5.png)
+
+
 
 
 ## Base de Datos
 
- ## MER
-![image](https://github.com/facu31/Taller-2/blob/6e2ca318da75abaa07c10b0f4f1ce96681e6333d/Recursos/MER.png)
+## MER 
 
-https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
-
+![image](https://github.com/facu31/Taller-2/blob/0058c5aafd513c92732e0664fff04f58935ad91d/Recursos/Mer%20final%20final%20con%20todas%20las%20correciones.PNG)
 
 ### Normalización.
+
+https://docs.google.com/document/d/15icsfiCMgK78Dn9lxBwymvwFUJBs4e7JnBscCCyprAA/edit?usp=sharing
 
 Se cumple con la primera forma normal ya que:
 - todos los atributos son atómicos
@@ -519,14 +534,52 @@ Consideramos que la tercera formal normal se adapta a los requerimientos de norm
 
 Tablas:
 
-![imagen](https://user-images.githubusercontent.com/63823685/190274886-f043d4a1-51a7-4be8-b7ad-faff0fdd937c.png)
-![imagen](https://user-images.githubusercontent.com/63823685/190274944-8ae65628-7baa-4973-81f4-9e3efe9514dc.png)
+![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/TablasBdTaller2.PNG)
+   ![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas2BdTaller2.PNG)
+![imagen](https://github.com/facu31/Taller-2/blob/5e05849dcafd8f350ccc7dd62979590fbac6e01b/Recursos/Tablas3BdTaller2.PNG)
 
+# Deploy de la aplicación
 
-## BD MySql
+Con el objetivo de dejar la aplicación ejecutando en un servidor que pudiera ser accedido desde Internet, se utilizaron los servicios de Amazon Web Services.
 
-![image](https://github.com/facu31/Taller-2/blob/1d40fe25cfb038cacb95dc800c7192f0f738f465/Recursos/Data%20base%20Iteracion%20II.png)
+Dicha compañía ofrece servicios de infraestructura (Plataform As A Service)  los cuales pueden ser contratados para deployar aplicaciones de diversos tipos.
 
-.
+A continuación se resumen los pasos seguidos para deployar la aplicación.
+
+Nota: Los mismos no pretenden ser una guía completa, solo un resumen general de lo realizado. La información completa de como crear/configurar el servidor de aplicaciones y de datos es provista por Amazon, siendo necesario estudiar la misma.
+
+1) Creamos una cuenta gratis por un año, en AWS.
+2) Siguiendo la documentación de Amazon, creamos una instancia de un servidor de aplicaciones denominada taller2-server
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623285-5c4b68e7-1ced-4861-880e-2f0f1b54ca6a.png)
+
+3) Siguiendo la documentación de Amazon, creamos una instancia del servidor de base de datos denominada: taller2
+4) Vinculamos ambas instancias creando una Virtual Private Cloud.
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623026-11785f2f-d730-4395-a55a-57f4f59ac8ab.png)
+
+5) Instalamos en el servidor de aplicaciones la versión de java que se utilizó para desarrollar la aplicación.
+6) Copiamos el .jar que contiene la aplicación realizada, al servidor de aplicaciones.
+7) Creamos la base de datos en el servidor de base de datos, ejecutando el script de creación que se encuentra en el repositorio (/scriptBD/Script Compuesto.sql)
+8) Ejecutamos la aplicación sobreescribiendo las propiedades que cambian respecto al ambiente de desarrollo local.
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623134-a9260f8a-f227-4c1f-a54b-bce658f90b96.png)
+
+Para acceder a las mismas se debe utilizar cualquiera de las siguientes direcciones:
+
+http://15.229.10.212:8080/principal
+
+http://ec2-15-229-10-212.sa-east-1.compute.amazonaws.com:8080/principal
+
+## Diagrama de deploy.
+
+El Diagrama de deploy quedò conformado de la siguiente forma:
+
+![imagen](https://user-images.githubusercontent.com/63823685/199623399-d3e0280a-9919-4427-a2a9-192a63a7f265.png)
+
+Manual de Usuario :
+
+https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
+
 
 
