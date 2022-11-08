@@ -513,7 +513,7 @@ Nota: para mejorar la legibilidad del mismo, solo se incluye la información má
 
 ## MER 
 
-![image](https://github.com/facu31/Taller-2/blob/1724bdcd14b551f3388a22380abeaa071e092a26/Recursos/Mer%20Final.PNG)
+![image](https://github.com/facu31/Taller-2/blob/0058c5aafd513c92732e0664fff04f58935ad91d/Recursos/Mer%20final%20final%20con%20todas%20las%20correciones.PNG)
 
 ### Normalización.
 
