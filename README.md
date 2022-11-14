@@ -581,5 +581,12 @@ Manual de Usuario :
 
 https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
 
+## Pendientes 
+
+| -------------- |
+|Editar Alumnos|
+||No ingresar usuarios repetidos|
+
+
 
 
