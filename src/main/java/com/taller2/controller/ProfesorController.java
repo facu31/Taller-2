@@ -28,8 +28,14 @@ public class ProfesorController {
     }
 	
 	@PostMapping("/profesor/saveProfesor")
-    public String saveEmployee(@ModelAttribute("profesor") Profesor profesor) {
+    public String saveProfesor(@ModelAttribute("profesor") Profesor profesor) {
         profesorServiciosImpl.grabar(profesor);
+        return "redirect:/profesor/listadoProfesores";
+    }
+	
+	@PostMapping("/profesor/updateProfesor")
+    public String updateProfesor(@ModelAttribute("profesor") Profesor profesor) {
+        profesorServiciosImpl.actualizar(profesor);
         return "redirect:/profesor/listadoProfesores";
     }
 	
@@ -50,7 +56,16 @@ public class ProfesorController {
 			model.addAttribute("mensaje", "No se puede borrar un profesor que haya creado pruebas.");
 			return "error/error";
 		}
-		 return "redirect:/profesor/listadoProfesores";
+		return "redirect:/profesor/listadoProfesores";
     }
+	
+	@GetMapping("/profesor/editar/{id}")
+    public String editarProfesor(@PathVariable(value = "id") int id, Model model) {
+		Profesor profesor = profesorServiciosImpl.buscarProfesor(id); 
+		model.addAttribute("profesor", profesor);
+        return "editarProfesor";
+	}
+	
+
 	
 }

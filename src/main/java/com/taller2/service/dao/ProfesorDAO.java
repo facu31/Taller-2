@@ -12,4 +12,8 @@ public interface ProfesorDAO {
 	public Object borrarProfesor(int id);
 	
 	public Profesor buncarProfesor(String usuario);
+
+	public Profesor buscarProfesor(int idProfesor);
+
+	public void actualizarProfesor(Profesor profesor);
 }

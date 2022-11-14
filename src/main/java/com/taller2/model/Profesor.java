@@ -28,7 +28,17 @@ public class Profesor {
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
 	}
+
+	public Profesor(int id, String nombre, String apellido, String email, String direccion) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+		this.direccion = direccion;
+	}
 	
+
 	public int getId() {
 		return id;
 	}

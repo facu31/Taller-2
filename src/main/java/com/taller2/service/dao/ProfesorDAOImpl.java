@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.taller2.model.Profesor;
+import com.taller2.model.prueba.Prueba;
 
 @Service
 public class ProfesorDAOImpl implements ProfesorDAO {
@@ -81,6 +82,37 @@ public class ProfesorDAOImpl implements ProfesorDAO {
 		    } else {
 		    	return profesores.get(0);
 		    }
+	}
+
+	@Override
+	public Profesor buscarProfesor(int idProfesor) {
+		String sql = "select * from taller2.profesores where id = :idProfesor";
+		
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("idProfesor", idProfesor);
+		 
+		return namejdbcTemplate.queryForObject(
+				sql, 
+				param, 
+				(rs, rowNum) ->
+						new Profesor(
+		                rs.getInt("id"),
+		                rs.getString("nombre"),
+		                rs.getString("apellido"),
+		                rs.getString("direccion"),
+		                rs.getString("email")
+		        ));
+	}
+
+	@Override
+	public void actualizarProfesor(Profesor profesor) {
+		int id = jdbcTemplate.update("UPDATE taller2.profesores set nombre = ?, apellido = ?,email = ?,direccion = ? where id = ?",
+				profesor.getNombre(),
+				profesor.getApellido(),
+				profesor.getEmail(),
+				profesor.getDireccion(),
+				profesor.getId());
+	
 	}
 
 }

@@ -27,4 +27,13 @@ public class ProfesorServiciosImpl implements ProfesorServicios{
 		profesorDAO.borrarProfesor(id);
 	}
 
+	@Override
+	public Profesor buscarProfesor(int idProfesor) {
+		return profesorDAO.buscarProfesor(idProfesor);
+	}
+
+	public void actualizar(Profesor profesor) {
+		profesorDAO.actualizarProfesor(profesor);
+	}
+
 }
