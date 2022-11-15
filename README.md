@@ -587,6 +587,20 @@ https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/
 |Editar Alumnos|
 ||No ingresar usuarios repetidos|
 
+Mantenimientos
+- que se pueda editar un alumno
+- que se controle que un alumno no pueda tener el mismo nick que otro ya existente
+- que se pueda modificar el nick o la constraseñia
 
+- que se pueda realizar mantenimiento de tema o materia
+
+Resultados
+- que el porcentaje de aprobación de las pruebas sea variable (no fijo como hasta ahora)
+
+Crear prueba
+- que no se permita ingresar una pregunta repetida en una prueba
+
+Crear pregunta
+- que no se permita ingresar opciones con la misma descripción al armar preguntas de tipo correlación
 
 
