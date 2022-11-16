@@ -583,9 +583,6 @@ https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/
 
 ## Pendientes 
 
-| -------------- |
-|Editar Alumnos|
-||No ingresar usuarios repetidos|
 
 Mantenimientos
 - Que se pueda editar un alumno
