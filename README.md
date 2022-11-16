@@ -589,7 +589,7 @@ https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/
 
 Mantenimientos
 - Que se pueda editar un alumno
-- Que se controle que un alumno no pueda tener el mismo nick que otro ya existente
+- Que se controle que un profesor no pueda tener el mismo nick que otro ya existente
 - Que se pueda modificar el nick o la constraseñia
 
 - que se pueda realizar mantenimiento de tema o materia
