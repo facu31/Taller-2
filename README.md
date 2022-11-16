@@ -15,7 +15,7 @@ Composición grupo de trabajo:
 -Gabriel Aramburu.
 -Diego Gandaria.
 -Facundo Olaizola.
--Javier Balado
+-Javier Balado.
 
 # Pautas Principales :
 
