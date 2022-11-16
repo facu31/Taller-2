@@ -588,14 +588,14 @@ https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/
 ||No ingresar usuarios repetidos|
 
 Mantenimientos
-- que se pueda editar un alumno
-- que se controle que un alumno no pueda tener el mismo nick que otro ya existente
-- que se pueda modificar el nick o la constraseñia
+- Que se pueda editar un alumno
+- Que se controle que un alumno no pueda tener el mismo nick que otro ya existente
+- Que se pueda modificar el nick o la constraseñia
 
 - que se pueda realizar mantenimiento de tema o materia
 
 Resultados
-- que el porcentaje de aprobación de las pruebas sea variable (no fijo como hasta ahora)
+- Agregar simbolo de % en la fila del porcentaje
 
 Crear prueba
 - que no se permita ingresar una pregunta repetida en una prueba
