@@ -594,7 +594,5 @@ Mantenimientos
 Resultados
 - Agregar simbolo de % en la fila del porcentaje
 
-Crear pregunta
-- que no se permita ingresar opciones con la misma descripción al armar preguntas de tipo correlación
 
 
