@@ -428,6 +428,12 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 1. Como profesor debo crear preguntas nuevas de tipo verdadero o falso, ingredando un enunciado y determinando la opción correcta.
 
+2. Como profesor debo crear preguntas nuevas de tipo multiple opción, ingresando un enunciado para la pregunta y las diferentes opciones que se le ofrecerán al alumno. Debo indicaar cual de las opciones ingresadas es la correcta.
+
+3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
+asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
+
+
 |Cu01 |Cu01- Cerar pregunta verdadero o false  | 
 | -------------- | --------------|
 |**Descripción** |El sistema deberá permitir crear preguntas de verdadero falso|
@@ -442,7 +448,6 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 |**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
 |**Prioridad** |Alta|
 
-2. Como profesor debo crear preguntas nuevas de tipo multiple opción, ingresando un enunciado para la pregunta y las diferentes opciones que se le ofrecerán al alumno. Debo indicaar cual de las opciones ingresadas es la correcta.
 
 |Cu02 |Cu02- Crear pregunta de multiple opción  | 
 | -------------- | --------------|
@@ -459,8 +464,6 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 |**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
 |**Prioridad** |Alta|
 
-3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
-asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
 
 |Cu03 |Cu03- Crear prueba  | 
 | -------------- | --------------|
@@ -513,6 +516,66 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 6. Como administrador necesito realizar mantenimiento de Profesores y Alumnos.
 
 7. Como alumno necesito ver los resultados de las pruebas realizadas.
+
+
+|Cu01 |Cu01- Crear pregunta de tipo respuesta corta  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de tipo respuesta corta|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor ingresa una descripción para la opción y agrega la misma a la lista de opciones. Este punto se repite por cada opción.|
+| |4-El profesor indica para cada opción ingresada, cual es el valor correcto|
+| |5-El profesor guarda la pregunta
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
+|Cu02 |Cu02- Crear pregunta de tipo correlación  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de tipo respuesta corta|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor ingresa una descripción para la opción y agrega la misma a la lista de opciones. Este punto se repite por cada opción.|
+| |4-El profesor indica para cada opción ingresada, cual es el valor correcto|
+| |5-El profesor guarda la pregunta
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
+|Cu03 |Cu03- Publicar prueba  | 
+| -------------- | --------------|
+|**Descripción** |Los profesores publican las pruebas a los estudiantes|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las pruebas que existen ofreciendo la posibilidad de publicar las mismas|
+| |2-El profesor profesor le indica al sistema la prueba que debe ser publicada|
+| |3-El sistema cambia el esta de la prueba a publicada.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La prueba queda publicada y visible para los estudiantes  |
+|**Prioridad** |Alta|
+
+|Cu04 |Cu04- Listar banco de preguntas  | 
+| -------------- | --------------|
+|**Descripción** |Los profesores mantienen el banco de preguntas|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las preguntas existentes en el banco de preguntas|
+| |2-El profesor profesor le indica al sistema que desea borrar una pregunta.|
+| |2.1-El profesor además puede optar por ver las opciones de cada pregunta.|
+| |3-El sistema borra la pregunta del banco de preguntas.|
+|**Flujo Alternativo**| 1 - La pregunta no se puede borrar ya que está asociada a una o más pruebas.|
+| |2-El sistema muestra mensaje de error y no borra la pregunta del banco.|
+|**Poscondiciones**|La pregunta se elimina del banco de preguntas. |
+|**Prioridad** |Alta|
+
 
 # Documentación de Diseño
 
