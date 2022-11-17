@@ -723,7 +723,7 @@ El Diagrama de deploy quedò conformado de la siguiente forma:
 
 https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
 
-## Pendientes 
+# Pendientes 
 
 
 Mantenimientos
