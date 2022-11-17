@@ -428,10 +428,58 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 
 1. Como profesor debo crear preguntas nuevas de tipo verdadero o falso, ingredando un enunciado y determinando la opción correcta.
 
+|Cu01 |Cu01- Cerar pregunta verdadero o false  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de verdadero falso|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor seleciona cual es la opción correcta.|
+| |4-Sistema guarda la pregunta.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
 2. Como profesor debo crear preguntas nuevas de tipo multiple opción, ingresando un enunciado para la pregunta y las diferentes opciones que se le ofrecerán al alumno. Debo indicaar cual de las opciones ingresadas es la correcta.
+
+|Cu02 |Cu02- Crear pregunta de multiple opción  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de multiple opción|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor ingresa una descripción para la opción y agrega la misma a la lista de opciones. Este punto se repite por cada opción.|
+| |4-El profesor indica cual de las opciones ingresadas en el punto anterior es la correcta|
+| |5-Sistema guarda la pregunta.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
 
 3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
 asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
+
+|Cu03 |Cu03- Crear prueba  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear pruebas|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un nombre para la prueba|
+| |2-El profesor ingresa una descripción|
+| |3-El profesor utiliza los el filtro por tema y materia para localizar preguntas|
+| |4-El sistema muestra la lista de preguntas existentes en el banco de preguntas, según el filtro ingresado|
+| |5-El profesor selecciona la pregunta que dese incluir en la prueba|
+| |6-El profesor repite los pasos 4 y 5 hasta que concidera que la prueba está completa|
+| |7-El profesor ingresa un puntaje a cada pregunta de la prueba|
+| |8-El profesor guarda la prueba
+| |9-Sistema guarda la prueba.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La prueba queda guardada y lista para ser publicada  |
+|**Prioridad** |Alta|
 
 ## Requerimientos Iteración III.
 
