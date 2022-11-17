@@ -597,7 +597,6 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 |**Precondiciones**| Login como alumno.|
 | | | 
 |**Flujo Normal**|1-El sitema muestra todas las pruebas realizadas del alumno indicando si la misma fue aprobada o rechazada|
-|
 |**Flujo Alternativo**| |
 |**Poscondiciones**| |
 |**Prioridad** |Alta|
