@@ -709,7 +709,7 @@ http://ec2-15-229-10-212.sa-east-1.compute.amazonaws.com:8080/principal
 ## Actualización de versiones.
 
 No fue posible por razones de tiempo, investigar herramientas de deploy automático como Jenkins. Por ese motivo el deploy de nuevas versiones 
-de la aplicación se realiza a manualmente según lo detallado en el manual al que se accede desde el link de abajo.
+de la aplicación se realiza manualmente según lo detallado en el manual (ver link que se incluye a continuación)
 
 https://docs.google.com/document/d/1OJME8speYwOPSlnBwuuT-9QQ3Yrtgj50eE1zs7yiAHg/edit?usp=sharing
 
@@ -719,7 +719,7 @@ El Diagrama de deploy quedò conformado de la siguiente forma:
 
 ![imagen](https://user-images.githubusercontent.com/63823685/199623399-d3e0280a-9919-4427-a2a9-192a63a7f265.png)
 
-Manual de Usuario :
+# Manual de Usuario 
 
 https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
 
