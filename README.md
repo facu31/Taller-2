@@ -576,6 +576,31 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 |**Poscondiciones**|La pregunta se elimina del banco de preguntas. |
 |**Prioridad** |Alta|
 
+|Cu05 |Cu05- Eliminar pruebas  | 
+| -------------- | --------------|
+|**Descripción** |Los profesores borran pruebas creadas|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las pruebas existentes|
+| |2-El profesor profesor le indica al sistema que desea borrar una prueba.|
+| |3-El sistema borra la prueba|
+|**Flujo Alternativo**| 1 - La prueba no se puede borrar ya que está asociada a un o varios resultados|
+| |2-El sistema muestra mensaje de error y no borra la prueba|
+|**Poscondiciones**|La prueba se elimina del sistema. |
+|**Prioridad** |Alta|
+
+|Cu07 |Cu07- Ver resultados  | 
+| -------------- | --------------|
+|**Descripción** |El alumno necesita ver los resultados de sus pruebas|
+|**Actores** |Alumno|
+|**Precondiciones**| Login como alumno.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las pruebas realizadas del alumno indicando si la misma fue aprobada o rechazada|
+|
+|**Flujo Alternativo**| |
+|**Poscondiciones**| |
+|**Prioridad** |Alta|
 
 # Documentación de Diseño
 
