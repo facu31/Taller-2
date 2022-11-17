@@ -706,6 +706,9 @@ http://15.229.10.212:8080/principal
 
 http://ec2-15-229-10-212.sa-east-1.compute.amazonaws.com:8080/principal
 
+En este manual se encuentran los pasos detallados para actualizar la aplicación con nuevas versiones.
+https://docs.google.com/document/d/1OJME8speYwOPSlnBwuuT-9QQ3Yrtgj50eE1zs7yiAHg/edit?usp=sharing
+
 ## Diagrama de deploy.
 
 El Diagrama de deploy quedò conformado de la siguiente forma:
