@@ -36,8 +36,10 @@
 					<td th:text="${pregunta.enunciado}"></td>
 					<td th:text="${pregunta.idTema}"></td>
 					<td>
-						<a th:href="@{/pregunta/verOpciones/{id}(id=${pregunta.id})}"
+					
+				<!--/*--><a th:href="@{/pregunta/verOpciones/{id}(id=${pregunta.id})}"
 						class="btn-sm btn-success">Ver Opciones</a>
+				<!--*/-->
 						
 						<a th:href="@{/pregunta/borrar/{id}(id=${pregunta.id})}"
 						class="btn-sm btn-danger">Borrar</a>
