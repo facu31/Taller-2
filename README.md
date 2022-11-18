@@ -15,7 +15,7 @@ Composición grupo de trabajo:
 -Gabriel Aramburu.
 -Diego Gandaria.
 -Facundo Olaizola.
--Javier Balado
+-Javier Balado.
 
 # Pautas Principales :
 
@@ -433,6 +433,57 @@ La siguiente lista de requerimientos surge de la reunión mantenida con el Clien
 3. Como profesor debo crear pruebas indicando el titulo de la misma, una descripción y las preguntas que integran la misma. El sistema debe
 asistir en la etapa de selección de preguntas ofreciendo un método fácil de búsqueda de preguntas.
 
+
+|Cu01 |Cu01- Cerar pregunta verdadero o false  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de verdadero falso|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor seleciona cual es la opción correcta.|
+| |4-Sistema guarda la pregunta.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
+
+|Cu02 |Cu02- Crear pregunta de multiple opción  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de multiple opción|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor ingresa una descripción para la opción y agrega la misma a la lista de opciones. Este punto se repite por cada opción.|
+| |4-El profesor indica cual de las opciones ingresadas en el punto anterior es la correcta|
+| |5-Sistema guarda la pregunta.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
+
+|Cu03 |Cu03- Crear prueba  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear pruebas|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un nombre para la prueba|
+| |2-El profesor ingresa una descripción|
+| |3-El profesor utiliza los el filtro por tema y materia para localizar preguntas|
+| |4-El sistema muestra la lista de preguntas existentes en el banco de preguntas, según el filtro ingresado|
+| |5-El profesor selecciona la pregunta que dese incluir en la prueba|
+| |6-El profesor repite los pasos 4 y 5 hasta que concidera que la prueba está completa|
+| |7-El profesor ingresa un puntaje a cada pregunta de la prueba|
+| |8-El profesor guarda la prueba
+| |9-Sistema guarda la prueba.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La prueba queda guardada y lista para ser publicada  |
+|**Prioridad** |Alta|
+
 ## Requerimientos Iteración III.
 
 1. Como profesor necesito que el sistema genere pruebas de forma automática a partir de ciertos criterios ingresados, como ser tema de la pregunta. 
@@ -465,6 +516,90 @@ asistir en la etapa de selección de preguntas ofreciendo un método fácil de b
 6. Como administrador necesito realizar mantenimiento de Profesores y Alumnos.
 
 7. Como alumno necesito ver los resultados de las pruebas realizadas.
+
+
+|Cu01 |Cu01- Crear pregunta de tipo respuesta corta  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de tipo respuesta corta|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor ingresa una descripción para la opción y agrega la misma a la lista de opciones. Este punto se repite por cada opción.|
+| |4-El profesor indica para cada opción ingresada, cual es el valor correcto|
+| |5-El profesor guarda la pregunta
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
+|Cu02 |Cu02- Crear pregunta de tipo correlación  | 
+| -------------- | --------------|
+|**Descripción** |El sistema deberá permitir crear preguntas de tipo respuesta corta|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El profesor ingresa un enunciado para la pregunta.|
+| |2-El profesor seleciona el tema de la pregunta.|
+| |3-El profesor ingresa una descripción para la opción y agrega la misma a la lista de opciones. Este punto se repite por cada opción.|
+| |4-El profesor indica para cada opción ingresada, cual es el valor correcto|
+| |5-El profesor guarda la pregunta
+|**Flujo Alternativo**||
+|**Poscondiciones**|La pregunta queda guardada y lista para ser usada en una prueba  |
+|**Prioridad** |Alta|
+
+|Cu03 |Cu03- Publicar prueba  | 
+| -------------- | --------------|
+|**Descripción** |Los profesores publican las pruebas a los estudiantes|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las pruebas que existen ofreciendo la posibilidad de publicar las mismas|
+| |2-El profesor profesor le indica al sistema la prueba que debe ser publicada|
+| |3-El sistema cambia el esta de la prueba a publicada.|
+|**Flujo Alternativo**||
+|**Poscondiciones**|La prueba queda publicada y visible para los estudiantes  |
+|**Prioridad** |Alta|
+
+|Cu04 |Cu04- Listar banco de preguntas  | 
+| -------------- | --------------|
+|**Descripción** |Los profesores mantienen el banco de preguntas|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las preguntas existentes en el banco de preguntas|
+| |2-El profesor profesor le indica al sistema que desea borrar una pregunta.|
+| |2.1-El profesor además puede optar por ver las opciones de cada pregunta.|
+| |3-El sistema borra la pregunta del banco de preguntas.|
+|**Flujo Alternativo**| 1 - La pregunta no se puede borrar ya que está asociada a una o más pruebas.|
+| |2-El sistema muestra mensaje de error y no borra la pregunta del banco.|
+|**Poscondiciones**|La pregunta se elimina del banco de preguntas. |
+|**Prioridad** |Alta|
+
+|Cu05 |Cu05- Eliminar pruebas  | 
+| -------------- | --------------|
+|**Descripción** |Los profesores borran pruebas creadas|
+|**Actores** |Profesor|
+|**Precondiciones**| Login como profesor.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las pruebas existentes|
+| |2-El profesor profesor le indica al sistema que desea borrar una prueba.|
+| |3-El sistema borra la prueba|
+|**Flujo Alternativo**| 1 - La prueba no se puede borrar ya que está asociada a un o varios resultados|
+| |2-El sistema muestra mensaje de error y no borra la prueba|
+|**Poscondiciones**|La prueba se elimina del sistema. |
+|**Prioridad** |Alta|
+
+|Cu07 |Cu07- Ver resultados  | 
+| -------------- | --------------|
+|**Descripción** |El alumno necesita ver los resultados de sus pruebas|
+|**Actores** |Alumno|
+|**Precondiciones**| Login como alumno.|
+| | | 
+|**Flujo Normal**|1-El sitema muestra todas las pruebas realizadas del alumno indicando si la misma fue aprobada o rechazada|
+|**Flujo Alternativo**| |
+|**Poscondiciones**| |
+|**Prioridad** |Alta|
 
 # Documentación de Diseño
 
@@ -571,25 +706,29 @@ http://15.229.10.212:8080/principal
 
 http://ec2-15-229-10-212.sa-east-1.compute.amazonaws.com:8080/principal
 
+## Actualización de versiones.
+
+No fue posible por razones de tiempo, investigar herramientas de deploy automático como Jenkins. Por ese motivo el deploy de nuevas versiones 
+de la aplicación se realiza manualmente según lo detallado en el manual (ver link que se incluye a continuación)
+
+https://docs.google.com/document/d/1OJME8speYwOPSlnBwuuT-9QQ3Yrtgj50eE1zs7yiAHg/edit?usp=sharing
+
 ## Diagrama de deploy.
 
 El Diagrama de deploy quedò conformado de la siguiente forma:
 
 ![imagen](https://user-images.githubusercontent.com/63823685/199623399-d3e0280a-9919-4427-a2a9-192a63a7f265.png)
 
-Manual de Usuario :
+# Manual de Usuario 
 
 https://docs.google.com/document/d/1A3Sthpa5mIC7qDfgjxiA1djGgNb83jFpr3TVlC2wUHY/edit?usp=sharing
 
-## Pendientes 
+# Pendientes 
 
-| -------------- |
-|Editar Alumnos|
-||No ingresar usuarios repetidos|
 
 Mantenimientos
 - Que se pueda editar un alumno
-- Que se controle que un alumno no pueda tener el mismo nick que otro ya existente
+- Que se controle que un profesor no pueda tener el mismo nick que otro ya existente
 - Que se pueda modificar el nick o la constraseñia
 
 - que se pueda realizar mantenimiento de tema o materia
@@ -597,10 +736,5 @@ Mantenimientos
 Resultados
 - Agregar simbolo de % en la fila del porcentaje
 
-Crear prueba
-- que no se permita ingresar una pregunta repetida en una prueba
-
-Crear pregunta
-- que no se permita ingresar opciones con la misma descripción al armar preguntas de tipo correlación
 
 
