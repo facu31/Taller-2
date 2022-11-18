@@ -27,8 +27,17 @@ public class AlumnoController {
     }
 	
 	@PostMapping("/alumno/saveAlumno")
-    public String saveAlumno(@ModelAttribute("alumno") Alumno alumno) {
-        alumnoServiciosImpl.grabar(alumno);
+    public String saveAlumno(@ModelAttribute("alumno") Alumno alumno, Model model) {
+		try {
+			 alumnoServiciosImpl.grabar(alumno);
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			model.addAttribute("mensaje", "No se puede crear un alumno con nick repetido");
+			return "error/error";
+		}
+		
+       
         return "redirect:/alumno/listadoAlumnos";
     }
 	

@@ -44,7 +44,7 @@
 				headers: { "Content-type": "application/json; charset=UTF-8" }
 			})
 			
-			alert("se guardo la prueba");
+			//alert("se guardo la prueba");
 
 		}
 	

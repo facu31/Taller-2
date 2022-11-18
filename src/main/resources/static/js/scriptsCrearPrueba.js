@@ -55,9 +55,14 @@
 					method: "POST",
 					body: JSON.stringify(datosPrueba),
 					headers: { "Content-type": "application/json; charset=UTF-8" }
-				})
-		
-				alert("se guardo la prueba");
+				}).then(function(response) {
+			        return response.text()
+			  		  })
+			    .then(function(html) {
+			       
+			        document.body.innerHTML = html 
+			    })
+	
 			}
 		
 		}

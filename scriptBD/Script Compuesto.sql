@@ -165,4 +165,6 @@ insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,4,1);
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,5,1);
 
 
+ALTER TABLE taller2.pruebaPreguntas ADD UNIQUE (idPrueba,idPregunta); 
+
     

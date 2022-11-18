@@ -1,9 +1,14 @@
 package com.taller2.controller;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -12,7 +17,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.taller2.dto.crearprueba.PreguntaDTO;
 import com.taller2.dto.crearprueba.PruebaAutomaticaDTO;
@@ -51,7 +59,7 @@ public class PruebaController {
     }
  	
  	@GetMapping("prueba/listadoPruebasParaEstudiantes")
-    public String viewHomePage(Model model) {
+    public String listadoPruebasEstudiantes(Model model) {
         model.addAttribute("pruebas", pruebaServiciosImpl.obtenerPruebasPublicadas());
         return "prueba/listadoPruebasParaEstudiantes"; 
     }
@@ -80,6 +88,27 @@ public class PruebaController {
         return "prueba/crearPrueba"; 
     }
  	
+ 	@PostMapping("prueba/guardarPrueba")
+    public String guardarPrueba(@RequestBody PruebaDTO pruebaDTO, Model model) throws IOException {
+ 		System.out.println("Se esta guardando la prueba");
+ 		
+ 		Prueba prueba = new Prueba();
+ 		prueba.setDesc(pruebaDTO.getDesc());
+ 		prueba.setTitulo(pruebaDTO.getTitulo());
+ 		
+ 		try {
+ 			pruebaServiciosImpl.guardarPrueba(prueba, Arrays.asList(pruebaDTO.getPreguntas()));
+ 		 	
+ 		} catch (Exception e) {
+ 			System.out.println(e.getMessage());
+ 			model.addAttribute("mensaje", "No se puede crear una prueba con preguntqs repetidas.");
+ 			return "error/error";
+ 		}
+ 		
+ 		return "redirect:/prueba/listadoPruebasParaProfesores";
+ 		 
+    }
+ 	
  	@GetMapping("/prueba/filtrarPreguntas/materia/{idM}/tema/{idT}")
     public String filtrarPreguntas (
     		@PathVariable("idM") int idMateria,
@@ -94,17 +123,7 @@ public class PruebaController {
  	
  	
  	
- 	@PostMapping("prueba/guardarPrueba")
-    public String guardarPrueba(@RequestBody PruebaDTO pruebaDTO) {
- 		System.out.println("Se esta guardando la prueba");
- 		
- 		Prueba prueba = new Prueba();
- 		prueba.setDesc(pruebaDTO.getDesc());
- 		prueba.setTitulo(pruebaDTO.getTitulo());
- 		pruebaServiciosImpl.guardarPrueba(prueba, Arrays.asList(pruebaDTO.getPreguntas()));
-        
-        return "prueba/pruebasExistentes"; 
-    }
+ 	
  	
  	@GetMapping("prueba/formularioCrearPruebaAutomatica")
  	public String crearPruebaAutomatica(Model model) {
@@ -133,7 +152,7 @@ public class PruebaController {
  		if (preguntas.size() > 0) {
  			pruebaServiciosImpl.guardarPrueba(prueba, PreguntaDTO.buildPreguntaDTO(preguntas));
  			//esto quedo bastante feo, corregir cuando se pueda
- 			redirectAttributes.addFlashAttribute("errorMessage",  "Preba guardadad");
+ 			redirectAttributes.addFlashAttribute("errorMessage",  "Prueba guardadad");
  		} else {
  			System.out.println("No existen preguntas para el tema.");
  			redirectAttributes.addFlashAttribute("errorMessage",  "No hay preguntas para ese tema, no se puede crear Prueba");
