@@ -151,6 +151,14 @@ insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (1,9,"q
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (2,9,"P");
 insert into opcionesPreguntas (idOpcion, idPregunta, descripcion) values (3,9,"q");
 
+insert into preguntas (id, tipo, enunciado, idOpcionCorrecta, idTema) values (10, 2,  "¿Cómo se llaman las leyes que se utilizan para reducir?", null, 5);
+insert into opcionesPreguntas (idOpcion, idPregunta, descripcion, valorCorrecto) values (1,10,"", "de Morgan");
+
+insert into preguntas (id, tipo, enunciado, idOpcionCorrecta, idTema) values (11, 2,  "Según la palabra reservada indica cual es el lenguaje correcto. a) printf b) cout c) println", null, 5);
+insert into opcionesPreguntas (idOpcion, idPregunta, descripcion, valorCorrecto) values (1,11,"java", "c");
+insert into opcionesPreguntas (idOpcion, idPregunta, descripcion, valorCorrecto) values (2,11,"c", "a");
+insert into opcionesPreguntas (idOpcion, idPregunta, descripcion, valorCorrecto) values (3,11,"c++", "b");
+
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,1,1);
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,2,1);
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (1,6,1);
@@ -163,6 +171,8 @@ insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (2,7,1);
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,3,1);
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,4,1);
 insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,5,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,10,1);
+insert into pruebaPreguntas (idPrueba, idPregunta, puntaje) values (3,11,1);
 
 
 ALTER TABLE taller2.pruebaPreguntas ADD UNIQUE (idPrueba,idPregunta); 
